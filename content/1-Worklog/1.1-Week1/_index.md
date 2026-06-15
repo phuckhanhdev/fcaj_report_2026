@@ -1,57 +1,34 @@
 ---
 title: "Week 1 Worklog"
-date: 2024-01-01
+date: 2026-06-15
 weight: 1
 chapter: false
 pre: " <b> 1.1. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
 
 ### Week 1 Objectives:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Receive and unlock all allocated AWS credits.
+* Practice and get familiar with core AWS services (EC2, Bedrock Playground, AWS Budgets, Lambda, RDS).
+* Resolve issues arising on the AWS account.
 
 ### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Date | Task | Start Date | Completion Date | Reference Material |
+| --- | --- | --- | --- | --- |
+| 15/06/2026 | - Unlock all AWS credits. <br> - Research and practice AWS services:<br>&emsp; + Launch EC2 Instance<br>&emsp; + Experience AI/ML with foundation models in Amazon Bedrock Playground<br>&emsp; + Set up monitoring and alerts for costs - Set up AWS Budgets<br>&emsp; + Build a serverless web application by Lambda Web App<br>&emsp; + Set up managed relational database - RDS Database | 15/06/2026 | 15/06/2026 | <https://cloudjourney.awsstudygroup.com/> |
 
 
 ### Week 1 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Successfully unlocked all allocated AWS credits for the learning program.
+* Researched and successfully practiced key services:
+  * **Launch EC2 Instance:** Successfully created an EC2 virtual server, configured Security Groups, and connected via SSH.
+  * **Experience AI/ML Bedrock:** Explored foundation models (such as Claude, Llama) in the Amazon Bedrock Playground.
+  * **AWS Budgets:** Set up monitoring budgets and alerts to control usage costs.
+  * **Lambda Web App:** Built a basic serverless web application using AWS Lambda and API Gateway.
+  * **RDS Database:** Provisioned a managed relational database using Amazon RDS.
 
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+### Incidents Encountered:
+* **Description:** During self-study and practice, I accidentally created a new AWS Organization. This action triggered the account status change from a Free Tier account to a regular Paid Plan account.
+* **Resolution:** I have opened a support case in the AWS Support Center explaining the accidental creation of the organization, and I am currently waiting for AWS Support's assistance in restoring the account to its previous state or waiving any incurred charges.

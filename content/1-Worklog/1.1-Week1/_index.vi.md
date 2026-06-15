@@ -1,59 +1,36 @@
 ---
 title: "Worklog Tuần 1"
-date: 2024-01-01
+date: 2026-06-15
 weight: 1
 chapter: false
 pre: " <b> 1.1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
 
 ### Mục tiêu tuần 1:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Nhận AWS credits và mở khóa toàn bộ credits được cấp.
+* Thực hành và làm quen với một số dịch vụ AWS cốt lõi (EC2, Bedrock Playground, AWS Budgets, Lambda, RDS).
+* Xử lý sự cố phát sinh trên tài khoản AWS.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 15/06/2026 | - Mở khóa toàn bộ credits của AWS. <br> - Tìm hiểu cách sử dụng và thực hành các dịch vụ AWS:<br>&emsp; + Launch EC2 Instance (Khởi tạo máy chủ ảo EC2)<br>&emsp; + Experience AI/ML with foundation models in Amazon Bedrock Playground (Trải nghiệm AI/ML với các mô hình nền tảng trong Amazon Bedrock Playground)<br>&emsp; + Set up monitoring and alerts for costs - Set up AWS Budgets (Thiết lập theo dõi và cảnh báo chi phí bằng AWS Budgets)<br>&emsp; + Build a serverless web application by Lambda Web App (Xây dựng ứng dụng web serverless với Lambda Web App)<br>&emsp; + Set up managed relational database - RDS Database (Thiết lập cơ sở dữ liệu quan hệ được quản lý - RDS Database) | 15/06/2026 | 15/06/2026 | <https://cloudjourney.awsstudygroup.com/> |
 
 
 ### Kết quả đạt được tuần 1:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Đã mở khóa thành công toàn bộ credits của AWS được cấp cho chương trình học tập.
+* Đã tìm hiểu và thực hành thành công các nội dung cốt lõi:
+  * **Launch EC2 Instance:** Khởi tạo thành công máy chủ ảo EC2, cấu hình Security Group và kết nối thành công qua SSH.
+  * **Experience AI/ML Bedrock:** Trải nghiệm sử dụng các mô hình nền tảng (Foundation Models) như Claude, Llama trên Amazon Bedrock Playground.
+  * **AWS Budgets:** Thiết lập thành công các ngưỡng cảnh báo chi phí sử dụng AWS để tránh phát sinh chi phí ngoài ý muốn.
+  * **Lambda Web App:** Xây dựng ứng dụng web Serverless cơ bản sử dụng AWS Lambda kết hợp API Gateway.
+  * **RDS Database:** Thiết lập cơ sở dữ liệu quan hệ được quản lý hoàn toàn bằng Amazon RDS (MySQL/PostgreSQL).
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+### Sự cố gặp phải:
+* **Mô tả:** Trong quá trình tự tìm hiểu và thực hành trên tài khoản AWS, tôi đã vô tình thực hiện thao tác tạo mới một tổ chức (AWS Organization). Hành động này đã kích hoạt việc chuyển đổi tài khoản từ gói miễn phí (Free Tier) sang tài khoản thanh toán thông thường (Paid Plan).
+* **Cách xử lý:** Tôi đã tạo ngay một phiếu hỗ trợ (Support Case) gửi đến trung tâm hỗ trợ của AWS (AWS Support Center) để giải thích sự cố vô ý này và đang chờ AWS phản hồi, trợ giúp đưa tài khoản trở lại trạng thái cũ hoặc miễn trừ các chi phí phát sinh nếu có.
 
 
