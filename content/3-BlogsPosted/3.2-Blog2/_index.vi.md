@@ -52,7 +52,7 @@ Sau khi tìm hiểu giải pháp này, mình nhận thấy một số ưu điể
 
 ### Hình ảnh kiến trúc & Tham khảo
 
-![AWS DevOps Agent Integration](/3-BlogsPosted/picture/blog2.png)
+![AWS DevOps Agent Integration](/images/3-BlogsPosted/picture/blog2.png)
 
 #### Tài liệu tham khảo:
 - [AWS Management & Governance Blog – Automate CI/CD troubleshooting with AWS DevOps Agent and GitHub](https://aws.amazon.com/blogs/mt/automate-ci-cd-troubleshooting-with-aws-devops-agent-and-github/)

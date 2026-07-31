@@ -1,6 +1,6 @@
 ---
 title: "Chia sẻ & Góp ý"
-date: 2026-08-15
+date: 2026-07-31
 weight: 7
 chapter: false
 pre: " <b> 7. </b> "

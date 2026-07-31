@@ -59,7 +59,7 @@ Thay vì tiếp tục chịu đựng những "tiếng ồn" báo lỗi mờ mị
 
 ### Hình ảnh kiến trúc & Tham khảo
 
-![Optimizing CloudWatch Alarms](/3-BlogsPosted/picture/blog3.png)
+![Optimizing CloudWatch Alarms](/images/3-BlogsPosted/picture/blog3.png)
 
 #### Tài liệu tham khảo:
 - [AWS Management & Governance Blog – Turn your Amazon CloudWatch alarms into actionable signals](https://aws.amazon.com/blogs/mt/turn-your-amazon-cloudwatch-alarms-into-actionable-signals/)

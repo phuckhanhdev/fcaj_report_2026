@@ -70,7 +70,7 @@ Rather than using complex charts, here is a concise breakdown of the core differ
 
 ### Architecture Diagram & References
 
-![Amazon Bedrock vs SageMaker](/3-BlogsPosted/picture/blog1.png)
+![Amazon Bedrock vs SageMaker](/images/3-BlogsPosted/picture/blog1.png)
 
 #### References:
 - [AWS Documentation – Amazon Bedrock](https://docs.aws.amazon.com/bedrock/)

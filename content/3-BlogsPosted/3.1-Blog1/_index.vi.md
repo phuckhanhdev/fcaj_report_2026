@@ -70,7 +70,7 @@ Thay vì dùng bảng biểu phức tạp, mình sẽ tóm tắt những điểm
 
 ### Hình ảnh kiến trúc & Tham khảo
 
-![Amazon Bedrock vs SageMaker](/3-BlogsPosted/picture/blog1.png)
+![Amazon Bedrock vs SageMaker](/images/3-BlogsPosted/picture/blog1.png)
 
 #### Tài liệu tham khảo:
 - [AWS Documentation – Amazon Bedrock](https://docs.aws.amazon.com/bedrock/)

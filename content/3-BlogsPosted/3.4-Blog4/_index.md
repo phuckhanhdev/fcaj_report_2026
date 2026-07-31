@@ -57,7 +57,7 @@ Transitioning from fragile in-code log masking to automated infrastructure-level
 
 ### Architecture Diagram & References
 
-![CloudWatch Logs Data Protection](/3-BlogsPosted/picture/blog4.png)
+![CloudWatch Logs Data Protection](/images/3-BlogsPosted/picture/blog4.png)
 
 #### References:
 - [AWS Cloud Operations & Management Blog – Handling sensitive log data using Amazon CloudWatch](https://aws.amazon.com/blogs/mt/handling-sensitive-log-data-using-amazon-cloudwatch/)

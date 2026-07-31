@@ -59,7 +59,7 @@ Instead of enduring vague error noise, transitioning to actionable alerts turns 
 
 ### Architecture Diagram & References
 
-![Optimizing CloudWatch Alarms](/3-BlogsPosted/picture/blog3.png)
+![Optimizing CloudWatch Alarms](/images/3-BlogsPosted/picture/blog3.png)
 
 #### References:
 - [AWS Management & Governance Blog – Turn your Amazon CloudWatch alarms into actionable signals](https://aws.amazon.com/blogs/mt/turn-your-amazon-cloudwatch-alarms-into-actionable-signals/)
