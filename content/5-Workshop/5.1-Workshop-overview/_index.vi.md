@@ -1,19 +1,63 @@
 ---
-title : "Giới thiệu"
-date : 2024-01-01 
-weight : 1
-chapter : false
-pre : " <b> 5.1. </b> "
+title: "Tổng quan Workshop"
+date: 2026-07-31
+weight: 1
+chapter: false
+pre: " <b> 5.1. </b> "
 ---
 
-#### Giới thiệu về VPC Endpoint
+## LifeSync AI Calendar — Tổng quan Workshop
 
-+ Điểm cuối VPC (endpoint) là thiết bị ảo. Chúng là các thành phần VPC có thể mở rộng theo chiều ngang, dự phòng và có tính sẵn sàng cao. Chúng cho phép giao tiếp giữa tài nguyên điện toán của bạn và dịch vụ AWS mà không gây ra rủi ro về tính sẵn sàng.
-+ Tài nguyên điện toán đang chạy trong VPC có thể truy cập Amazon S3 bằng cách sử dụng điểm cuối Gateway. Interface Endpoint  PrivateLink có thể được sử dụng bởi tài nguyên chạy trong VPC hoặc tại TTDL.
+### Bạn sẽ xây dựng gì?
 
-#### Tổng quan về workshop
-Trong workshop này, bạn sẽ sử dụng hai VPC.
-+ **"VPC Cloud"** dành cho các tài nguyên cloud như Gateway endpoint và EC2 instance để kiểm tra.
-+ **"VPC On-Prem"** mô phỏng môi trường truyền thống như nhà máy hoặc trung tâm dữ liệu của công ty. Một EC2 Instance chạy phần mềm StrongSwan VPN đã được triển khai trong "VPC On-prem" và được cấu hình tự động để thiết lập đường hầm VPN Site-to-Site với AWS Transit Gateway. VPN này mô phỏng kết nối từ một vị trí tại TTDL (on-prem) với AWS cloud. Để giảm thiểu chi phí, chỉ một phiên bản VPN được cung cấp để hỗ trợ workshop này. Khi lập kế hoạch kết nối VPN cho production workloads của bạn, AWS khuyên bạn nên sử dụng nhiều thiết bị VPN để có tính sẵn sàng cao.
+Sau khi hoàn thành workshop, bạn sẽ có một **hệ thống production đầy đủ trên AWS** phản ánh kiến trúc đang vận hành tại [https://phuckhanh.id.vn](https://phuckhanh.id.vn), bao gồm:
 
-![overview](/images/5-Workshop/5.1-Workshop-overview/diagram1.png)
+- Instance **Amazon EC2** chạy Next.js 16 với Nginx reverse proxy và PM2 process manager
+- CSDL **Amazon RDS MySQL** lưu trữ tài khoản người dùng, sự kiện lịch và lịch sử chat AI
+- Bucket **Amazon S3** lưu trữ ảnh đại diện người dùng qua Presigned URL
+- Phân phối **Amazon CloudFront** CDN tăng tốc toàn cầu và che giấu IP EC2
+- Tường lửa **AWS WAF** với Core Rules và bảo vệ SQL Injection
+- Hàm **AWS Lambda** + **Amazon EventBridge** Scheduler để cào dữ liệu rạp CGV hàng tuần
+
+### Công nghệ chính
+
+| Công nghệ | Mục đích |
+|---|---|
+| **Next.js 16** | Framework React full-stack (App Router + Server Actions) |
+| **PM2** | Quản lý tiến trình Node.js production (tự khởi động lại, ghi log) |
+| **Nginx** | Reverse proxy hiệu suất cao điều hướng port 80/443 → 3000 |
+| **Ubuntu 24.04 LTS** | Hệ điều hành Linux ổn định cho EC2 |
+| **MySQL 8.0** | CSDL quan hệ production trên Amazon RDS |
+| **Google Gemini 2.5 Flash** | Mô hình AI phân tích ý định lập lịch từ ngôn ngữ tự nhiên |
+| **GitHub Actions** | Pipeline CI/CD tự động deploy mỗi khi `git push` |
+
+### Phạm vi Workshop
+
+Workshop chia thành **Dịch vụ AWS** (Mục 3–7) và **Dịch vụ khác** (Mục 8):
+
+**Dịch vụ AWS được hướng dẫn chi tiết:**
+- Amazon EC2 — Khởi tạo server, Security Group, Elastic IP, swap memory
+- Amazon RDS — Cài đặt MySQL, Security Group, migration schema
+- Amazon S3 — Tạo bucket, CORS policy, cơ chế Presigned URL
+- Amazon CloudFront — Tạo distribution, cài đặt origin, cache behavior
+- AWS WAF — Tạo Web ACL, chọn managed rules, gắn CloudFront
+- AWS Lambda — Tạo hàm, biến môi trường, gói triển khai
+- Amazon EventBridge — Lịch cron kích hoạt Lambda
+
+**Dịch vụ khác (Mục 8 — hướng dẫn cài đặt ngắn gọn):**
+- Tên miền Mắt Bão & cấu hình DNS A Record
+- SSL/TLS Let's Encrypt với Certbot
+- Quản lý API key Google Gemini
+
+### Thời gian ước tính
+
+| Mục | Thời gian ước tính |
+|---|---|
+| Chuẩn bị | 15 phút |
+| Cài đặt EC2 | 20 phút |
+| Cài đặt RDS & S3 | 20 phút |
+| Cài đặt CloudFront | 15 phút |
+| Cài đặt WAF | 10 phút |
+| Lambda + EventBridge | 20 phút |
+| Dịch vụ khác | 15 phút |
+| **Tổng cộng** | **~2 giờ** |

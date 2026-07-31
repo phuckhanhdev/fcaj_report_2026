@@ -1,112 +1,144 @@
 ---
 title: "Proposal"
-date: 2024-01-01
+date: 2026-07-31
 weight: 2
 chapter: false
 pre: " <b> 2. </b> "
 ---
 
-In this section, you need to summarize the contents of the workshop that you **plan** to conduct.
+# LifeSync AI Calendar
+## A Scientific AI-Powered Smart Scheduling System on AWS Cloud Infrastructure
 
-# IoT Weather Platform for Lab Research
-## A Unified AWS Serverless Solution for Real-Time Weather Monitoring
+---
 
 ### 1. Executive Summary
-The IoT Weather Platform is designed for the ITea Lab team in Ho Chi Minh City to enhance weather data collection and analysis. It supports up to 5 weather stations, with potential scalability to 10-15, utilizing Raspberry Pi edge devices with ESP32 sensors to transmit data via MQTT. The platform leverages AWS Serverless services to deliver real-time monitoring, predictive analytics, and cost efficiency, with access restricted to 5 lab members via Amazon Cognito.
+
+**LifeSync AI Calendar** is a full-stack intelligent scheduling application built with **Next.js 16** and deployed on **Amazon Web Services (AWS)**. The platform leverages **Google Gemini 2.5 Flash AI** for natural language scheduling intent parsing, a custom **Haversine Algorithm** for CGV cinema geolocation recommendations, and a **Scientific Scheduling Engine** based on Constraint Satisfaction Problem (CSP) solving with Bitmask optimization.
+
+The system is deployed on a production-grade AWS infrastructure stack including Amazon EC2 (t2.micro Free Tier), Amazon RDS MySQL, Amazon S3, Amazon CloudFront CDN, AWS WAF, AWS Lambda, and Amazon EventBridge Scheduler — all accessible at the custom domain **[https://phuckhanh.id.vn](https://phuckhanh.id.vn)**.
+
+---
 
 ### 2. Problem Statement
-### What’s the Problem?
-Current weather stations require manual data collection, becoming unmanageable with multiple units. There is no centralized system for real-time data or analytics, and third-party platforms are costly and overly complex.
 
-### The Solution
-The platform uses AWS IoT Core to ingest MQTT data, AWS Lambda and API Gateway for processing, Amazon S3 for storage (including a data lake), and AWS Glue Crawlers and ETL jobs to extract, transform, and load data from the S3 data lake to another S3 bucket for analysis. AWS Amplify with Next.js provides the web interface, and Amazon Cognito ensures secure access. Similar to Thingsboard and CoreIoT, users can register new devices and manage connections, though this platform operates on a smaller scale and is designed for private use. Key features include real-time dashboards, trend analysis, and low operational costs.
+#### What's the Problem?
+Traditional calendar applications lack intelligent automation — users must manually create each event without receiving context-aware scheduling recommendations. There is no scientific approach to suggest optimal time slots based on a user's existing calendar, productivity science (Pomodoro, golden hours), or group location for outings.
 
-### Benefits and Return on Investment
-The solution establishes a foundational resource for lab members to develop a larger IoT platform, serving as a study resource, and provides a data foundation for AI enthusiasts for model training or analysis. It reduces manual reporting for each station via a centralized platform, simplifying management and maintenance, and improves data reliability. Monthly costs are $0.66 USD per the AWS Pricing Calculator, with a 12-month total of $7.92 USD. All IoT equipment costs are covered by the existing weather station setup, eliminating additional development expenses. The break-even period of 6-12 months is achieved through significant time savings from reduced manual work.
+#### The Solution
+LifeSync AI Calendar solves this by:
+- Parsing natural language requests via **Google Gemini AI** to extract scheduling intent (study, fitness, date, etc.)
+- Applying a **Scientific Scheduling Engine** with 68 time slots (15-minute granularity) from 06:00–23:00 using CSP-based Bitmask solving
+- Recommending the **Top 3 CGV Cinemas nearest to a group** using the Haversine geolocation formula with a special "**Nam rước Nữ**" weighting algorithm (80% Female, 20% Male proximity for couple dates)
+- Automating event creation and calendar insertion with a single button click
+
+---
 
 ### 3. Solution Architecture
-The platform employs a serverless AWS architecture to manage data from 5 Raspberry Pi-based stations, scalable to 15. Data is ingested via AWS IoT Core, stored in an S3 data lake, and processed by AWS Glue Crawlers and ETL jobs to transform and load it into another S3 bucket for analysis. Lambda and API Gateway handle additional processing, while Amplify with Next.js hosts the dashboard, secured by Cognito. The architecture is detailed below:
 
-![IoT Weather Station Architecture](/images/2-Proposal/edge_architecture.jpeg)
+```
+[Internet User]
+      │
+      ▼
+[Custom Domain: phuckhanh.id.vn (Mắt Bão DNS)]
+      │
+      ▼ (Let's Encrypt SSL/TLS 1.3)
+[Amazon CloudFront CDN] (Global Content Delivery Network)
+      │
+      ▼ (AWS WAF: LifeSync-WAF — Blocks SQLi, XSS, DDoS)
+[Nginx Reverse Proxy: Port 80/443]
+      │
+      ▼ (Proxy Pass → http://localhost:3000)
+[AWS EC2 t2.micro] (Ubuntu 24.04 LTS + PM2 + Next.js 16)
+      │
+      ├──► [Amazon RDS MySQL] (Relational Database — Users, Events, Chat)
+      ├──► [AWS Lambda + EventBridge] (Weekly CGV Cinema Crawler Scheduler)
+      ├──► [Google Gemini 2.5 Flash] (AI NLP Intent Parsing & Slot Filling)
+      └──► [Amazon S3 Bucket] (User Avatar Storage via Presigned URL)
+```
 
-![IoT Weather Platform Architecture](/images/2-Proposal/platform_architecture.jpeg)
+#### AWS Services Used
 
-### AWS Services Used
-- **AWS IoT Core**: Ingests MQTT data from 5 stations, scalable to 15.
-- **AWS Lambda**: Processes data and triggers Glue jobs (two functions).
-- **Amazon API Gateway**: Facilitates web app communication.
-- **Amazon S3**: Stores raw data in a data lake and processed outputs (two buckets).
-- **AWS Glue**: Crawlers catalog data, and ETL jobs transform and load it.
-- **AWS Amplify**: Hosts the Next.js web interface.
-- **Amazon Cognito**: Secures access for lab users.
+| Service | Role |
+|---|---|
+| **Amazon EC2 (t2.micro)** | Application server running Next.js 16 + PM2 + Nginx |
+| **Amazon RDS MySQL** | Cloud relational database for users, events, and chat history |
+| **Amazon S3** | Avatar file storage with Presigned URL upload mechanism |
+| **Amazon CloudFront** | Global CDN for performance acceleration and IP masking |
+| **AWS WAF** | Web Application Firewall (Core Rules + SQL Injection protection) |
+| **AWS Lambda** | Serverless function for CGV cinema weekly crawler |
+| **Amazon EventBridge** | Cron scheduler triggering Lambda at 00:00 every Monday |
+| **GitHub Actions CI/CD** | Automated build & deploy pipeline on `git push origin main` |
 
-### Component Design
-- **Edge Devices**: Raspberry Pi collects and filters sensor data, sending it to IoT Core.
-- **Data Ingestion**: AWS IoT Core receives MQTT messages from the edge devices.
-- **Data Storage**: Raw data is stored in an S3 data lake; processed data is stored in another S3 bucket.
-- **Data Processing**: AWS Glue Crawlers catalog the data, and ETL jobs transform it for analysis.
-- **Web Interface**: AWS Amplify hosts a Next.js app for real-time dashboards and analytics.
-- **User Management**: Amazon Cognito manages user access, allowing up to 5 active accounts.
+---
 
 ### 4. Technical Implementation
-**Implementation Phases**
-This project has two parts—setting up weather edge stations and building the weather platform—each following 4 phases:
-- Build Theory and Draw Architecture: Research Raspberry Pi setup with ESP32 sensors and design the AWS serverless architecture (1 month pre-internship)
-- Calculate Price and Check Practicality: Use AWS Pricing Calculator to estimate costs and adjust if needed (Month 1).
-- Fix Architecture for Cost or Solution Fit: Tweak the design (e.g., optimize Lambda with Next.js) to stay cost-effective and usable (Month 2).
-- Develop, Test, and Deploy: Code the Raspberry Pi setup, AWS services with CDK/SDK, and Next.js app, then test and release to production (Months 2-3).
 
-**Technical Requirements**
-- Weather Edge Station: Sensors (temperature, humidity, rainfall, wind speed), a microcontroller (ESP32), and a Raspberry Pi as the edge device. Raspberry Pi runs Raspbian, handles Docker for filtering, and sends 1 MB/day per station via MQTT over Wi-Fi.
-- Weather Platform: Practical knowledge of AWS Amplify (hosting Next.js), Lambda (minimal use due to Next.js), AWS Glue (ETL), S3 (two buckets), IoT Core (gateway and rules), and Cognito (5 users). Use AWS CDK/SDK to code interactions (e.g., IoT Core rules to S3). Next.js reduces Lambda workload for the fullstack web app.
+#### AI Scheduling Engine Architecture
+- **Strategy Pattern**: `StudyStrategy` (Pomodoro 50m/10m + Golden Hours 08:00–11:00), `FitnessStrategy` (30m recovery buffer post-workout), `DateStrategy` (30m travel buffer Hard Constraint)
+- **CSP Bitmask Solver**: 68 slots × 15min from 06:00–23:00, running 100% native JavaScript
+- **NLP Intent Parsing**: Google Gemini 2.5 Flash with Tool Calling format
+
+#### Scientific CGV Cinema Recommendation Algorithm
+- **Haversine Formula**: Calculates precise km distances between GPS coordinates
+- **"Nam rước Nữ" Weighting**: For couple (1M+1F): `avgLat = female.lat × 0.8 + male.lat × 0.2` — prioritizes cinema location near the Female's home (80% weight)
+- **Group Centroid**: For 3+ people or same-gender groups — standard weighted average
+
+#### Key Features
+- Zodiac-based avatar color system (12 signs × deterministic hash from User_ID)
+- AI chat history auto-pruned after 3 days
+- Real-time friend invitation & group scheduling with voting polls
+- CGV cinema geolocation with Google Maps direct navigation links
+
+---
 
 ### 5. Timeline & Milestones
-**Project Timeline**
-- Pre-Internship (Month 0): 1 month for planning and old station review.
-- Internship (Months 1-3): 3 months.
-    - Month 1: Study AWS and upgrade hardware.
-    - Month 2: Design and adjust architecture.
-    - Month 3: Implement, test, and launch.
-- Post-Launch: Up to 1 year for research.
+
+| Phase | Period | Activity |
+|---|---|---|
+| **Phase 1** | Month 1 | Architecture design, AWS setup (EC2, RDS, S3), Next.js scaffolding |
+| **Phase 2** | Month 2 | Core features (auth, calendar, scheduling engine), AI integration |
+| **Phase 3** | Month 3 | CloudFront + WAF deployment, CGV geolocation, production hardening |
+| **Post-launch** | Ongoing | CI/CD automation, monitoring, feature iterations |
+
+---
 
 ### 6. Budget Estimation
-You can find the budget estimation on the [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=621f38b12a1ef026842ba2ddfe46ff936ed4ab01).  
-Or you can download the [Budget Estimation File](../attachments/budget_estimation.pdf).
 
-### Infrastructure Costs
-- AWS Services:
-    - AWS Lambda: $0.00/month (1,000 requests, 512 MB storage).
-    - S3 Standard: $0.15/month (6 GB, 2,100 requests, 1 GB scanned).
-    - Data Transfer: $0.02/month (1 GB inbound, 1 GB outbound).
-    - AWS Amplify: $0.35/month (256 MB, 500 ms requests).
-    - Amazon API Gateway: $0.01/month (2,000 requests).
-    - AWS Glue ETL Jobs: $0.02/month (2 DPUs).
-    - AWS Glue Crawlers: $0.07/month (1 crawler).
-    - MQTT (IoT Core): $0.08/month (5 devices, 45,000 messages).
+#### AWS Services (Monthly)
+| Service | Cost |
+|---|---|
+| EC2 t2.micro (Free Tier 750h/month) | $0.00/month |
+| RDS MySQL db.t2.micro (Free Tier) | $0.00/month |
+| S3 Standard (< 5GB Free Tier) | $0.00/month |
+| CloudFront (1TB Free Tier) | ~$0.01/month |
+| AWS WAF (Web ACL $5 + 2 rules $2) | ~$7.00/month (covered by AWS Credits) |
+| Lambda (< 1M requests Free Tier) | $0.00/month |
+| EventBridge Scheduler (Free Tier) | $0.00/month |
 
-Total: $0.7/month, $8.40/12 months
+**Total: ~$7/month** — Covered by AWS Credits
 
-- Hardware: $265 one-time (Raspberry Pi 5 and sensors).
+---
 
 ### 7. Risk Assessment
-#### Risk Matrix
-- Network Outages: Medium impact, medium probability.
-- Sensor Failures: High impact, low probability.
-- Cost Overruns: Medium impact, low probability.
 
-#### Mitigation Strategies
-- Network: Local storage on Raspberry Pi with Docker.
-- Sensors: Regular checks and spares.
-- Cost: AWS budget alerts and optimization.
+| Risk | Impact | Probability | Mitigation |
+|---|---|---|---|
+| EC2 instance downtime | High | Low | PM2 auto-restart + Elastic IP |
+| AI API rate limit | Medium | Medium | AWS Bedrock Claude fallback |
+| Database connection loss | High | Low | Connection pooling + retry logic |
+| Cost overrun | Medium | Low | AWS Budget Alerts + Free Tier monitoring |
 
-#### Contingency Plans
-- Revert to manual methods if AWS fails.
-- Use CloudFormation for cost-related rollbacks.
+---
 
 ### 8. Expected Outcomes
-#### Technical Improvements: 
-Real-time data and analytics replace manual processes.  
-Scalable to 10-15 stations.
+
+#### Technical Achievements
+- Production-grade AWS cloud infrastructure serving real user traffic 24/7
+- Sub-second AI scheduling suggestions via Google Gemini 2.5 Flash
+- Mathematical geolocation optimization for group cinema outings
+- Enterprise-level security: SSL/TLS 1.3 + AWS WAF multi-layer protection
+
 #### Long-term Value
-1-year data foundation for AI research.  
-Reusable for future projects.
+- Reusable AWS architecture blueprint for future projects
+- Demonstrated competency in full-stack deployment on AWS cloud
+- Practical application of AI/NLP in real-world scheduling problems

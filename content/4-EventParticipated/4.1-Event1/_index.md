@@ -1,123 +1,78 @@
 ---
-title: "Event 1"
-date: 2024-01-01
+title: "Swinburne Cloud Mastery"
+date: 2026-07-04
 weight: 1
 chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
 
-# Summary Report: “GenAI-powered App-DB Modernization workshop”
+# Summary Report: “Swinburne Cloud Mastery”
 
 ### Event Objectives
 
-- Share best practices in modern application design
-- Introduce Domain-Driven Design (DDD) and event-driven architecture
-- Provide guidance on selecting the right compute services
-- Present AI tools to support the development lifecycle
+- Share insights on technical knowledge and real-world work in the Cloud and Data industries.
+- Share CV writing experience and explain how Applicant Tracking Systems (ATS) and AI screening algorithms work to construct a comprehensive CV that fits employer criteria.
+- Present market trends and job demands for Cloud, DevOps, and Data Engineering roles today.
 
 ### Speakers
 
-- **Jignesh Shah** – Director, Open Source Databases
-- **Erica Liu** – Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** – Assc. Specialist SA, Serverless Amazon Web Services
+- **Nguyễn Gia Hưng** – Head of Solution Architecture, AWS Vietnam
+- **Bành Cẩm Vĩnh** – Data Engineer, Renova Cloud (5 years of hands-on experience)
+- **Như Trần** – Account Manager, AWS Vietnam
+- **Khang Nguyễn** – Solution Architect, AWS (Swinburne IT Alumnus)
 
 ### Key Highlights
 
-#### Identifying the drawbacks of legacy application architecture
+#### 1. Market Perspective and Core Mental Models (Mr. Gia Hung)
 
-- Long product release cycles → Lost revenue/missed opportunities  
-- Inefficient operations → Reduced productivity, higher costs  
-- Non-compliance with security regulations → Security breaches, loss of reputation  
+- **Impact of AI tools**: The emergence of AI tools saves up to 90% of working time, similar to the transition from incandescent bulbs to LED lights. Cheaper software and technology do not decrease overall demand; on the contrary, it will drive software development and aggregate consumption up significantly.
+- **Core Mental Models**: Students need to equip themselves with 6 foundational mental models when entering the workforce: Teamwork, hands-on skills, building skills, troubleshooting skills, and especially resilience under pressure or when facing criticism from superiors.
+- **Invest in yourself & Lifelong Learning**: Companies recruit candidates not only based on current capabilities but also on their future potential. Continuous self-investment through international certifications is a major plus that helps a CV attract recruiters.
 
-#### Transitioning to modern application architecture – Microservices
+#### 2. Data Engineering: The Gap Between School and Industry (Mr. Banh Cam Vinh)
 
-Migrating to a modular system — each function is an **independent service** communicating via **events**, built on three core pillars:
+- **Foundational knowledge**: Fundamental subjects such as Databases, Programming, Data Structures and Algorithms, Distributed Databases, and APIs are core basics that will be thoroughly tested during technical interviews.
+- **Differences in Data and Requirements**:
+  - *At school*: data is clean, small in scale, and requirements are clearly defined from day one with flexible deadlines.
+  - *At work*: data comes from various sources, contains errors or missing entries, is inconsistent in format, and changes constantly. The consequences of mistakes in a production environment are severe, directly impacting business operations.
+- **"One Framework for every platform"**: Mr. Vinh emphasized the importance of mastering the core DNA of a Data Platform, which includes components like Ingestion, Processing, Storage, Data Governance, and Data Catalog, rather than chasing constantly changing tools.
+- **AI in the Data Industry**: AI can assist in code generation or documentation, but it cannot replace humans in understanding business problems and designing system architecture.
 
-- **Queue Management**: Handle asynchronous tasks  
-- **Caching Strategy**: Optimize performance  
-- **Message Handling**: Flexible inter-service communication  
+#### 3. The Art of Communication and Seizing Opportunities (Ms. Nhu Tran)
 
-#### Domain-Driven Design (DDD)
+- **Overcoming the fear of being wrong**: Schools are optimized for correctness, which often leaves students with a strong fear of making mistakes and the consequences of being evaluated. When working in the industry, adapting to pressure and speaking up is critical.
+- **Communication as a technical skill**: Communication is a technical skill, not just a soft skill. Miscommunication often occurs due to differences in perspective (e.g., the mindset of a Builder vs. a Seller). To bridge the gap with superiors, students should engage in small talks and introduce themselves to increase visibility.
+- **Finding opportunities in the "Blue Ocean"**: Job listings on major recruitment platforms represent a highly competitive "Red Ocean." Ms. Nhu advised students to find opportunities in the "Blue Ocean" through persistence, building strong networks, and taking on tasks that others avoid.
 
-- **Four-step method**: Identify domain events → arrange timeline → identify actors → define bounded contexts  
-- **Bookstore case study**: Demonstrates real-world DDD application  
-- **Context mapping**: 7 patterns for integrating bounded contexts  
+#### 4. Practical Advice for IT Students (Mr. Khang Nguyen)
 
-#### Event-Driven Architecture
-
-- **3 integration patterns**: Publish/Subscribe, Point-to-point, Streaming  
-- **Benefits**: Loose coupling, scalability, resilience  
-- **Sync vs async comparison**: Understanding the trade-offs  
-
-#### Compute Evolution
-
-- **Shared Responsibility Model**: EC2 → ECS → Fargate → Lambda  
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value  
-- **Functions vs Containers**: Criteria for appropriate choice  
-
-#### Amazon Q Developer
-
-- **SDLC automation**: From planning to maintenance  
-- **Code transformation**: Java upgrade, .NET modernization  
-- **AWS Transform agents**: VMware, Mainframe, .NET migration  
+- **Using AI properly**: Students should definitely use AI, but "you can outsource thinking to AI, but you cannot outsource understanding." Without understanding the fundamentals, AI will lead you in the wrong direction, and you will lack the knowledge to verify the results.
+- **Learning core fundamentals**: Understanding foundational layers (such as Networking, Security) deeply helps you work effectively and sustainably in the long run, rather than just studying to pass classes or get high grades. Ask "Why" to investigate problems.
+- **Job selection criteria and Freshers evaluation**:
+  - *For fresh graduates*: look beyond the salary. A job should be evaluated based on 5 dimensions: Salary, Experience, Network, Knowledge, and Personal Growth.
+  - *For Freshers*: recruiters prioritize **Attitude** above all, followed by proficiency, knowledge, and experience.
 
 ### Key Takeaways
 
-#### Design Mindset
-
-- **Business-first approach**: Always start from the business domain, not the technology  
-- **Ubiquitous language**: Importance of a shared vocabulary between business and tech teams  
-- **Bounded contexts**: Identifying and managing complexity in large systems  
-
-#### Technical Architecture
-
-- **Event storming technique**: Practical method for modeling business processes  
-- Use **event-driven communication** instead of synchronous calls  
-- **Integration patterns**: When to use sync, async, pub/sub, streaming  
-- **Compute spectrum**: Criteria for choosing between VM, containers, and serverless  
-
-#### Modernization Strategy
-
-- **Phased approach**: No rushing — follow a clear roadmap  
-- **7Rs framework**: Multiple modernization paths depending on the application  
-- **ROI measurement**: Cost reduction + business agility  
+- **Practical & Design Mindsets**: Understood the distinct gap between academic theory and enterprise projects. Learned core mental models such as Teamwork, hands-on, building, troubleshooting, and resilience.
+- **CV Optimization Process**: Learned how to construct a professional CV and optimize it to pass automated AI/ATS scanners for Cloud/DevOps roles.
+- **Communication**: Practiced treating communication as a technical skill to prevent miscommunication across departments and improve visibility.
+- **Career Evaluation**: Evaluated career opportunities based on 5 dimensions instead of focusing solely on short-term income.
 
 ### Applying to Work
 
-- **Apply DDD** to current projects: Event storming sessions with business teams  
-- **Refactor microservices**: Use bounded contexts to define service boundaries  
-- **Implement event-driven patterns**: Replace some sync calls with async messaging  
-- **Adopt serverless**: Pilot AWS Lambda for suitable use cases  
-- **Try Amazon Q Developer**: Integrate into the dev workflow to boost productivity  
+- **Optimize personal CV**: Update CV to highlight hands-on cloud projects and structure details to be easily scanned by AI/ATS algorithms.
+- **Attitude and Builder Mindset**: Apply resilience, take initiative in solving problems, and build active communication channels with team members during the internship.
+- **Responsible AI Usage**: Leverage AI for code optimization and report drafting, but always verify results against core concepts (Networking, Security, APIs).
 
 ### Event Experience
 
-Attending the **“GenAI-powered App-DB Modernization”** workshop was extremely valuable, giving me a comprehensive view of modernizing applications and databases using advanced methods and tools. Key experiences included:
+- Due to geographical constraints and internship schedules, I attended this event **online** by watching the recorded sessions/livestream shared on the **AWS Study Group** YouTube channel.
+- Despite attending online, the industry insights and practical advice shared by the speakers gave me a very clear perspective on future Cloud/DevOps/Data career paths and how to best prepare myself for the job market.
 
-#### Learning from highly skilled speakers
-- Experts from AWS and major tech organizations shared **best practices** in modern application design.  
-- Through real-world case studies, I gained a deeper understanding of applying **DDD** and **Event-Driven Architecture** to large projects.  
+### Some event photos
 
-#### Hands-on technical exposure
-- Participating in **event storming** sessions helped me visualize how to **model business processes** into domain events.  
-- Learned how to **split microservices** and define **bounded contexts** to manage large-system complexity.  
-- Understood trade-offs between **synchronous and asynchronous communication** and integration patterns like **pub/sub, point-to-point, streaming**.  
+![Swinburne Cloud Mastery](event_1.jpg)
 
-#### Leveraging modern tools
-- Explored **Amazon Q Developer**, an AI tool for SDLC support from planning to maintenance.  
-- Learned to **automate code transformation** and pilot serverless with **AWS Lambda** to improve productivity.  
-
-#### Networking and discussions
-- The workshop offered opportunities to exchange ideas with experts, peers, and business teams, enhancing the **ubiquitous language** between business and tech.  
-- Real-world examples reinforced the importance of the **business-first approach** rather than focusing solely on technology.  
-
-#### Lessons learned
-- Applying DDD and event-driven patterns reduces **coupling** while improving **scalability** and **resilience**.  
-- Modernization requires a **phased approach** with **ROI measurement**; rushing the process can be risky.  
-- AI tools like Amazon Q Developer can significantly **boost productivity** when integrated into the current workflow.  
-
-#### Some event photos
-*Add your event photos here*  
-
-> Overall, the event not only provided technical knowledge but also helped me reshape my thinking about application design, system modernization, and cross-team collaboration.
+> Overall, the Swinburne Cloud Mastery seminar provided valuable industry insights from AWS and Renova Cloud experts, helping me shape my development roadmap and improve my skills in Cloud Computing.

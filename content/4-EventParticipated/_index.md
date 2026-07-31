@@ -21,7 +21,7 @@ pre: " <b> 4. </b> "
 During my internship, I participated in two events. Each one was a memorable experience that provided new, interesting, and useful knowledge, along with gifts and wonderful moments.
 
 ### [Event 1](4.1-Event1/)  
-&emsp;**Event Name:** GenAI-powered App-DB Modernization workshop  
+&emsp;**Event Name:** Swinburne Cloud Mastery  
 
 &emsp;**Date & Time:** 09:00, August 13, 2025  
 

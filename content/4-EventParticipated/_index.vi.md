@@ -22,7 +22,7 @@ pre: " <b> 4. </b> "
 Trong quá trình thực tập, em đã tham gia 2 events, với mỗi event là một trải nghiệm đáng nhớ với những kiến thức mới, hay và bổ ích, cùng với đó là nhứng món quà và những khoảnh khắc rất tuyệt vời.
 
 ### [Event 1](4.1-Event1/)
-&emsp;**Tên sự kiện:** GenAI-powered App-DB Modernization workshop
+&emsp;**Tên sự kiện:** Swinburne Cloud Mastery
 
 &emsp;**Thời gian:** 09:00 ngày 13/08/2025
 

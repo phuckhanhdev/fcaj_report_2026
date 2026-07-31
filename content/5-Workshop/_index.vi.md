@@ -1,30 +1,43 @@
 ---
 title: "Workshop"
-date: 2024-01-01
+date: 2026-07-31
 weight: 5
 chapter: false
 pre: " <b> 5. </b> "
 ---
 
-
-
-# Đảm bảo truy cập Hybrid an toàn đến S3 bằng cách sử dụng VPC endpoint
+# Triển khai LifeSync AI Calendar trên AWS
 
 #### Tổng quan
 
-**AWS PrivateLink** cung cấp kết nối riêng tư đến các dịch vụ aws từ VPCs hoặc trung tâm dữ liệu (on-premise) mà không làm lộ lưu lượng truy cập ra ngoài public internet.
+**LifeSync AI Calendar** là ứng dụng lập lịch thông minh tích hợp AI chuẩn production, được xây dựng bằng Next.js 16 và triển khai trên bộ hạ tầng AWS đầy đủ. Trong workshop này, bạn sẽ học cách cài đặt từng dịch vụ AWS từ đầu theo đúng các bước được dùng để xây dựng hệ thống production thực tế tại [https://phuckhanh.id.vn](https://phuckhanh.id.vn).
 
-Trong bài lab này, chúng ta sẽ học cách tạo, cấu hình, và kiểm tra VPC endpoints để cho phép workload của bạn tiếp cận các dịch vụ AWS mà không cần đi qua Internet công cộng.
+Workshop này tập trung vào việc cài đặt **các dịch vụ AWS**. Các dịch vụ khác (Google Gemini AI, tên miền Mắt Bão, SSL Certbot) được hướng dẫn ở phần riêng cuối workshop.
 
-Chúng ta sẽ tạo hai loại endpoints để truy cập đến Amazon S3: gateway vpc endpoint và interface vpc endpoint. Hai loại vpc endpoints này mang đến nhiều lợi ích tùy thuộc vào việc bạn truy cập đến S3 từ môi trường cloud hay từ trung tâm dữ liệu (on-premise).
-+ **Gateway** - Tạo gateway endpoint để gửi lưu lượng đến Amazon S3 hoặc DynamoDB using private IP addresses. Bạn điều hướng lưu lượng từ VPC của bạn đến gateway endpoint bằng các bảng định tuyến (route tables)
-+ **Interface** - Tạo interface endpoint để gửi lưu lượng đến các dịch vụ điểm cuối (endpoints) sử dụng Network Load Balancer để phân phối lưu lượng. Lưu lượng dành cho dịch vụ điểm cuối được resolved bằng DNS.
+#### Kiến trúc
+
+```
+[Người dùng Internet]
+      │
+      ▼
+[Amazon CloudFront CDN] ← [AWS WAF Bảo vệ]
+      │
+      ▼
+[AWS EC2 t2.micro — Next.js 16 + Nginx + PM2]
+      │
+      ├──► [Amazon RDS MySQL]
+      ├──► [Amazon S3 — Lưu trữ Avatar]
+      └──► [AWS Lambda + EventBridge — Cào phim CGV]
+```
 
 #### Nội dung
 
-1. [Tổng quan về workshop](5.1-Workshop-overview/)
+1. [Tổng quan Workshop](5.1-Workshop-overview)
 2. [Chuẩn bị](5.2-Prerequiste/)
-3. [Truy cập đến S3 từ VPC](5.3-S3-vpc/)
-4. [Truy cập đến S3 từ TTDL On-premises](5.4-S3-onprem/)
-5. [VPC Endpoint Policies (làm thêm)](5.5-Policy/)
-6. [Dọn dẹp tài nguyên](5.6-Cleanup/)
+3. [Cài đặt Amazon EC2](5.3-EC2/)
+4. [Cài đặt Amazon RDS & S3](5.4-RDS-S3/)
+5. [Cài đặt Amazon CloudFront](5.5-CloudFront/)
+6. [Cài đặt AWS WAF](5.6-WAF/)
+7. [Cài đặt AWS Lambda & EventBridge](5.7-Lambda-EventBridge/)
+8. [Cài đặt dịch vụ khác](5.8-OtherServices/)
+9. [Dọn dẹp tài nguyên](5.9-Cleanup/)

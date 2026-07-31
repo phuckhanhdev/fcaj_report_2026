@@ -1,105 +1,144 @@
 ---
 title: "Bản đề xuất"
-date: 2024-01-01
+date: 2026-07-31
 weight: 2
 chapter: false
 pre: " <b> 2. </b> "
 ---
 
-Tại phần này, bạn cần tóm tắt các nội dung trong workshop mà bạn **dự tính** sẽ làm.
+# LifeSync AI Calendar
+## Hệ thống Lập lịch Thông minh Khoa học tích hợp AI trên Hạ tầng Đám mây AWS
 
-# IoT Weather Platform for Lab Research  
-## Giải pháp AWS Serverless hợp nhất cho giám sát thời tiết thời gian thực  
+---
 
-### 1. Tóm tắt điều hành  
-IoT Weather Platform được thiết kế dành cho nhóm *ITea Lab* tại TP. Hồ Chí Minh nhằm nâng cao khả năng thu thập và phân tích dữ liệu thời tiết. Nền tảng hỗ trợ tối đa 5 trạm thời tiết, có khả năng mở rộng lên 10–15 trạm, sử dụng thiết bị biên Raspberry Pi kết hợp cảm biến ESP32 để truyền dữ liệu qua MQTT. Nền tảng tận dụng các dịch vụ AWS Serverless để cung cấp giám sát thời gian thực, phân tích dự đoán và tiết kiệm chi phí, với quyền truy cập giới hạn cho 5 thành viên phòng lab thông qua Amazon Cognito.  
+### 1. Tóm tắt điều hành
 
-### 2. Tuyên bố vấn đề  
-*Vấn đề hiện tại*  
-Các trạm thời tiết hiện tại yêu cầu thu thập dữ liệu thủ công, khó quản lý khi có nhiều trạm. Không có hệ thống tập trung cho dữ liệu hoặc phân tích thời gian thực, và các nền tảng bên thứ ba thường tốn kém và quá phức tạp.  
+**LifeSync AI Calendar** là một ứng dụng lập lịch thông minh toàn diện được xây dựng bằng **Next.js 16** và triển khai trên hạ tầng **Amazon Web Services (AWS)**. Nền tảng sử dụng **Google Gemini 2.5 Flash AI** để phân tích ý định lập lịch từ ngôn ngữ tự nhiên, **Thuật toán Haversine** tùy chỉnh để gợi ý rạp chiếu phim CGV gần nhất theo vị trí địa lý, cùng **Engine Lập lịch Khoa học** dựa trên thuật toán giải CSP (Constraint Satisfaction Problem) với tối ưu hóa Bitmask.
 
-*Giải pháp*  
-Nền tảng sử dụng AWS IoT Core để tiếp nhận dữ liệu MQTT, AWS Lambda và API Gateway để xử lý, Amazon S3 để lưu trữ (bao gồm data lake), và AWS Glue Crawlers cùng các tác vụ ETL để trích xuất, chuyển đổi, tải dữ liệu từ S3 data lake sang một S3 bucket khác để phân tích. AWS Amplify với Next.js cung cấp giao diện web, và Amazon Cognito đảm bảo quyền truy cập an toàn. Tương tự như Thingsboard và CoreIoT, người dùng có thể đăng ký thiết bị mới và quản lý kết nối, nhưng nền tảng này hoạt động ở quy mô nhỏ hơn và phục vụ mục đích sử dụng nội bộ. Các tính năng chính bao gồm bảng điều khiển thời gian thực, phân tích xu hướng và chi phí vận hành thấp.  
+Hệ thống được triển khai trên nền tảng AWS production-grade gồm Amazon EC2 (t2.micro Free Tier), Amazon RDS MySQL, Amazon S3, Amazon CloudFront CDN, AWS WAF, AWS Lambda và Amazon EventBridge Scheduler — truy cập tại tên miền chính thức **[https://phuckhanh.id.vn](https://phuckhanh.id.vn)**.
 
-*Lợi ích và hoàn vốn đầu tư (ROI)*  
-Giải pháp tạo nền tảng cơ bản để các thành viên phòng lab phát triển một nền tảng IoT lớn hơn, đồng thời cung cấp nguồn dữ liệu cho những người nghiên cứu AI phục vụ huấn luyện mô hình hoặc phân tích. Nền tảng giảm bớt báo cáo thủ công cho từng trạm thông qua hệ thống tập trung, đơn giản hóa quản lý và bảo trì, đồng thời cải thiện độ tin cậy dữ liệu. Chi phí hàng tháng ước tính 0,66 USD (theo AWS Pricing Calculator), tổng cộng 7,92 USD cho 12 tháng. Tất cả thiết bị IoT đã được trang bị từ hệ thống trạm thời tiết hiện tại, không phát sinh chi phí phát triển thêm. Thời gian hoàn vốn 6–12 tháng nhờ tiết kiệm đáng kể thời gian thao tác thủ công.  
+---
 
-### 3. Kiến trúc giải pháp  
-Nền tảng áp dụng kiến trúc AWS Serverless để quản lý dữ liệu từ 5 trạm dựa trên Raspberry Pi, có thể mở rộng lên 15 trạm. Dữ liệu được tiếp nhận qua AWS IoT Core, lưu trữ trong S3 data lake và xử lý bởi AWS Glue Crawlers và ETL jobs để chuyển đổi và tải vào một S3 bucket khác cho mục đích phân tích. Lambda và API Gateway xử lý bổ sung, trong khi Amplify với Next.js cung cấp bảng điều khiển được bảo mật bởi Cognito.  
+### 2. Tuyên bố vấn đề
 
-![IoT Weather Station Architecture](/images/2-Proposal/edge_architecture.jpeg)
+#### Vấn đề hiện tại
+Các ứng dụng lịch truyền thống thiếu khả năng tự động hóa thông minh — người dùng phải tạo thủ công từng sự kiện mà không nhận được đề xuất lập lịch theo ngữ cảnh. Không có phương pháp khoa học nào để gợi ý khung giờ tối ưu dựa trên lịch hiện có của người dùng, khoa học năng suất (Pomodoro, giờ vàng), hay vị trí nhóm khi đi chơi.
 
-![IoT Weather Platform Architecture](/images/2-Proposal/platform_architecture.jpeg)
+#### Giải pháp
+LifeSync AI Calendar giải quyết vấn đề trên bằng cách:
+- Phân tích yêu cầu ngôn ngữ tự nhiên qua **Google Gemini AI** để trích xuất ý định lập lịch (học tập, thể dục, hẹn hò, v.v.)
+- Áp dụng **Engine Lập lịch Khoa học** với 68 khung giờ (mỗi 15 phút) từ 06:00–23:00 dùng thuật toán CSP-Bitmask
+- Gợi ý **Top 3 Rạp CGV gần nhất** bằng công thức Haversine với thuật toán đặc biệt **"Nam rước Nữ"** (trọng số 80% vị trí bạn Nữ, 20% bạn Nam cho cặp đôi)
+- Tự động tạo sự kiện và chèn vào lịch cá nhân chỉ bằng 1 cú click
 
-*Dịch vụ AWS sử dụng*  
-- *AWS IoT Core*: Tiếp nhận dữ liệu MQTT từ 5 trạm, mở rộng lên 15.  
-- *AWS Lambda*: Xử lý dữ liệu và kích hoạt Glue jobs (2 hàm).  
-- *Amazon API Gateway*: Giao tiếp với ứng dụng web.  
-- *Amazon S3*: Lưu trữ dữ liệu thô (data lake) và dữ liệu đã xử lý (2 bucket).  
-- *AWS Glue*: Crawlers lập chỉ mục dữ liệu, ETL jobs chuyển đổi và tải dữ liệu.  
-- *AWS Amplify*: Lưu trữ giao diện web Next.js.  
-- *Amazon Cognito*: Quản lý quyền truy cập cho người dùng phòng lab.  
+---
 
-*Thiết kế thành phần*  
-- *Thiết bị biên*: Raspberry Pi thu thập và lọc dữ liệu cảm biến, gửi tới IoT Core.  
-- *Tiếp nhận dữ liệu*: AWS IoT Core nhận tin nhắn MQTT từ thiết bị biên.  
-- *Lưu trữ dữ liệu*: Dữ liệu thô lưu trong S3 data lake; dữ liệu đã xử lý lưu ở một S3 bucket khác.  
-- *Xử lý dữ liệu*: AWS Glue Crawlers lập chỉ mục dữ liệu; ETL jobs chuyển đổi để phân tích.  
-- *Giao diện web*: AWS Amplify lưu trữ ứng dụng Next.js cho bảng điều khiển và phân tích thời gian thực.  
-- *Quản lý người dùng*: Amazon Cognito giới hạn 5 tài khoản hoạt động.  
+### 3. Kiến trúc giải pháp
 
-### 4. Triển khai kỹ thuật  
-*Các giai đoạn triển khai*  
-Dự án gồm 2 phần — thiết lập trạm thời tiết biên và xây dựng nền tảng thời tiết — mỗi phần trải qua 4 giai đoạn:  
-1. *Nghiên cứu và vẽ kiến trúc*: Nghiên cứu Raspberry Pi với cảm biến ESP32 và thiết kế kiến trúc AWS Serverless (1 tháng trước kỳ thực tập).  
-2. *Tính toán chi phí và kiểm tra tính khả thi*: Sử dụng AWS Pricing Calculator để ước tính và điều chỉnh (Tháng 1).  
-3. *Điều chỉnh kiến trúc để tối ưu chi phí/giải pháp*: Tinh chỉnh (ví dụ tối ưu Lambda với Next.js) để đảm bảo hiệu quả (Tháng 2).  
-4. *Phát triển, kiểm thử, triển khai*: Lập trình Raspberry Pi, AWS services với CDK/SDK và ứng dụng Next.js, sau đó kiểm thử và đưa vào vận hành (Tháng 2–3).  
+```
+[Người dùng Internet]
+      │
+      ▼
+[Tên miền tùy chỉnh: phuckhanh.id.vn (DNS Mắt Bão)]
+      │
+      ▼ (SSL/TLS 1.3 Let's Encrypt)
+[Amazon CloudFront CDN] (Mạng phân phối nội dung toàn cầu)
+      │
+      ▼ (AWS WAF: LifeSync-WAF — Chặn SQLi, XSS, DDoS)
+[Nginx Reverse Proxy: Port 80/443]
+      │
+      ▼ (Proxy Pass → http://localhost:3000)
+[AWS EC2 t2.micro] (Ubuntu 24.04 LTS + PM2 + Next.js 16)
+      │
+      ├──► [Amazon RDS MySQL] (CSDL quan hệ — Người dùng, Sự kiện, Chat)
+      ├──► [AWS Lambda + EventBridge] (Lịch cào phim CGV hàng tuần)
+      ├──► [Google Gemini 2.5 Flash] (AI NLP Phân tích ý định & Slot Filling)
+      └──► [Amazon S3 Bucket] (Lưu trữ ảnh đại diện qua Presigned URL)
+```
 
-*Yêu cầu kỹ thuật*  
-- *Trạm thời tiết biên*: Cảm biến (nhiệt độ, độ ẩm, lượng mưa, tốc độ gió), vi điều khiển ESP32, Raspberry Pi làm thiết bị biên. Raspberry Pi chạy Raspbian, sử dụng Docker để lọc dữ liệu và gửi 1 MB/ngày/trạm qua MQTT qua Wi-Fi.  
-- *Nền tảng thời tiết*: Kiến thức thực tế về AWS Amplify (lưu trữ Next.js), Lambda (giảm thiểu do Next.js xử lý), AWS Glue (ETL), S3 (2 bucket), IoT Core (gateway và rules), và Cognito (5 người dùng). Sử dụng AWS CDK/SDK để lập trình (ví dụ IoT Core rules tới S3). Next.js giúp giảm tải Lambda cho ứng dụng web fullstack.  
+#### Dịch vụ AWS sử dụng
 
-### 5. Lộ trình & Mốc triển khai  
-- *Trước thực tập (Tháng 0)*: 1 tháng lên kế hoạch và đánh giá trạm cũ.  
-- *Thực tập (Tháng 1–3)*:  
-    - Tháng 1: Học AWS và nâng cấp phần cứng.  
-    - Tháng 2: Thiết kế và điều chỉnh kiến trúc.  
-    - Tháng 3: Triển khai, kiểm thử, đưa vào sử dụng.  
-- *Sau triển khai*: Nghiên cứu thêm trong vòng 1 năm.  
+| Dịch vụ | Vai trò |
+|---|---|
+| **Amazon EC2 (t2.micro)** | Máy chủ ứng dụng chạy Next.js 16 + PM2 + Nginx |
+| **Amazon RDS MySQL** | CSDL đám mây cho người dùng, sự kiện và lịch sử chat |
+| **Amazon S3** | Lưu trữ ảnh đại diện qua cơ chế Presigned URL |
+| **Amazon CloudFront** | CDN toàn cầu để tăng tốc độ và che giấu IP EC2 |
+| **AWS WAF** | Tường lửa ứng dụng web (Core Rules + bảo vệ SQL Injection) |
+| **AWS Lambda** | Hàm serverless cào rạp CGV hàng tuần |
+| **Amazon EventBridge** | Lịch Cron kích hoạt Lambda vào 00:00 mỗi Thứ Hai |
+| **GitHub Actions CI/CD** | Pipeline tự động build & deploy khi `git push origin main` |
 
-### 6. Ước tính ngân sách  
-Có thể xem chi phí trên [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=621f38b12a1ef026842ba2ddfe46ff936ed4ab01)  
-Hoặc tải [tệp ước tính ngân sách](../attachments/budget_estimation.pdf).  
+---
 
-*Chi phí hạ tầng*  
-- AWS Lambda: 0,00 USD/tháng (1.000 request, 512 MB lưu trữ).  
-- S3 Standard: 0,15 USD/tháng (6 GB, 2.100 request, 1 GB quét).  
-- Truyền dữ liệu: 0,02 USD/tháng (1 GB vào, 1 GB ra).  
-- AWS Amplify: 0,35 USD/tháng (256 MB, request 500 ms).  
-- Amazon API Gateway: 0,01 USD/tháng (2.000 request).  
-- AWS Glue ETL Jobs: 0,02 USD/tháng (2 DPU).  
-- AWS Glue Crawlers: 0,07 USD/tháng (1 crawler).  
-- MQTT (IoT Core): 0,08 USD/tháng (5 thiết bị, 45.000 tin nhắn).  
+### 4. Triển khai kỹ thuật
 
-*Tổng*: 0,7 USD/tháng, 8,40 USD/12 tháng  
-- *Phần cứng*: 265 USD một lần (Raspberry Pi 5 và cảm biến).  
+#### Kiến trúc Engine Lập lịch AI
+- **Strategy Pattern**: `StudyStrategy` (Pomodoro 50m/10m + Giờ vàng 08:00–11:00), `FitnessStrategy` (Buffer phục hồi 30m sau luyện tập), `DateStrategy` (Buffer di chuyển 30m — Ràng buộc cứng)
+- **CSP Bitmask Solver**: 68 slot × 15 phút từ 06:00–23:00, chạy 100% JavaScript thuần
+- **Phân tích ý định NLP**: Google Gemini 2.5 Flash với định dạng Tool Calling
 
-### 7. Đánh giá rủi ro  
-*Ma trận rủi ro*  
-- Mất mạng: Ảnh hưởng trung bình, xác suất trung bình.  
-- Hỏng cảm biến: Ảnh hưởng cao, xác suất thấp.  
-- Vượt ngân sách: Ảnh hưởng trung bình, xác suất thấp.  
+#### Thuật toán Gợi ý Rạp CGV Khoa học
+- **Công thức Haversine**: Tính khoảng cách km chính xác giữa 2 tọa độ GPS
+- **Trọng số "Nam rước Nữ"**: Cặp đôi (1Nam+1Nữ): `avgLat = lat_nu × 0.8 + lat_nam × 0.2` — ưu tiên rạp gần nhà bạn Nữ hơn (trọng số 80%)
+- **Trọng tâm nhóm (Group Centroid)**: Từ 3+ người hoặc cùng giới — lấy trung bình cộng chuẩn
 
-*Chiến lược giảm thiểu*  
-- Mạng: Lưu trữ cục bộ trên Raspberry Pi với Docker.  
-- Cảm biến: Kiểm tra định kỳ, dự phòng linh kiện.  
-- Chi phí: Cảnh báo ngân sách AWS, tối ưu dịch vụ.  
+#### Các tính năng nổi bật
+- Hệ thống màu Avatar theo Cung Hoàng Đạo (12 cung × hash cố định theo User_ID)
+- Lịch sử chat AI tự động dọn sạch sau 3 ngày
+- Mời bạn bè theo thời gian thực & lập lịch nhóm với bỏ phiếu
+- Tích hợp Google Maps chỉ đường trực tiếp tới rạp CGV
 
-*Kế hoạch dự phòng*  
-- Quay lại thu thập thủ công nếu AWS gặp sự cố.  
-- Sử dụng CloudFormation để khôi phục cấu hình liên quan đến chi phí.  
+---
 
-### 8. Kết quả kỳ vọng  
-*Cải tiến kỹ thuật*: Dữ liệu và phân tích thời gian thực thay thế quy trình thủ công. Có thể mở rộng tới 10–15 trạm.  
-*Giá trị dài hạn*: Nền tảng dữ liệu 1 năm cho nghiên cứu AI, có thể tái sử dụng cho các dự án tương lai.
+### 5. Lộ trình & Mốc triển khai
+
+| Giai đoạn | Thời gian | Hoạt động |
+|---|---|---|
+| **Giai đoạn 1** | Tháng 1 | Thiết kế kiến trúc, cài đặt AWS (EC2, RDS, S3), dựng khung Next.js |
+| **Giai đoạn 2** | Tháng 2 | Tính năng cốt lõi (xác thực, lịch, engine lập lịch), tích hợp AI |
+| **Giai đoạn 3** | Tháng 3 | Triển khai CloudFront + WAF, tính năng CGV, kiểm thử production |
+| **Sau ra mắt** | Liên tục | Tự động hóa CI/CD, giám sát, phát triển tính năng mới |
+
+---
+
+### 6. Ước tính ngân sách
+
+#### Chi phí AWS (Hàng tháng)
+| Dịch vụ | Chi phí |
+|---|---|
+| EC2 t2.micro (Free Tier 750h/tháng) | $0,00/tháng |
+| RDS MySQL db.t2.micro (Free Tier) | $0,00/tháng |
+| S3 Standard (< 5GB Free Tier) | $0,00/tháng |
+| CloudFront (1TB Free Tier) | ~$0,01/tháng |
+| AWS WAF ($5 Web ACL + $2 mỗi quy tắc) | ~$7,00/tháng (chi từ AWS Credits) |
+| Lambda (< 1M request Free Tier) | $0,00/tháng |
+| EventBridge Scheduler (Free Tier) | $0,00/tháng |
+
+**Tổng: ~$7/tháng** — Chi trả bằng AWS Credits
+
+---
+
+### 7. Đánh giá rủi ro
+
+| Rủi ro | Mức ảnh hưởng | Xác suất | Giải pháp |
+|---|---|---|---|
+| EC2 instance gián đoạn | Cao | Thấp | PM2 tự khởi động lại + Elastic IP cố định |
+| Giới hạn tần suất API AI | Trung bình | Trung bình | Fallback AWS Bedrock Claude |
+| Mất kết nối CSDL | Cao | Thấp | Connection pooling + retry logic |
+| Vượt ngân sách | Trung bình | Thấp | AWS Budget Alerts + giám sát Free Tier |
+
+---
+
+### 8. Kết quả kỳ vọng
+
+#### Thành tựu kỹ thuật
+- Hạ tầng AWS cloud production-grade phục vụ người dùng thực 24/7
+- Đề xuất lập lịch AI dưới 1 giây qua Google Gemini 2.5 Flash
+- Tối ưu hóa địa lý toán học cho buổi đi xem phim nhóm
+- Bảo mật cấp doanh nghiệp: SSL/TLS 1.3 + AWS WAF đa tầng
+
+#### Giá trị dài hạn
+- Bản thiết kế kiến trúc AWS có thể tái sử dụng cho các dự án tương lai
+- Thể hiện năng lực triển khai full-stack trên nền tảng đám mây AWS
+- Ứng dụng thực tế của AI/NLP vào bài toán lập lịch trong cuộc sống

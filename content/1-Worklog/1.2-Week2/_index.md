@@ -1,6 +1,6 @@
 ---
 title: "Week 2 Worklog"
-date: 2024-01-01
+date: 2026-06-22
 weight: 1
 chapter: false
 pre: " <b> 1.2. </b> "
@@ -9,46 +9,19 @@ pre: " <b> 1.2. </b> "
 
 ### Week 2 Objectives:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Plan and design the AI Energy Calendar project.
+* Learn how to use LocalStack to emulate AWS services locally for cost-effective development and testing.
+* Explore AWS services, specifically Amazon Bedrock, and design user database and JSON integration structures.
 
 ### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+| Date | Task | Start Date | Completion Date | Reference Material |
+| --- | --- | --- | --- | --- |
+| 24/06/2026 | - Discussed the AI Calendar project with Tiến Kha (focusing on analyzing daily energy levels and destiny compatibility to determine optimal activity timing).<br>- Learned to use LocalStack to run AWS services locally for testing before deploying to AWS Cloud, helping to minimize costs.<br>- Researched AWS applications and services, including Amazon Bedrock, and estimated projected future operating costs.<br>- Designed the user database and the JSON structure for AI data transmission and analysis.<br>- Formulated concepts and performed initial testing. | 24/06/2026 | 24/06/2026 | [LocalStack Documentation](https://docs.localstack.cloud/), [Amazon Bedrock Documentation](https://aws.amazon.com/bedrock/) |
 
 ### Week 2 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Defined the concept of the AI Energy Calendar project to recommend actions based on daily energy levels and destiny alignment.
+* Acquired the ability to use LocalStack for local AWS service emulation, enabling local testing and reducing development costs.
+* Researched Amazon Bedrock and estimated the project's future cloud architecture costs.
+* Designed the user database schema and JSON data structure optimized for AI analysis.
+* Successfully built initial project concepts and executed testing.

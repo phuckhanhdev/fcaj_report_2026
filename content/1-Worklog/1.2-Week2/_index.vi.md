@@ -1,6 +1,6 @@
 ---
 title: "Worklog Tuần 2"
-date: 2024-01-01
+date: 2026-06-22
 weight: 1
 chapter: false
 pre: " <b> 1.2. </b> "
@@ -9,48 +9,19 @@ pre: " <b> 1.2. </b> "
 
 ### Mục tiêu tuần 2:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Hoạch định và thiết kế ý tưởng cho dự án Lịch AI (AI Energy Calendar).
+* Tìm hiểu cách sử dụng LocalStack để chạy giả lập các dịch vụ AWS tại local nhằm tối ưu chi phí phát triển và test sản phẩm.
+* Tìm hiểu sâu về các ứng dụng và dịch vụ AWS (đặc biệt là Amazon Bedrock), thiết kế cấu trúc database người dùng và JSON tích hợp AI.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 24/06/2026 | - Bàn luận dự án với Tiến Kha về dự án Lịch AI (hệ thống phân tích năng lượng hợp lý trong ngày để đề xuất hoạt động phù hợp với bản mệnh).<br>- Học cách sử dụng LocalStack chạy local các dịch vụ AWS nhằm kiểm thử sản phẩm cục bộ trước khi deploy lên Cloud, tiết kiệm chi phí.<br>- Nghiên cứu các dịch vụ AWS, bao gồm Amazon Bedrock, và ước tính chi phí vận hành dự kiến.<br>- Thiết kế database người dùng và cấu trúc JSON chuẩn hóa để gửi dữ liệu cho AI phân tích.<br>- Xây dựng ý tưởng và tiến hành chạy thử nghiệm (testing). | 24/06/2026 | 24/06/2026 | [LocalStack Documentation](https://docs.localstack.cloud/), [Amazon Bedrock Documentation](https://aws.amazon.com/bedrock/) |
 
 ### Kết quả đạt được tuần 2:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Định hình thành công ý tưởng dự án Lịch AI, phân tích năng lượng theo ngày và độ tương hợp mệnh để tối ưu hóa kế hoạch làm việc.
+* Làm chủ công cụ LocalStack để giả lập các dịch vụ AWS tại local, hỗ trợ chạy test tiết kiệm và thuận tiện.
+* Có thêm hiểu biết về Amazon Bedrock và các dịch vụ Cloud AWS liên quan, tính toán sơ bộ chi phí sử dụng trong tương lai.
+* Thiết kế xong cấu trúc cơ sở dữ liệu người dùng và định dạng JSON truyền nhận tin cho AI.
+* Triển khai xây dựng ý tưởng cốt lõi và thực hiện các bước testing đầu tiên.
