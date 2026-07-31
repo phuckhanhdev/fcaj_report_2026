@@ -19,6 +19,12 @@ Sau khi hoàn thành workshop, bạn sẽ có một **hệ thống production đ
 - Tường lửa **AWS WAF** với Core Rules và bảo vệ SQL Injection
 - Hàm **AWS Lambda** + **Amazon EventBridge** Scheduler để cào dữ liệu rạp CGV hàng tuần
 
+---
+
+### Sơ đồ Kiến trúc Tổng quan Workshop (AWS Cloud Architecture)
+
+![Sơ đồ Kiến trúc Tổng quan Workshop AWS LifeSync AI Calendar](/images/architecture.png)
+
 <!-- Khung Nhúng Video Demo Hệ thống -->
 <div align="center" style="margin: 25px 0;">
   <h4>📹 Video Demo Hệ thống LifeSync AI Calendar</h4>

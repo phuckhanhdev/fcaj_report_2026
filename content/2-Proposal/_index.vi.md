@@ -44,7 +44,9 @@ LifeSync AI Calendar giải quyết vấn đề trên bằng cách:
 
 #### Sơ đồ Kiến trúc Hệ thống (AWS Cloud Architecture)
 
-![Sơ đồ Kiến trúc AWS LifeSync AI Calendar](/images/2-Proposal/architecture.png)
+![Sơ đồ Kiến trúc AWS LifeSync AI Calendar](/images/architecture.png)
+
+```
 [Người dùng Internet]
       │
       ▼

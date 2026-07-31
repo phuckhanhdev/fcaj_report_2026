@@ -19,6 +19,12 @@ By the end of this workshop, you will have a **fully deployed production system*
 - An **AWS WAF** Web Application Firewall with Core Rules and SQL Injection protection
 - An **AWS Lambda** function + **Amazon EventBridge** Scheduler for weekly CGV cinema data crawling
 
+---
+
+### AWS Cloud Architecture Overview
+
+![AWS Cloud Architecture Diagram LifeSync AI Calendar Workshop](/images/architecture.png)
+
 <!-- System Demo Video Embed -->
 <div align="center" style="margin: 25px 0;">
   <h4>📹 System Demo Video: LifeSync AI Calendar</h4>

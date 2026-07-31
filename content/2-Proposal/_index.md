@@ -44,7 +44,9 @@ LifeSync AI Calendar solves this by:
 
 #### System Infrastructure Architecture Diagram
 
-![AWS Cloud Architecture Diagram LifeSync AI Calendar](/images/2-Proposal/architecture.png)
+![AWS Cloud Architecture Diagram LifeSync AI Calendar](/images/architecture.png)
+
+```
 [Internet User]
       │
       ▼
