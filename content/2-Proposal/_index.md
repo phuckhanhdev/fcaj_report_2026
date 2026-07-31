@@ -40,9 +40,13 @@ LifeSync AI Calendar solves this by:
 
 ---
 
-### 3. Solution Architecture
+### 3. AWS Cloud Architecture
 
-```
+#### System Infrastructure Architecture Diagram
+
+<div align="center" style="margin: 20px 0;">
+  <img src="images/2-Proposal/architecture.png" alt="AWS Cloud Architecture Diagram LifeSync AI Calendar" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+</div>
 [Internet User]
       │
       ▼

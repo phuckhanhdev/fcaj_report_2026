@@ -8,6 +8,8 @@ pre: " <b> 3.2. </b> "
 
 # Tự động hóa xử lý sự cố CI/CD với AWS DevOps Agent và GitHub: Lối thoát cho dân DevOps & Dev
 
+> 🔗 **Bài viết chính thức đã đăng tải trên AWS Study Group**: [Xem bài viết trực tiếp trên Facebook](https://www.facebook.com/groups/awsstudygroupfcj/permalink/2229179391180354/)
+
 Nếu bạn từng rơi vào cảnh pipeline CI/CD trên GitHub Actions báo lỗi "đỏ ngầu" vào lúc 11 giờ đêm, chắc chắn bạn sẽ hiểu cảm giác này: Mở hàng tá tab CloudWatch Logs, đọc từng dòng log build dài lê thê, đào xới các commit gần nhất để tìm xem do dòng code nào hay do sai cấu hình IAM Role.
 
 Công việc troubleshooting (xử lý sự cố) trong luồng CI/CD thường ngốn của chúng ta rất nhiều thời gian và công sức thủ công. Nhằm giải quyết đúng bài toán nhức nhối này, AWS đã giới thiệu giải pháp tích hợp **AWS DevOps Agent** cùng **GitHub** giúp tự động hóa quá trình phân tích và tìm nguyên nhân gốc rễ (*Root Cause Analysis*) ngay khi pipeline gặp sự cố.

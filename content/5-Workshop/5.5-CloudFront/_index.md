@@ -20,7 +20,7 @@ Amazon CloudFront is a global Content Delivery Network (CDN) that sits in front 
 
 1. Go to **AWS Console** → Search **CloudFront** → Click **Create distribution**
 
-![CloudFront Create Distribution](/images/5-Workshop/picture/cloudfront/1_setup.png)
+![CloudFront Create Distribution](images/5-Workshop/picture/cloudfront/1_setup.png)
 
 ---
 
@@ -36,7 +36,7 @@ Amazon CloudFront is a global Content Delivery Network (CDN) that sits in front 
 
 5. **Protocol**: HTTP only (EC2 handles HTTP, CloudFront handles HTTPS)
 
-![CloudFront Name Configuration](/images/5-Workshop/picture/cloudfront/2_name.png)
+![CloudFront Name Configuration](images/5-Workshop/picture/cloudfront/2_name.png)
 
 ---
 
@@ -51,7 +51,7 @@ Amazon CloudFront is a global Content Delivery Network (CDN) that sits in front 
 8. **Cache policy**: Select `CachingDisabled` for dynamic Next.js content
    - Or use `CachingOptimized` for static assets only
 
-![CloudFront Origin Setup](/images/5-Workshop/picture/cloudfront/3_origin%20setup.png)
+![CloudFront Origin Setup](images/5-Workshop/picture/cloudfront/3_origin%20setup.png)
 
 ---
 
@@ -69,7 +69,7 @@ Amazon CloudFront is a global Content Delivery Network (CDN) that sits in front 
 
 11. **Default root object**: Enter `index.html` (optional for Next.js apps)
 
-![CloudFront Final Settings](/images/5-Workshop/picture/cloudfront/4_cloudFront%20settings.png)
+![CloudFront Final Settings](images/5-Workshop/picture/cloudfront/4_cloudFront%20settings.png)
 
 12. Click **Create distribution** → Wait 5–10 minutes for deployment to complete
 

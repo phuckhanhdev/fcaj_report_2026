@@ -6,11 +6,11 @@ chapter: false
 pre: " <b> 3.2. </b> "
 ---
 
-# Automating CI/CD Troubleshooting with AWS DevOps Agent and GitHub: A Lifesaver for Developers & DevOps
+# Automating CI/CD Incident Resolution with AWS DevOps Agent & GitHub: A Relief for Engineers
 
-If you have ever experienced a GitHub Actions CI/CD pipeline turning "bright red" with errors at 11 PM, you certainly know the feeling: opening dozens of CloudWatch Logs tabs, scanning through endless lines of build logs, and digging through recent git commits to pinpoint whether it was a code bug or an IAM Role misconfiguration.
+> 🔗 **Official Post Published on AWS Study Group**: [View Post Directly on Facebook](https://www.facebook.com/groups/awsstudygroupfcj/permalink/2229179391180354/)
 
-Troubleshooting failures in CI/CD pipelines often consumes significant manual effort and time. To solve this painful challenge, AWS introduced the integration between **AWS DevOps Agent** and **GitHub**, automating Root Cause Analysis (RCA) immediately when pipeline failures occur.
+If you've ever experienced a GitHub Actions CI/CD pipeline failing unexpectedly late at night, you know the frustration: opening dozens of CloudWatch log tabs, scrolling through endless build outputs, and inspecting recent commits to identify whether code or IAM role misconfigurations broke the pipeline.g failures in CI/CD pipelines often consumes significant manual effort and time. To solve this painful challenge, AWS introduced the integration between **AWS DevOps Agent** and **GitHub**, automating Root Cause Analysis (RCA) immediately when pipeline failures occur.
 
 In this article, we will explore how AWS DevOps Agent works, the practical integration workflow, and key lessons you can apply to your system!
 

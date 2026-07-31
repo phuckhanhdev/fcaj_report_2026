@@ -22,7 +22,7 @@ Amazon EC2 (Elastic Compute Cloud) là máy chủ ứng dụng chạy **Next.js 
    - **Instance type**: `t2.micro` (1 vCPU, 1GB RAM — 750 giờ/tháng Free Tier)
    - **Key pair**: Chọn `lifesync-key` (đã tạo ở phần Chuẩn bị)
 
-![Khởi tạo EC2 Instance Bước 1](/images/5-Workshop/picture/ec2/1_setup.png)
+![Khởi tạo EC2 Instance Bước 1](images/5-Workshop/picture/ec2/1_setup.png)
 
 ---
 
@@ -36,7 +36,7 @@ Amazon EC2 (Elastic Compute Cloud) là máy chủ ứng dụng chạy **Next.js 
    | HTTP | 80 | 0.0.0.0/0 | Lưu lượng web (chuyển hướng sang HTTPS) |
    | HTTPS | 443 | 0.0.0.0/0 | Lưu lượng web an toàn |
 
-![Cài đặt Security Group EC2](/images/5-Workshop/picture/ec2/2_setup.png)
+![Cài đặt Security Group EC2](images/5-Workshop/picture/ec2/2_setup.png)
 
 4. Giữ nguyên **Storage** mặc định 8GB gp3 (Free Tier) → Click **Launch instance**
 
@@ -50,7 +50,7 @@ Amazon EC2 (Elastic Compute Cloud) là máy chủ ứng dụng chạy **Next.js 
    - **Instance**: Chọn `LifeSync-Server`
    - Click **Associate**
 
-![Cài đặt Elastic IP EC2](/images/5-Workshop/picture/ec2/3_setup.png)
+![Cài đặt Elastic IP EC2](images/5-Workshop/picture/ec2/3_setup.png)
 
 > **Lưu ý**: Elastic IP đảm bảo IP máy chủ không thay đổi dù EC2 khởi động lại. Rất quan trọng cho cấu hình DNS A Record.
 
@@ -78,7 +78,7 @@ Amazon EC2 (Elastic Compute Cloud) là máy chủ ứng dụng chạy **Next.js 
    pm2 --version    # Hiển thị phiên bản pm2
    ```
 
-![Cài đặt Terminal EC2](/images/5-Workshop/picture/ec2/4_terminal_setup.png)
+![Cài đặt Terminal EC2](images/5-Workshop/picture/ec2/4_terminal_setup.png)
 
 ---
 

@@ -8,6 +8,8 @@ pre: " <b> 3.1. </b> "
 
 # Amazon Bedrock vs Amazon SageMaker: Đâu là giải pháp AI phù hợp cho hệ thống của bạn?
 
+> 🔗 **Bài viết chính thức đã đăng tải trên AWS Study Group**: [Xem bài viết trực tiếp trên Facebook](https://www.facebook.com/groups/awsstudygroupfcj/permalink/2229173917847568/)
+
 Khi làn sóng Trí tuệ nhân tạo (AI) và Generative AI bùng nổ, việc tích hợp AI vào sản phẩm hay hệ thống phần mềm đã trở thành bài toán sống còn của nhiều đội ngũ phát triển. Tuy nhiên, khi nhìn vào hệ sinh thái AI của AWS, hai cái tên **Amazon Bedrock** và **Amazon SageMaker** thường khiến các lập trình viên và kiến trúc sư bối rối không biết nên chọn công cụ nào cho đúng.
 
 Cả hai đều là những "vũ khí" cực kỳ mạnh mẽ của AWS, nhưng chúng được sinh ra để giải quyết hai bài toán hoàn toàn khác nhau: **Xây dựng ứng dụng Generative AI nhanh chóng qua API quản lý sẵn (Serverless LLMs)** và **Làm chủ toàn bộ vòng đời Machine Learning tùy chỉnh (Custom ML/DL Workflow)**.

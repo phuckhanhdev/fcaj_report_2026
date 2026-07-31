@@ -40,9 +40,13 @@ LifeSync AI Calendar giải quyết vấn đề trên bằng cách:
 
 ---
 
-### 3. Kiến trúc giải pháp
+### 3. Kiến trúc đám mây AWS
 
-```
+#### Sơ đồ Kiến trúc Hệ thống (AWS Cloud Architecture)
+
+<div align="center" style="margin: 20px 0;">
+  <img src="images/2-Proposal/architecture.png" alt="Sơ đồ Kiến trúc AWS LifeSync AI Calendar" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+</div>
 [Người dùng Internet]
       │
       ▼

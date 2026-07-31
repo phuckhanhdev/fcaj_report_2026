@@ -30,7 +30,7 @@ pre: " <b> 5.7. </b> "
 
 3. Click **Create function**
 
-![Lambda Function Setup](/images/5-Workshop/picture/lambda/cgv_movie_crawler/1_setup.png)
+![Lambda Function Setup](images/5-Workshop/picture/lambda/cgv_movie_crawler/1_setup.png)
 
 ---
 
@@ -49,7 +49,7 @@ pre: " <b> 5.7. </b> "
 
 6. Click **Save**
 
-![Lambda Environment Variables Setup](/images/5-Workshop/picture/lambda/cgv_movie_crawler/2_envSetup.png)
+![Lambda Environment Variables Setup](images/5-Workshop/picture/lambda/cgv_movie_crawler/2_envSetup.png)
 
 ---
 
@@ -101,7 +101,7 @@ pre: " <b> 5.7. </b> "
 
 1. Go to **AWS Console** → Search **EventBridge** → Click **Scheduler** → **Schedules** → **Create schedule**
 
-![EventBridge Scheduler](/images/5-Workshop/picture/eventBridge/1_scheduler.png)
+![EventBridge Scheduler](images/5-Workshop/picture/eventBridge/1_scheduler.png)
 
 ---
 
@@ -116,7 +116,7 @@ pre: " <b> 5.7. </b> "
 
 5. **Flexible time window**: `Off` (run exactly on time)
 
-![EventBridge Name & Config](/images/5-Workshop/picture/eventBridge/2_name%26config.png)
+![EventBridge Name & Config](images/5-Workshop/picture/eventBridge/2_name%26config.png)
 
 ---
 
@@ -128,7 +128,7 @@ pre: " <b> 5.7. </b> "
 
 8. **Payload**: `{}` (empty — the crawler doesn't need input)
 
-![EventBridge Target Selected](/images/5-Workshop/picture/eventBridge/3_target_selected.png)
+![EventBridge Target Selected](images/5-Workshop/picture/eventBridge/3_target_selected.png)
 
 ---
 
@@ -138,7 +138,7 @@ pre: " <b> 5.7. </b> "
 
 10. Click **Next** → Review → Click **Create schedule**
 
-![EventBridge Review](/images/5-Workshop/picture/eventBridge/4_review.png)
+![EventBridge Review](images/5-Workshop/picture/eventBridge/4_review.png)
 
 ---
 
