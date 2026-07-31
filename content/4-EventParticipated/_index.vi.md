@@ -1,43 +1,33 @@
 ---
 title: "Các events đã tham gia"
-date: 2024-01-01
+date: 2026-07-31
 weight: 4
 chapter: false
 pre: " <b> 4. </b> "
 ---
 
+Trong quá trình thực tập tại AWS Việt Nam thuộc chương trình FCAJ 2026, tôi đã có cơ hội tham dự 3 sự kiện hội thảo và workshop chuyên sâu về Cloud, DevOps và Agentic AI. Mỗi sự kiện mang lại những góc nhìn thực chiến, kiến thức công nghệ tiên tiến và cơ hội giao lưu tuyệt vời với các chuyên gia đầu ngành.
 
-> Trong phần này, các bạn cần liệt kê và mô tả chi tiết các sự kiện (event) mà mình đã tham gia trong suốt quá trình thực tập hoặc làm việc. 
-> 
-> Mỗi sự kiện nên được trình bày theo định dạng Event 1, Event 2, Event 3…, kèm theo các thông tin:
-> * Tên sự kiện
-> * Thời gian tổ chức
-> * Địa điểm (nếu có)
-> * Vai trò của bạn trong sự kiện (người tham dự, hỗ trợ tổ chức, diễn giả, v.v.)
-> * Mô tả ngắn gọn nội dung và hoạt động chính trong sự kiện
-> * Kết quả hoặc giá trị đạt được (bài học, kỹ năng mới, đóng góp cho nhóm/dự án)
-> * Việc liệt kê này giúp thể hiện rõ sự tham gia thực tế của bạn, cũng như các kỹ năng mềm và kinh nghiệm bạn đã tích lũy qua từng sự kiện.
+---
 
+### [Event 1 - GenAI-powered App-DB Modernization Workshop](4.2-Event2/)
+- **Thời gian:** 27/06/2026
+- **Địa điểm:** Tầng 36, Văn phòng AWS Việt Nam, TP. Hồ Chí Minh
+- **Vai trò:** Người tham dự (Attendee)
+- **Tóm tắt:** Tìm hiểu về chuyển đổi hạ tầng ứng dụng và cơ sở dữ liệu sang microservices, phương pháp Domain-Driven Design (DDD), Event-Driven Architecture và công cụ tự động hóa mã nguồn Amazon Q Developer.
 
-Trong quá trình thực tập, em đã tham gia 2 events, với mỗi event là một trải nghiệm đáng nhớ với những kiến thức mới, hay và bổ ích, cùng với đó là nhứng món quà và những khoảnh khắc rất tuyệt vời.
+---
 
-### [Event 1](4.1-Event1/)
-&emsp;**Tên sự kiện:** Swinburne Cloud Mastery
+### [Event 2 - Swinburne Cloud Mastery](4.1-Event1/)
+- **Thời gian:** 04/07/2026
+- **Địa điểm:** Trực tuyến (Livestream trên kênh AWS Study Group)
+- **Vai trò:** Người tham dự (Attendee)
+- **Tóm tắt:** Lắng nghe chia sẻ từ các chuyên gia AWS và Renova Cloud về tư duy làm nghề Cloud/DevOps/Data, quy trình tối ưu CV qua bộ lọc ATS/AI, và 6 mô hình tư duy phát triển sự nghiệp trọn đời.
 
-&emsp;**Thời gian:** 09:00 ngày 13/08/2025
+---
 
-&emsp;**Địa điểm:** Tầng 26, tòa nhà Bitexco, số 02 đường Hải Triều, phường Sài Gòn, thành phố Hồ Chí Minh
-
-&emsp;**Vai trò trong sự kiện:** Người tham dự 
-
-
-
-### [Event 2](4.2-Event2/)
-&emsp;**Tên sự kiện:** GenAI-powered App-DB Modernization workshop
-
-&emsp;**Thời gian:** 09:00 ngày 13/08/2025
-
-&emsp;**Địa điểm:** Tầng 26, tòa nhà Bitexco, số 02 đường Hải Triều, phường Sài Gòn, thành phố Hồ Chí Minh
-
-&emsp;**Vai trò trong sự kiện:** Người tham dự 
-
+### [Event 3 - AABW - AWS AI Build Week Workshop](4.3-Event3/)
+- **Thời gian:** 25/07/2026
+- **Địa điểm:** Tầng 26, Tòa nhà Bitexco, TP. Hồ Chí Minh
+- **Vai trò:** Người tham dự (Attendee)
+- **Tóm tắt:** Phiên tổng kết hackathon quy mô lớn với các đội vô địch chia sẻ giải pháp Agentic AI thực tế (KFC Order Agent, SA Assistant App, S.H.E.P.H.E.R.D Crowd Control, Signal Scout AML) kết hợp AgentCore, Amazon Bedrock và kiến trúc Double-LLM.

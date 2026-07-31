@@ -1,54 +1,24 @@
 ---
 title: "Week 9 Worklog"
-date: 2024-01-01
+date: 2026-08-15
 weight: 1
 chapter: false
 pre: " <b> 1.9. </b> "
 ---
 
-
 ### Week 9 Objectives:
+* Complete Technical Blogs 3 & 4 on AWS CloudWatch monitoring and security data protection.
+* Finalize internship Self-Evaluation, Program Feedback, and verify Hugo website compilation.
+* Officially complete the FCAJ 2026 Internship Program on August 15, 2026.
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
-
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+### Tasks carried out this week:
+| Date | Task | Start Date | Completion Date | Reference Material |
+| --- | --- | --- | --- | --- |
+| 11/08/2026 | - Authored Blog 3: *"Optimizing CloudWatch Alarms: Turning Alert Noise into Actionable Signals"* detailing the AWS 3-Right framework.<br>- Authored Blog 4: *"Protecting Sensitive Data in Logs: Lessons from Exploring AWS CloudWatch"* exploring real-time log masking with ML. | 11/08/2026 | 11/08/2026 | AWS CloudWatch Documentation |
+| 13/08/2026 | - Completed the Self-Assessment document (`content/6-Self-evaluation/`) reflecting on technical achievements and professional growth.<br>- Completed the Program Feedback document (`content/7-Feedback/`) providing detailed insights on the FCAJ internship experience. | 13/08/2026 | 13/08/2026 | FCAJ Internship Guidelines |
+| 15/08/2026 | - 🎯 **OFFICIAL INTERNSHIP COMPLETION**: Conducted final Hugo site compilation check, ensuring all 100+ English and Vietnamese pages render flawlessly without broken links.<br>- Submitted the final internship portfolio to the FCAJ program portal. | 15/08/2026 | 15/08/2026 | FCAJ Final Submission Portal |
 
 ### Week 9 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Completed all 4 technical blog publications.
+* Finalized internship self-evaluation and program feedback documentation.
+* Successfully completed the FCAJ 2026 Internship Program on August 15, 2026.

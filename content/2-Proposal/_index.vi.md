@@ -17,6 +17,13 @@ pre: " <b> 2. </b> "
 
 Hệ thống được triển khai trên nền tảng AWS production-grade gồm Amazon EC2 (t2.micro Free Tier), Amazon RDS MySQL, Amazon S3, Amazon CloudFront CDN, AWS WAF, AWS Lambda và Amazon EventBridge Scheduler — truy cập tại tên miền chính thức **[https://phuckhanh.id.vn](https://phuckhanh.id.vn)**.
 
+<!-- Khung Nhúng Video Demo Hệ thống -->
+<div align="center" style="margin: 25px 0;">
+  <h4>📹 Video Demo Hệ thống LifeSync AI Calendar</h4>
+  <iframe width="100%" height="450" style="max-width: 800px; border-radius: 8px; border: 1px solid #ddd;" src="LINK_VIDEO_DEMO_CỦA_BẠN" frameborder="0" allowfullscreen></iframe>
+  <p><i>(Dán link nhúng video YouTube / Loom / MP4 của bạn vào thuộc tính src ở trên)</i></p>
+</div>
+
 ---
 
 ### 2. Tuyên bố vấn đề

@@ -17,6 +17,13 @@ pre: " <b> 2. </b> "
 
 The system is deployed on a production-grade AWS infrastructure stack including Amazon EC2 (t2.micro Free Tier), Amazon RDS MySQL, Amazon S3, Amazon CloudFront CDN, AWS WAF, AWS Lambda, and Amazon EventBridge Scheduler — all accessible at the custom domain **[https://phuckhanh.id.vn](https://phuckhanh.id.vn)**.
 
+<!-- System Demo Video Embed -->
+<div align="center" style="margin: 25px 0;">
+  <h4>📹 System Demo Video: LifeSync AI Calendar</h4>
+  <iframe width="100%" height="450" style="max-width: 800px; border-radius: 8px; border: 1px solid #ddd;" src="YOUR_DEMO_VIDEO_EMBED_URL" frameborder="0" allowfullscreen></iframe>
+  <p><i>(Paste your video embed link above)</i></p>
+</div>
+
 ---
 
 ### 2. Problem Statement

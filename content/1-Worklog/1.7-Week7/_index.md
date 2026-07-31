@@ -1,54 +1,24 @@
 ---
 title: "Week 7 Worklog"
-date: 2024-01-01
+date: 2026-08-02
 weight: 1
 chapter: false
 pre: " <b> 1.7. </b> "
 ---
 
-
 ### Week 7 Objectives:
+* Build AWS Lambda CGV crawler function and configure Amazon EventBridge weekly cron schedule.
+* Handle AWS Bedrock API quota incident and integrate **Google Gemini 2.5 Flash** as a high-availability fallback engine.
+* Complete the full 9-step AWS Production Deployment Workshop report by July 31, 2026.
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
-
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+### Tasks carried out this week:
+| Date | Task | Start Date | Completion Date | Reference Material |
+| --- | --- | --- | --- | --- |
+| 27/07/2026 | - Developed AWS Lambda function (`cgv-movie-crawler`) running Node.js 20.x to scrape CGV movie and showtime data into Amazon RDS MySQL.<br>- Created Amazon EventBridge Schedule (`cgv-weekly-crawler`) with cron expression `cron(0 17 ? * SUN *)` running every Monday at 00:00 AM Vietnam time (UTC+7). | 27/07/2026 | 27/07/2026 | AWS Lambda & EventBridge Docs |
+| 29/07/2026 | - ⚠️ **BEDROCK API INCIDENT & GEMINI FALLBACK**: AWS Bedrock API experienced quota limits / connection errors.<br>- Upgraded the AI Intent Parsing service to a **Dual-AI Engine architecture**, integrating **Google Gemini 2.5 Flash** as an instant fallback engine to ensure 99.9% uptime. | 29/07/2026 | 29/07/2026 | Google Gemini API Docs |
+| 31/07/2026 | - 🎉 **COMPLETED AWS WORKSHOP**: Finalized the comprehensive 9-step AWS Production Deployment Workshop document (`docs/aws_full_production_deployment_report.md`) covering EC2, RDS, S3, CloudFront, WAF, Lambda, and EventBridge. | 31/07/2026 | 31/07/2026 | Project Workshop Documentation |
 
 ### Week 7 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Fully automated weekly CGV cinema data collection pipeline.
+* Built resilient Dual-AI Engine architecture with automatic fallback to Google Gemini 2.5 Flash.
+* Officially completed the comprehensive 9-step AWS deployment workshop documentation on July 31, 2026.

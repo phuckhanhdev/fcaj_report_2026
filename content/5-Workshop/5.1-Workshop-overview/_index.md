@@ -19,6 +19,13 @@ By the end of this workshop, you will have a **fully deployed production system*
 - An **AWS WAF** Web Application Firewall with Core Rules and SQL Injection protection
 - An **AWS Lambda** function + **Amazon EventBridge** Scheduler for weekly CGV cinema data crawling
 
+<!-- System Demo Video Embed -->
+<div align="center" style="margin: 25px 0;">
+  <h4>📹 System Demo Video: LifeSync AI Calendar</h4>
+  <iframe width="100%" height="450" style="max-width: 800px; border-radius: 8px; border: 1px solid #ddd;" src="YOUR_DEMO_VIDEO_EMBED_URL" frameborder="0" allowfullscreen></iframe>
+  <p><i>(Paste your video embed link above)</i></p>
+</div>
+
 ### Key Technologies
 
 | Technology | Purpose |

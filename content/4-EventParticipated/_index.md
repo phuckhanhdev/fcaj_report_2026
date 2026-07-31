@@ -1,41 +1,33 @@
 ---
 title: "Events Participated"
-date: 2024-01-01
+date: 2026-07-31
 weight: 4
 chapter: false
 pre: " <b> 4. </b> "
 ---
 
-
-> In this section, you should list and describe in detail the events you have participated in during your internship or work experience.  
-> 
-> Each event should be presented in the format Event 1, Event 2, Event 3…, along with the following details:
-> * Event name
-> * Date and time
-> * Location (if applicable)
-> * Your role in the event (attendee, event support, speaker, etc.)
-> * A brief description of the event’s content and main activities
-> * Outcomes or value gained (lessons learned, new skills, contribution to the team/project)
-> * This listing helps demonstrate your actual participation as well as the soft skills and experience you have gained from each event.
-
-During my internship, I participated in two events. Each one was a memorable experience that provided new, interesting, and useful knowledge, along with gifts and wonderful moments.
-
-### [Event 1](4.1-Event1/)  
-&emsp;**Event Name:** Swinburne Cloud Mastery  
-
-&emsp;**Date & Time:** 09:00, August 13, 2025  
-
-&emsp;**Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Saigon Ward, Ho Chi Minh City  
-
-&emsp;**Role:** Attendee  
+During my internship at AWS Vietnam under the FCAJ 2026 program, I had the privilege of attending 3 technical seminars and hands-on workshops on Cloud, DevOps, and Agentic AI. Each event delivered invaluable industry insights, advanced technology trends, and networking opportunities with senior architects.
 
 ---
 
-### [Event 2](4.2-Event2/)  
-&emsp;**Event Name:** GenAI-powered App-DB Modernization workshop  
+### [Event 1 - GenAI-powered App-DB Modernization Workshop](4.2-Event2/)
+- **Date & Time:** June 27, 2026
+- **Location:** 36th Floor, AWS Vietnam Office, Ho Chi Minh City
+- **Role:** Attendee
+- **Overview:** Explored modern application and database migration to microservices, Domain-Driven Design (DDD) principles, Event-Driven Architecture, and code modernization with Amazon Q Developer.
 
-&emsp;**Date & Time:** 09:00, August 13, 2025  
+---
 
-&emsp;**Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Saigon Ward, Ho Chi Minh City  
+### [Event 2 - Swinburne Cloud Mastery](4.1-Event1/)
+- **Date & Time:** July 04, 2026
+- **Location:** Online (Livestream on AWS Study Group YouTube Channel)
+- **Role:** Attendee
+- **Overview:** Industry insights from AWS and Renova Cloud experts on Cloud/DevOps/Data career mindsets, CV optimization for ATS/AI screeners, and core mental models for lifelong learning.
 
-&emsp;**Role:** Attendee  
+---
+
+### [Event 3 - AABW - AWS AI Build Week Workshop](4.3-Event3/)
+- **Date & Time:** July 25, 2026
+- **Location:** 26th Floor, Bitexco Tower, Ho Chi Minh City
+- **Role:** Attendee
+- **Overview:** Hackathon recap event featuring winning teams presenting production Agentic AI architectures (KFC Order Agent, SA Assistant App, S.H.E.P.H.E.R.D Crowd Control, Signal Scout AML) leveraging AgentCore, Amazon Bedrock, and Double-LLM verification patterns.

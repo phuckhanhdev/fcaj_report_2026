@@ -1,54 +1,24 @@
 ---
 title: "Week 4 Worklog"
-date: 2024-01-01
+date: 2026-07-12
 weight: 1
 chapter: false
 pre: " <b> 1.4. </b> "
 ---
 
-
 ### Week 4 Objectives:
+* Implement Strategy Pattern for AI scheduling strategies (`StudyStrategy`, `FitnessStrategy`, `DateStrategy`).
+* Provision Amazon EC2 production server, configure Elastic IP, 2GB Swap memory, Nginx reverse proxy, and PM2.
+* Report mid-term progress on-site with mentors and configure Security Group access rules.
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
-
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+### Tasks carried out this week:
+| Date | Task | Start Date | Completion Date | Reference Material |
+| --- | --- | --- | --- | --- |
+| 06/07/2026 | - Developed Strategy Pattern architecture for the scheduling engine:<br>&emsp; + `StudyStrategy`: Pomodoro 50m work / 10m break, target golden hours 08:00–11:00.<br>&emsp; + `FitnessStrategy`: 30m recovery buffer.<br>&emsp; + `DateStrategy`: Hard 30m travel buffer constraint. | 06/07/2026 | 06/07/2026 | Design Patterns Documentation |
+| 08/07/2026 | - **On-site at AWS Office**: Launched EC2 Ubuntu 24.04 LTS `t2.micro` instance (`LifeSync-Server`).<br>- Allocated static Elastic IP `3.104.121.77`.<br>- Configured 2GB Swap memory.<br>- Configured Nginx reverse proxy routing port 80 to port 3000 and setup PM2 process manager. | 08/07/2026 | 08/07/2026 | AWS EC2 Documentation, Nginx Docs |
+| 11/07/2026 | - **On-site at AWS Office**: Presented mid-term project demo to mentors.<br>- Configured EC2 & RDS Security Groups to restrict direct MySQL public access and only accept connections from the EC2 security group. | 11/07/2026 | 11/07/2026 | AWS Security Best Practices |
 
 ### Week 4 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Successfully built the Strategy Pattern scheduling engine.
+* Provisioned and configured the live EC2 production server with Nginx and PM2.
+* Secured database access using EC2-to-RDS Security Group rules and completed mid-term demo.

@@ -1,54 +1,24 @@
 ---
 title: "Week 6 Worklog"
-date: 2024-01-01
+date: 2026-07-26
 weight: 1
 chapter: false
 pre: " <b> 1.6. </b> "
 ---
 
-
 ### Week 6 Objectives:
+* Deploy Amazon CloudFront CDN distribution for global performance acceleration and IP masking.
+* Configure AWS WAF (Web Application Firewall) to protect the application against OWASP Top 10 and SQL Injection.
+* Attend the "FCAJ: Agentic AI Build Week" event on-site at the AWS office and present the project.
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
-
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+### Tasks carried out this week:
+| Date | Task | Start Date | Completion Date | Reference Material |
+| --- | --- | --- | --- | --- |
+| 21/07/2026 | - Created Amazon CloudFront CDN distribution (`dbpvljmyvgnai.cloudfront.net`) pointing to custom domain `phuckhanh.id.vn`.<br>- Configured viewer protocol policy to redirect HTTP to HTTPS.<br>- Enabled HTTP methods `GET, HEAD, OPTIONS, PUT, POST, PATCH, DELETE`. | 21/07/2026 | 21/07/2026 | AWS CloudFront Developer Guide |
+| 23/07/2026 | - Created AWS WAF Web ACL (`LifeSync-WAF`) attached directly to CloudFront.<br>- Enabled AWS Managed Rules: `AWSManagedRulesCommonRuleSet` (Core OWASP) and `AWSManagedRulesSQLiRuleSet` (SQL Injection protection for RDS). | 23/07/2026 | 23/07/2026 | AWS WAF Developer Guide |
+| 25/07/2026 | - **On-site at AWS Office**: Attended the "FCAJ: Agentic AI Build Week" event.<br>- Presented the LifeSync AI Calendar architecture demo, receiving feedback from AWS Solution Architects and hackathon teams. | 25/07/2026 | 25/07/2026 | FCAJ Event Resources |
 
 ### Week 6 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Successfully deployed global CloudFront CDN for low-latency delivery and EC2 Elastic IP masking.
+* Established multi-layer WAF security protection.
+* Successfully presented the project at the FCAJ Agentic AI Build Week on-site event.

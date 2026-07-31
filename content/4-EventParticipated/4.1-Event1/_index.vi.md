@@ -73,6 +73,6 @@ pre: " <b> 4.1. </b> "
 
 ### Một số hình ảnh khi tham gia sự kiện
 
-![Swinburne Cloud Mastery](event_1.jpg)
+![Swinburne Cloud Mastery](/images/4-EventParticipated/picture/Event1/event_1.jpg)
 
 > Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp em định hình lại cách thiết kế CV, lộ trình học tập trọn đời, và kỹ năng giao tiếp phối hợp hiệu quả giữa các phòng ban.

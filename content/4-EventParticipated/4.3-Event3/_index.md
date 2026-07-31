@@ -1,108 +1,103 @@
 ---
-title: "Event 3"
+title: "AABW - AWS AI Build Week Workshop"
 date: 2026-07-25
-weight: 1
+weight: 3
 chapter: false
 pre: " <b> 4.3. </b> "
 ---
 
-# Summary Report: “AABW - AWS AI Build Week Workshop”
+# Detailed Event Report: AABW - AWS AI Build Week Workshop
 
-### Event Objectives
+- **Date & Time:** 09:00 on 25/07/2026  
+- **Location:** 26th Floor, Bitexco Tower, No. 02 Hai Trieu Street, Sai Gon Ward, Ho Chi Minh City  
+- **Role:** Attendee  
 
-- Share practical insights from the AABW - AWS AI Build Week hackathon experience
-- Explore how real-world Agentic AI solutions are designed and delivered
-- Highlight the technical architecture decisions behind successful AI products
-- Inspire future learning directions for building reliable and scalable AI applications
+---
 
-### Event Details
+### 1. Purpose of the Event
 
-- **Date & Time:** 09:00 on 25/07/2026
-- **Location:** 26th Floor, Bitexco Tower, No. 02 Hai Trieu Street, Sai Gon Ward, Ho Chi Minh City
-- **Role:** Attendee
+The workshop was designed as an intensive knowledge-sharing and recap session for the "AABW - AWS AI Build Week" hackathon, an event hosted in collaboration with the KNAI Fund (one of the biggest VCs in Ho Chi Minh City). The primary goal was to move beyond theoretical AI knowledge and provide attendees with practical insights into building **"Agentic AI"**. 
 
-### Speakers
+The event featured the winning teams from the hackathon, who shared their end-to-end journeys — from ideation and architecture design to overcoming 24-hour development constraints — demonstrating how to solve real-world problems with viable AI solutions.
 
-- **Mr. Huynh Sa Hung** – Head of Solutions Architect of Vietnam
-- **Mr. Joseph Marasota** – Head of Technology
-- **Presenting Teams:** One Team, Lùa Mình (Plan V), 3KA, and Signal Scout
+---
 
-### Key Highlights
+### 2. List of Speakers & Presenting Teams
 
-#### Opening keynote: the new mental model
+* **Event Hosts & Special Guests:**
+  * **Mr. Huynh Sa Hung:** Head of Solutions Architecture, AWS Vietnam.
+  * **Mr. Joseph Marasota:** Head of Technology. He delivered the opening keynote, reflecting on his 20-year career evolution from mainframes to AI, discussing Amazon's scale of 1 million+ robots, and inspiring the youth to act as the "human in the loop" for the next generation of automated systems.
 
-- The industry is changing faster than ever, and young technologists need to adapt quickly
-- Mr. Joseph Marasota encouraged people to challenge old assumptions and move beyond “stable but slow” systems
-- The current era favors rapid, automated releases driven by AI agents and human-in-the-loop oversight
+* **Presenting Teams (Hackathon Winners):**
+  * **One Team:** (Members: Anh Duy, Tran Dong, Doan Trung, Minh Viet, Anshul Roy). They built a multi-channel AI conversational ordering agent for KFC.
+  * **Lùa Mình (Plan V):** (Members: Pham Tien Thuan Phat, Huynh Hoang Long, Le Minh Nghia, Tran Dai Vi, Nguyen An). They presented the "SA Professional Native App," an AI assistant for Solution Architects.
+  * **3KA:** (Members: Huỳnh An Khương, Nguyễn Quốc Huy, Ngô Quang Khôi, Hoàng Lê Thành Đức, Đặng Nguyễn Phước Lộc, Đặng Trường Hưng). They built "S.H.E.P.H.E.R.D," an AI and computer vision system for crowd control and congestion prediction.
+  * **Signal Scout:** (Members: Le Tan Luc, Do Hoang Hieu, Trieu Quoc Hao, Nguyen Van Duy Khiem, Nguyen Cong Minh, Nguyen Tran Minh Quan). They developed a complex AI system for Anti-Money Laundering (AML) and corporate strategy detection.
 
-#### Deep dive into winning hackathon projects
+---
 
-- One Team built a multi-channel AI conversational ordering agent for KFC, operating directly in Zalo and WhatsApp
-- Lùa Mình (Plan V) developed the “SA Professional Native App” to help Solution Architects generate architecture diagrams, AWS cost estimates, and Terraform scripts from BRD input
-- 3KA built “S.H.E.P.H.E.R.D,” a computer vision and AI system for crowd control and congestion prediction using live camera feeds
-- Signal Scout developed a complex AI system for AML and corporate strategy detection using layered filtering and multi-agent analysis
+### 3. Key Highlights & Detailed Learnings
 
-#### Key technical takeaways from the teams
+#### A. Keynote Insight: The "New Mental Model"
+Mr. Joseph Marasota highlighted that the industry is transforming at an unprecedented rate. He advised young technologists to challenge the status quo, noting that while older generations focused on system stability ("do as little changes as possible"), the current era requires rapid, automated releases driven by AI agents.
 
-- **One Team:** Replaced standard Lambda-based patterns with AgentCore to provide memory for bots, reducing infrastructure cost by 60% and achieving low latency at a very small cost per order
-- **Lùa Mình / Plan V:** Used prompt engineering and agent engineering to ensure LLM outputs followed strict enterprise templates and generated outputs that were practical for real architects
-- **3KA:** Combined AWS Kinesis Video Streams, YOLO, ByteTrack, and AgentCore to build a real-time monitoring assistant for crowd conditions
-- **Signal Scout:** Applied a “Double LLM” strategy to reduce hallucination and improve decision reliability in sensitive business scenarios
+#### B. Deep Dive into Team Projects & Technical Architectures
 
-### Key Takeaways
+* **One Team (KFC AI Ordering Agent):**
+  * *Problem:* Traditional apps cause friction (login, menu navigation), leading to lost momentum and abandoned orders.
+  * *Solution:* An agent that operates directly within Zalo and WhatsApp. It understands natural language intent, uses tools to fetch menus via TinyFish, and manages cart states without forcing the user to switch apps.
+  * *Technical Takeaway:* Instead of using standard AWS Lambda functions which lack memory, they utilized **AgentCore**. This allowed the bot to remember past customer orders. This architectural choice dropped infrastructure costs by 60%, achieving an end-to-end latency of just 3-5 seconds at $0.006 per order.
 
-#### Mindset
+* **Lùa Mình / Plan V (SA Professional Native App):**
+  * *Problem:* Solution Architects often receive sudden requests to design complex cloud architectures and estimate costs within hours.
+  * *Solution:* An AI application where an SA inputs a Business Requirement Document (BRD). The AI automatically generates an editable Draw.io architecture diagram, AWS cost estimates, and Terraform IaC (Infrastructure as Code) scripts.
+  * *Technical Takeaway:* The team heavily utilized Prompt and Agent Engineering to ensure the LLM outputs adhered to strict company templates (e.g., ensuring Lambdas are attached to VPCs). The architecture utilized AWS Fargate for the backend and Amazon Bedrock for AI processing.
 
-- **Business-first approach**: The strongest ideas solve real pain points, not just showcase technology
-- **Practical experimentation**: The best results came from building quickly, learning from failures, and improving iteratively
-- **Human-in-the-loop**: AI should support humans rather than replace human judgment in critical decisions
+* **3KA (S.H.E.P.H.E.R.D - Crowd Control):**
+  * *Problem:* Airport and supermarket staff struggle to monitor multiple camera feeds manually to prevent bottlenecks.
+  * *Solution:* A system that ingests live camera feeds to track crowd density and queue conditions, alerting staff before severe congestion occurs.
+  * *Technical Takeaway:* The team streamed video via AWS Kinesis Video Streams into a processing cluster utilizing YOLO and ByteTrack for object detection. An AgentCore (via Amazon Bedrock) acted as an "Operator Copilot," allowing staff to ask natural language questions about the crowd status.
 
-#### Technical Architecture
+* **Signal Scout (AML / Financial Detection):**
+  * *Problem:* Financial analysts waste time cross-referencing multiple systems to detect fraud like "Structuring" or "Smurfing".
+  * *Solution:* A multi-layer filtering system using an XGBoost model for fast initial detection, followed by an LLM orchestration layer.
+  * *Technical Takeaway:* To prevent "AI Hallucination" in sensitive financial decisions, they employed a **"Double LLM"** strategy. A master agent coordinated sub-agents (Crawler Subagent, Analysis Subagent). One LLM made an initial decision (Dismiss, Hold, Escalate), and a second LLM verified the reasoning based on strict rule bases before escalating to a human Dashboard.
 
-- **Agentic design**: Building AI systems with memory, tools, and state management can make them much more useful in production
-- **Real-time integration**: Streaming data sources such as video and event streams can be connected to AI agents to create live-monitoring experiences
-- **Reliability engineering**: Verification layers, rule-based checks, and multi-agent coordination are essential for trustworthy AI systems
+#### C. Hackathon Best Practices
+All teams shared similar challenges: sleep deprivation, code failures at 3 AM, and scope creep. The unanimous advice for future hackathons:
+1. **Scope Control:** Build one feature perfectly rather than a massive, broken system. Define what "done" looks like early.
+2. **Focus on the Business Problem:** The technology is just a tool; 70% of the winning criteria is based on how well the idea solves a real-world "pain point" (using tools like the Value Proposition Canvas).
+3. **Team Dynamics:** Delegate clearly (who codes, who designs, who pitches) and value the experience over the prize.
 
-#### Hackathon lessons
+---
 
-- **Scope control**: Implementing one well-executed feature is better than building a large system that fails under complexity
-- **Team coordination**: Clear role assignment between coding, design, and pitching is critical for team success
-- **Learning over winning**: The experience and lessons gained from the process matter just as much as the prize itself
+### 4. Future Outlook (What I Expect to Learn Next)
 
-### Applying to Work
+Inspired by the deep technical implementations shown today, my next learning goals are:
+1. **Mastering Multi-Agent Orchestration & Double-Check Systems:** Study the "Double LLM" verification method used by Signal Scout to build highly reliable, low-hallucination AI systems for strict business rules.
+2. **Streaming Data into AI:** Learn to integrate real-time data streams (like AWS Kinesis used by team 3KA) with LLMs via Amazon Bedrock to create "live-monitoring" agents.
+3. **Agentic State Management:** Understand how to implement AgentCore and DynamoDB to maintain session states and long-term memory for chatbots, as successfully demonstrated by One Team to reduce costs.
+4. **Applying the Business Canvas:** Practice framing technical projects using the Value Proposition & Delivery Canvas to ensure they are viable for real-world enterprise adoption.
 
-- **Study multi-agent orchestration**: Explore how multiple agents can coordinate safely and effectively
-- **Learn stateful agent design**: Understand how to preserve context and long-term memory in AI applications
-- **Experiment with streaming AI**: Connect real-time data sources to LLM-based systems for more dynamic behavior
-- **Frame projects with business value**: Use value proposition and delivery thinking so technical work stays relevant to real needs
+---
 
-### Event Experience
+### 5. Proof of Participation & Event Gallery
 
-Attending the **AABW - AWS AI Build Week Workshop** was a highly valuable experience because it connected technical innovation with practical business application. The event gave me a clear picture of how modern AI systems can move from concept to real deployment when the right architecture, tools, and team dynamics are in place.
+<p align="center">
+  <img src="/images/4-EventParticipated/picture/Event3/1785418082560.jpg" alt="AABW Event Photo 1" width="48%">
+  <img src="/images/4-EventParticipated/picture/Event3/1785418082561.jpg" alt="AABW Event Photo 2" width="48%">
+</p>
 
-#### Learning from expert perspectives
+<p align="center">
+  <img src="/images/4-EventParticipated/picture/Event3/1785418082562.jpg" alt="AABW Event Photo 3" width="48%">
+  <img src="/images/4-EventParticipated/picture/Event3/1785418082563.jpg" alt="AABW Event Photo 4" width="48%">
+</p>
 
-- The keynote and guest sessions offered strong inspiration for thinking beyond traditional software development and toward more autonomous, AI-driven workflows
-- The presentations from the winning teams showed how ideas can be transformed into working solutions under tight constraints
+<p align="center">
+  <img src="/images/4-EventParticipated/picture/Event3/1785418082564.jpg" alt="AABW Event Photo 5" width="48%">
+  <img src="/images/4-EventParticipated/picture/Event3/1785418082565.jpg" alt="AABW Event Photo 6" width="48%">
+</p>
 
-#### Gaining hands-on technical understanding
+---
 
-- I learned how different teams approached the same AI challenge from very different angles, from conversational agents to computer vision and financial analytics
-- The examples highlighted how architecture choices such as AgentCore, Bedrock, Kinesis, and Fargate shape system performance, cost, and reliability
-
-#### Seeing how business problems shape technical design
-
-- Each project was not just technically impressive, but also tied to a business problem such as ordering, architecture support, crowd management, or fraud detection
-- This reinforced the importance of designing AI solutions with a clear value proposition rather than focusing only on the technology itself
-
-#### Lessons learned
-
-- The strongest AI solutions combine technical depth with clear organizational and business context
-- Reliability, cost efficiency, and explainability are just as important as model capability
-- Building with AI is not only about writing code, but also about creating systems that can be trusted and adopted in practice
-
-#### Some event photos
-
-*Add your event photos here*
-
-> Overall, the event provided not only technical knowledge but also a broader perspective on how to think about AI product design, architecture, and future growth.
+> Overall, the AABW AWS AI Build Week workshop provided invaluable technical insights and inspired new directions for building scalable Agentic AI applications on AWS.

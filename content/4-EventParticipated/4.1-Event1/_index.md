@@ -73,6 +73,6 @@ pre: " <b> 4.1. </b> "
 
 ### Some event photos
 
-![Swinburne Cloud Mastery](event_1.jpg)
+![Swinburne Cloud Mastery](/images/4-EventParticipated/picture/Event1/event_1.jpg)
 
 > Overall, the Swinburne Cloud Mastery seminar provided valuable industry insights from AWS and Renova Cloud experts, helping me shape my development roadmap and improve my skills in Cloud Computing.

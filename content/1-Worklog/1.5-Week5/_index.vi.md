@@ -1,56 +1,24 @@
 ---
 title: "Worklog Tuần 5"
-date: 2024-01-01
+date: 2026-07-19
 weight: 1
 chapter: false
 pre: " <b> 1.5. </b> "
 ---
 
-
 ### Mục tiêu tuần 5:
+* Khởi tạo Amazon S3 bucket phục vụ lưu trữ ảnh đại diện (avatar) của người dùng.
+* Khắc phục sự cố tài khoản AWS chính bị lỗi/khóa và hoàn tất di chuyển hạ tầng sang tài khoản AWS dự phòng.
+* Triển khai cơ chế upload ảnh trực tiếp lên S3 qua Presigned URL không thông qua server EC2.
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
-
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+### Các công việc triển khai trong tuần này:
+| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 13/07/2026 | - Khởi tạo Amazon S3 bucket (`lifesync-avatar-bucket`) tại region `ap-southeast-2`.<br>- Cấu hình CORS policy cho phép các phương thức `PUT`, `GET` từ tên miền `https://phuckhanh.id.vn`. | 13/07/2026 | 13/07/2026 | Tài liệu Hướng dẫn AWS S3 |
+| 15/07/2026 | - ⚠️ **SỰ CỐ TÀI KHOẢN AWS & CHUYỂN DỊCH**: Tài khoản AWS chính gặp sự cố bị khóa do liên quan đến AWS Organization.<br>- Nhanh chóng kích hoạt tài khoản AWS dự phòng thứ 2.<br>- Khôi phục CSDL RDS MySQL, cấu hình máy chủ EC2 và tạo lại S3 bucket trên tài khoản mới để đảm bảo dự án không bị gián đoạn. | 15/07/2026 | 15/07/2026 | Quy trình Sao lưu & Khôi phục AWS |
+| 18/07/2026 | - Xây dựng API Route `/api/upload/presign` trong Next.js để cấp Presigned URL có thời hạn 60 giây.<br>- Tích hợp giao diện Frontend cho phép người dùng upload ảnh đại diện trực tiếp lên S3 không tốn băng thông EC2. | 18/07/2026 | 18/07/2026 | Tài liệu AWS SDK v3 S3 Presigned URL |
 
 ### Kết quả đạt được tuần 5:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Xử lý thành công sự cố tài khoản AWS, đảm bảo hệ thống khôi phục nhanh chóng và không mất mát dữ liệu.
+* Xây dựng xong hạ tầng lưu trữ S3 chuẩn hóa.
+* Tối ưu hóa hiệu năng upload tệp avatar 0đ qua cơ chế Presigned URL.

@@ -1,56 +1,24 @@
 ---
 title: "Worklog Tuần 7"
-date: 2024-01-01
+date: 2026-08-02
 weight: 1
 chapter: false
 pre: " <b> 1.7. </b> "
 ---
 
-
 ### Mục tiêu tuần 7:
+* Viết AWS Lambda crawler cào phim CGV và cấu hình lịch chạy tự động Amazon EventBridge hàng tuần.
+* Xử lý sự cố giới hạn API AWS Bedrock và tích hợp **Google Gemini 2.5 Flash** làm AI Engine dự phòng song song.
+* Hoàn thành toàn bộ báo cáo Workshop 9 bước triển khai trên AWS đúng mốc 31/07/2026.
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
-
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+### Các công việc triển khai trong tuần này:
+| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 27/07/2026 | - Viết hàm AWS Lambda (`cgv-movie-crawler`) chạy Node.js 20.x bóc tách dữ liệu lịch chiếu phim CGV và cập nhật trực tiếp vào Amazon RDS MySQL.<br>- Tạo Amazon EventBridge Schedule (`cgv-weekly-crawler`) với cú pháp `cron(0 17 ? * SUN *)` tự động kích hoạt lúc 00:00 AM sáng Thứ Hai hàng tuần giờ VN (UTC+7). | 27/07/2026 | 27/07/2026 | Tài liệu AWS Lambda & EventBridge |
+| 29/07/2026 | - ⚠️ **SỰ CỐ API BEDROCK & BỔ SUNG GEMINI**: AWS Bedrock gặp sự cố quá giới hạn API/quota.<br>- Nâng cấp hệ thống phân tích ngôn ngữ tự nhiên lên mô hình **Dual-AI Engine**, bổ sung **Google Gemini 2.5 Flash** làm engine dự phòng có độ sẵn sàng cao, tự động chuyển đổi khi Bedrock gặp sự cố. | 29/07/2026 | 29/07/2026 | Tài liệu API Google Gemini |
+| 31/07/2026 | - 🎉 **HOÀN THÀNH WORKSHOP AWS**: Biên soạn và hoàn tất cuốn báo cáo kỹ thuật Workshop triển khai sản phẩm 9 bước trên AWS (`docs/aws_full_production_deployment_report.md`) đúng tiến độ ngày 31/07/2026. | 31/07/2026 | 31/07/2026 | Tài liệu Báo cáo Kỹ thuật Workshop |
 
 ### Kết quả đạt được tuần 7:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Tự động hóa hoàn toàn quy trình cập nhật dữ liệu phim CGV hàng tuần.
+* Làm chủ kiến trúc Dual-AI Engine đa tầng với cơ chế fallback tự động sang Google Gemini 2.5 Flash.
+* Hoàn thành cuốn báo cáo Workshop triển khai production chuẩn AWS đúng mốc 31/07/2026.

@@ -1,56 +1,24 @@
 ---
 title: "Worklog Tuần 4"
-date: 2024-01-01
+date: 2026-07-12
 weight: 1
 chapter: false
 pre: " <b> 1.4. </b> "
 ---
 
-
 ### Mục tiêu tuần 4:
+* Lập trình các thuật toán lập lịch theo Strategy Pattern (`StudyStrategy`, `FitnessStrategy`, `DateStrategy`).
+* Khởi tạo máy chủ Amazon EC2 production, gán Elastic IP, cấu hình 2GB Swap memory, Nginx reverse proxy và PM2.
+* Báo cáo tiến độ giữa kỳ trực tiếp tại văn phòng AWS với Mentor và cấu hình Security Group bảo mật.
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
-
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+### Các công việc triển khai trong tuần này:
+| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 06/07/2026 | - Phát triển kiến trúc Strategy Pattern cho engine lập lịch:<br>&emsp; + `StudyStrategy`: Áp dụng Pomodoro 50m làm / 10m nghỉ, ưu tiên giờ vàng 08:00–11:00.<br>&emsp; + `FitnessStrategy`: Tự động chèn 30m nghỉ ngơi phục hồi sau tập luyện.<br>&emsp; + `DateStrategy`: Ràng buộc cứng 30m di chuyển giữa các địa điểm. | 06/07/2026 | 06/07/2026 | Tài liệu Design Patterns |
+| 08/07/2026 | - **Lên công ty (On-site 🏢)**: Khởi tạo EC2 Ubuntu 24.04 LTS `t2.micro` (`LifeSync-Server`).<br>- Gán Elastic IP tĩnh `3.104.121.77`.<br>- Cấu hình 2GB Swap Memory chống quá tải RAM.<br>- Cấu hình Nginx reverse proxy điều hướng port 80 ➔ 3000 và PM2 quản lý tiến trình ứng dụng. | 08/07/2026 | 08/07/2026 | Tài liệu AWS EC2 & Nginx |
+| 11/07/2026 | - **Lên công ty (On-site 🏢)**: Thuyết trình bản thử nghiệm giữa kỳ với Mentor.<br>- Siết chặt Security Group của CSDL RDS MySQL, chỉ cho phép duy nhất Security Group của EC2 truy cập qua port 3306. | 11/07/2026 | 11/07/2026 | Quy chuẩn Bảo mật AWS |
 
 ### Kết quả đạt được tuần 4:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Hoàn thành các chiến lược lập lịch khoa học linh hoạt theo ngữ cảnh.
+* Đưa máy chủ EC2 production vào vận hành 24/7 với Nginx và PM2.
+* Thiết lập bảo mật đa tầng giữa EC2 và CSDL RDS MySQL thành công.

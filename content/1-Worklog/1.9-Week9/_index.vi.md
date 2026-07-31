@@ -1,56 +1,24 @@
 ---
 title: "Worklog Tuần 9"
-date: 2024-01-01
+date: 2026-08-15
 weight: 1
 chapter: false
 pre: " <b> 1.9. </b> "
 ---
 
-
 ### Mục tiêu tuần 9:
+* Hoàn thành Bài Blog 3 & 4 về giám sát hệ thống CloudWatch Alarms và bảo vệ dữ liệu nhạy cảm.
+* Hoàn thiện hồ sơ Tự đánh giá bản thân (Self-evaluation), Ý kiến đóng góp (Feedback) và kiểm thử Hugo website.
+* Báo cáo tổng kết và chính thức hoàn thành chương trình thực tập FCAJ 2026 vào ngày 15/08/2026.
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
-
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+### Các công việc triển khai trong tuần này:
+| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 11/08/2026 | - Biên soạn Bài Blog 3: *"Tối ưu CloudWatch Alarms: Biến tiếng ồn thành những cảnh báo có giá trị"* hướng dẫn mô hình 3-Right.<br>- Biên soạn Bài Blog 4: *"Bảo vệ dữ liệu nhạy cảm trong Logs: Bài học khi tìm hiểu AWS CloudWatch"* hướng dẫn tính năng CloudWatch Logs Data Protection. | 11/08/2026 | 11/08/2026 | Tài liệu AWS CloudWatch |
+| 13/08/2026 | - Hoàn thiện tài liệu Tự đánh giá bản thân (`content/6-Self-evaluation/`) tổng kết kết quả học tập và kỹ năng đạt được.<br>- Hoàn thiện tài liệu Ý kiến chia sẻ & góp ý (`content/7-Feedback/`) đóng góp phản hồi xây dựng cho chương trình FCAJ. | 13/08/2026 | 13/08/2026 | Quy định Tổng kết Thực tập FCAJ |
+| 15/08/2026 | - 🎯 **CHÍNH THỨC HOÀN THÀNH KỲ THỰC TẬP**: Kiểm thử tổng thể trang web Hugo, đảm bảo hơn 100 trang Tiếng Anh và Tiếng Việt hiển thị chuẩn không có lỗi liên kết.<br>- Đóng gói và nộp báo cáo thực tập hoàn chỉnh lên cổng thông tin chương trình FCAJ. | 15/08/2026 | 15/08/2026 | Cổng nộp Báo cáo FCAJ |
 
 ### Kết quả đạt được tuần 9:
-
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Hoàn thành đầy đủ 4 bài viết blog kỹ thuật chuyên sâu.
+* Hoàn thiện toàn bộ hồ sơ cá nhân, đánh giá và phản hồi kỳ thực tập.
+* Chính thức hoàn thành xuất sắc kỳ thực tập FCAJ 2026 đúng mốc ngày 15/08/2026.

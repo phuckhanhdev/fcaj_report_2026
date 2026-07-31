@@ -19,6 +19,13 @@ Sau khi hoàn thành workshop, bạn sẽ có một **hệ thống production đ
 - Tường lửa **AWS WAF** với Core Rules và bảo vệ SQL Injection
 - Hàm **AWS Lambda** + **Amazon EventBridge** Scheduler để cào dữ liệu rạp CGV hàng tuần
 
+<!-- Khung Nhúng Video Demo Hệ thống -->
+<div align="center" style="margin: 25px 0;">
+  <h4>📹 Video Demo Hệ thống LifeSync AI Calendar</h4>
+  <iframe width="100%" height="450" style="max-width: 800px; border-radius: 8px; border: 1px solid #ddd;" src="LINK_VIDEO_DEMO_CỦA_BẠN" frameborder="0" allowfullscreen></iframe>
+  <p><i>(Dán link nhúng video YouTube / Loom / MP4 của bạn vào thuộc tính src ở trên)</i></p>
+</div>
+
 ### Công nghệ chính
 
 | Công nghệ | Mục đích |
