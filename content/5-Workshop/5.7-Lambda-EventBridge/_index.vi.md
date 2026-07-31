@@ -30,7 +30,7 @@ pre: " <b> 5.7. </b> "
 
 3. Click **Create function**
 
-![Cài đặt Lambda Function](images/5-Workshop/picture/lambda/cgv_movie_crawler/1_setup.png)
+![Cài đặt Lambda Function](/images/5-Workshop/picture/lambda/cgv_movie_crawler/1_setup.png)
 
 ---
 
@@ -49,7 +49,7 @@ pre: " <b> 5.7. </b> "
 
 6. Click **Save**
 
-![Cài đặt biến môi trường Lambda](images/5-Workshop/picture/lambda/cgv_movie_crawler/2_envSetup.png)
+![Cài đặt biến môi trường Lambda](/images/5-Workshop/picture/lambda/cgv_movie_crawler/2_envSetup.png)
 
 ---
 
@@ -101,7 +101,7 @@ pre: " <b> 5.7. </b> "
 
 1. Vào **AWS Console** → Tìm **EventBridge** → Click **Scheduler** → **Schedules** → **Create schedule**
 
-![EventBridge Scheduler](images/5-Workshop/picture/eventBridge/1_scheduler.png)
+![EventBridge Scheduler](/images/5-Workshop/picture/eventBridge/1_scheduler.png)
 
 ---
 
@@ -116,7 +116,7 @@ pre: " <b> 5.7. </b> "
 
 5. **Flexible time window**: `Off` (chạy đúng giờ)
 
-![Tên & Cấu hình EventBridge](images/5-Workshop/picture/eventBridge/2_name%26config.png)
+![Tên & Cấu hình EventBridge](/images/5-Workshop/picture/eventBridge/2_name%26config.png)
 
 ---
 
@@ -128,7 +128,7 @@ pre: " <b> 5.7. </b> "
 
 8. **Payload**: `{}` (rỗng — crawler không cần đầu vào)
 
-![EventBridge đã chọn Target](images/5-Workshop/picture/eventBridge/3_target_selected.png)
+![EventBridge đã chọn Target](/images/5-Workshop/picture/eventBridge/3_target_selected.png)
 
 ---
 
@@ -138,7 +138,7 @@ pre: " <b> 5.7. </b> "
 
 10. Click **Next** → Xem lại → Click **Create schedule**
 
-![Xem lại EventBridge](images/5-Workshop/picture/eventBridge/4_review.png)
+![Xem lại EventBridge](/images/5-Workshop/picture/eventBridge/4_review.png)
 
 ---
 

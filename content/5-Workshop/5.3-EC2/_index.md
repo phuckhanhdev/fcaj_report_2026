@@ -22,7 +22,7 @@ Amazon EC2 (Elastic Compute Cloud) is the application server that runs the **Nex
    - **Instance type**: `t2.micro` (1 vCPU, 1GB RAM — 750 hours/month Free Tier)
    - **Key pair**: Select `lifesync-key` (created in Prerequisites)
 
-![EC2 Instance Setup Step 1](images/5-Workshop/picture/ec2/1_setup.png)
+![EC2 Instance Setup Step 1](/images/5-Workshop/picture/ec2/1_setup.png)
 
 ---
 
@@ -36,7 +36,7 @@ Amazon EC2 (Elastic Compute Cloud) is the application server that runs the **Nex
    | HTTP | 80 | 0.0.0.0/0 | Web traffic (redirects to HTTPS) |
    | HTTPS | 443 | 0.0.0.0/0 | Secure web traffic |
 
-![EC2 Security Group Setup](images/5-Workshop/picture/ec2/2_setup.png)
+![EC2 Security Group Setup](/images/5-Workshop/picture/ec2/2_setup.png)
 
 4. Keep **Storage** at the default 8GB gp3 (Free Tier) → Click **Launch instance**
 
@@ -50,7 +50,7 @@ Amazon EC2 (Elastic Compute Cloud) is the application server that runs the **Nex
    - **Instance**: Select `LifeSync-Server`
    - Click **Associate**
 
-![EC2 Elastic IP Setup](images/5-Workshop/picture/ec2/3_setup.png)
+![EC2 Elastic IP Setup](/images/5-Workshop/picture/ec2/3_setup.png)
 
 > **Note**: Elastic IP ensures your server IP never changes even after EC2 reboots. This is critical for DNS A Record configuration.
 
@@ -78,7 +78,7 @@ Amazon EC2 (Elastic Compute Cloud) is the application server that runs the **Nex
    pm2 --version    # Should show pm2 version
    ```
 
-![EC2 Terminal Setup](images/5-Workshop/picture/ec2/4_terminal_setup.png)
+![EC2 Terminal Setup](/images/5-Workshop/picture/ec2/4_terminal_setup.png)
 
 ---
 

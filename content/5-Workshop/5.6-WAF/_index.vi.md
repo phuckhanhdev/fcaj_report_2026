@@ -26,7 +26,7 @@ AWS WAF (Tường lửa Ứng dụng Web) bảo vệ LifeSync AI Calendar khỏi
 
 > **Quan trọng**: Đảm bảo region được chuyển sang **Global (CloudFront)** ở góc trên bên phải — WAF phải ở phạm vi Global để gắn vào CloudFront distribution.
 
-![Cài đặt ban đầu WAF](images/5-Workshop/picture/waf/1_setup.png)
+![Cài đặt ban đầu WAF](/images/5-Workshop/picture/waf/1_setup.png)
 
 ---
 
@@ -49,7 +49,7 @@ AWS WAF (Tường lửa Ứng dụng Web) bảo vệ LifeSync AI Calendar khỏi
    - Chọn CloudFront distribution (`dbpvljmyvgnai.cloudfront.net`)
    - Click **Add**
 
-![Cài đặt WAF](images/5-Workshop/picture/waf/2_setting.png)
+![Cài đặt WAF](/images/5-Workshop/picture/waf/2_setting.png)
 
 ---
 
@@ -67,7 +67,7 @@ AWS WAF (Tường lửa Ứng dụng Web) bảo vệ LifeSync AI Calendar khỏi
 
 8. Với mỗi quy tắc, đặt **Action** là `Block`
 
-![Cấu hình quy tắc tùy chỉnh WAF](images/5-Workshop/picture/waf/3_custom%20rule.png)
+![Cấu hình quy tắc tùy chỉnh WAF](/images/5-Workshop/picture/waf/3_custom%20rule.png)
 
 ---
 

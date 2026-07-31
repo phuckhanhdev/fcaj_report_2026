@@ -20,7 +20,7 @@ Amazon CloudFront là mạng phân phối nội dung (CDN) toàn cầu đứng t
 
 1. Vào **AWS Console** → Tìm **CloudFront** → Click **Create distribution**
 
-![Tạo CloudFront Distribution](images/5-Workshop/picture/cloudfront/1_setup.png)
+![Tạo CloudFront Distribution](/images/5-Workshop/picture/cloudfront/1_setup.png)
 
 ---
 
@@ -36,7 +36,7 @@ Amazon CloudFront là mạng phân phối nội dung (CDN) toàn cầu đứng t
 
 5. **Protocol**: HTTP only (EC2 xử lý HTTP, CloudFront xử lý HTTPS)
 
-![Cấu hình tên CloudFront](images/5-Workshop/picture/cloudfront/2_name.png)
+![Cấu hình tên CloudFront](/images/5-Workshop/picture/cloudfront/2_name.png)
 
 ---
 
@@ -51,7 +51,7 @@ Amazon CloudFront là mạng phân phối nội dung (CDN) toàn cầu đứng t
 8. **Cache policy**: Chọn `CachingDisabled` cho nội dung Next.js động
    - Hoặc `CachingOptimized` chỉ cho tài nguyên tĩnh
 
-![Cài đặt Origin CloudFront](images/5-Workshop/picture/cloudfront/3_origin%20setup.png)
+![Cài đặt Origin CloudFront](/images/5-Workshop/picture/cloudfront/3_origin%20setup.png)
 
 ---
 
@@ -69,7 +69,7 @@ Amazon CloudFront là mạng phân phối nội dung (CDN) toàn cầu đứng t
 
 11. **Default root object**: Nhập `index.html` (tùy chọn cho Next.js)
 
-![Cài đặt cuối CloudFront](images/5-Workshop/picture/cloudfront/4_cloudFront%20settings.png)
+![Cài đặt cuối CloudFront](/images/5-Workshop/picture/cloudfront/4_cloudFront%20settings.png)
 
 12. Click **Create distribution** → Chờ 5–10 phút để deploy hoàn tất
 

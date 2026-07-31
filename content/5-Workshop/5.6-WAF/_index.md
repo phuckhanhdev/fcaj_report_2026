@@ -26,7 +26,7 @@ AWS WAF (Web Application Firewall) protects the LifeSync AI Calendar application
 
 > **Important**: Make sure the region is set to **Global (CloudFront)** in the top-right corner — WAF must be in Global scope to attach to CloudFront distributions.
 
-![WAF Initial Setup](images/5-Workshop/picture/waf/1_setup.png)
+![WAF Initial Setup](/images/5-Workshop/picture/waf/1_setup.png)
 
 ---
 
@@ -49,7 +49,7 @@ AWS WAF (Web Application Firewall) protects the LifeSync AI Calendar application
    - Select your CloudFront distribution (`dbpvljmyvgnai.cloudfront.net`)
    - Click **Add**
 
-![WAF Settings](images/5-Workshop/picture/waf/2_setting.png)
+![WAF Settings](/images/5-Workshop/picture/waf/2_setting.png)
 
 ---
 
@@ -67,7 +67,7 @@ AWS WAF (Web Application Firewall) protects the LifeSync AI Calendar application
 
 8. For each rule, set **Action** to `Block`
 
-![WAF Custom Rule Configuration](images/5-Workshop/picture/waf/3_custom%20rule.png)
+![WAF Custom Rule Configuration](/images/5-Workshop/picture/waf/3_custom%20rule.png)
 
 ---
 
