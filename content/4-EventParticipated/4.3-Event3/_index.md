@@ -84,18 +84,18 @@ Inspired by the deep technical implementations shown today, my next learning goa
 ### 5. Proof of Participation & Event Gallery
 
 <p align="center">
-  <img src="/images/4-EventParticipated/picture/Event3/1785418082560.jpg" alt="AABW Event Photo 1" width="48%">
-  <img src="/images/4-EventParticipated/picture/Event3/1785418082561.jpg" alt="AABW Event Photo 2" width="48%">
+  <img src="images/4-EventParticipated/picture/Event3/1785418082560.jpg" alt="AABW Event Photo 1" width="48%">
+  <img src="images/4-EventParticipated/picture/Event3/1785418082561.jpg" alt="AABW Event Photo 2" width="48%">
 </p>
 
 <p align="center">
-  <img src="/images/4-EventParticipated/picture/Event3/1785418082562.jpg" alt="AABW Event Photo 3" width="48%">
-  <img src="/images/4-EventParticipated/picture/Event3/1785418082563.jpg" alt="AABW Event Photo 4" width="48%">
+  <img src="images/4-EventParticipated/picture/Event3/1785418082562.jpg" alt="AABW Event Photo 3" width="48%">
+  <img src="images/4-EventParticipated/picture/Event3/1785418082563.jpg" alt="AABW Event Photo 4" width="48%">
 </p>
 
 <p align="center">
-  <img src="/images/4-EventParticipated/picture/Event3/1785418082564.jpg" alt="AABW Event Photo 5" width="48%">
-  <img src="/images/4-EventParticipated/picture/Event3/1785418082565.jpg" alt="AABW Event Photo 6" width="48%">
+  <img src="images/4-EventParticipated/picture/Event3/1785418082564.jpg" alt="AABW Event Photo 5" width="48%">
+  <img src="images/4-EventParticipated/picture/Event3/1785418082565.jpg" alt="AABW Event Photo 6" width="48%">
 </p>
 
 ---

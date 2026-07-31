@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-07-31T14:48:00.000Z" agent="5.0" version="21.0.0" type="device">
+  <diagram id="ai-calendar-architecture" name="AI Calendar Solution Architecture">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- AWS Cloud Container -->
+        <mxCell id="aws_cloud" value="AWS Cloud (Region: ap-southeast-2 Sydney)" style="swimlane;whiteSpace=wrap;html=1;fillColor=#F8F9FA;strokeColor=#FF9900;dashed=0;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="220" y="40" width="1320" height="760" as="geometry" />
+        </mxCell>
+        
+        <!-- User Client Icon -->
+        <mxCell id="user_client" value="Users / Clients" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fillColor=#E1F5FE;strokeColor=#0288D1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="380" width="50" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Mắt Bão DNS -->
+        <mxCell id="matbao_dns" value="Mắt Bão DNS&#10;(phuckhanh.id.vn)" style="shape=mxgraph.aws3.route_53;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#E65100;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="110" y="375" width="90" height="75" as="geometry" />
+        </mxCell>
+
+        <!-- Amazon CloudFront CDN -->
+        <mxCell id="cloudfront" value="Amazon CloudFront CDN&#10;(Global Edge Caching)" style="shape=mxgraph.aws3.cloudfront;whiteSpace=wrap;html=1;fillColor=#E1F5FE;strokeColor=#0288D1;fontSize=10;fontStyle=1;" vertex="1" parent="aws_cloud">
+          <mxGeometry x="40" y="360" width="110" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- AWS WAF -->
+        <mxCell id="aws_waf" value="AWS WAF&#10;(LifeSync-WAF)&#10;Core &amp; SQLi Rules" style="shape=mxgraph.aws3.waf;whiteSpace=wrap;html=1;fillColor=#FFEBEE;strokeColor=#C62828;fontSize=10;fontStyle=1;" vertex="1" parent="aws_cloud">
+          <mxGeometry x="40" y="240" width="110" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- VPC Container -->
+        <mxCell id="vpc_box" value="VPC (Virtual Private Cloud: 10.0.0.0/16)" style="swimlane;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#388E3C;dashed=0;fontStyle=1;fontSize=13;" vertex="1" parent="aws_cloud">
+          <mxGeometry x="200" y="180" width="860" height="540" as="geometry" />
+        </mxCell>
+
+        <!-- Internet Gateway -->
+        <mxCell id="igw" value="Internet Gateway (IGW)" style="shape=mxgraph.aws3.internet_gateway;whiteSpace=wrap;html=1;fillColor=#E1F5FE;strokeColor=#0288D1;fontStyle=1;fontSize=11;" vertex="1" parent="vpc_box">
+          <mxGeometry x="30" y="180" width="120" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Availability Zone 1 -->
+        <mxCell id="az1_box" value="Availability Zone 1 (ap-southeast-2a)" style="swimlane;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1976D2;dashed=1;fontStyle=1;fontSize=12;" vertex="1" parent="vpc_box">
+          <mxGeometry x="180" y="40" width="650" height="460" as="geometry" />
+        </mxCell>
+        
+        <!-- Public Subnet (App Tier) -->
+        <mxCell id="pub_app1" value="Public Subnet (App Tier)&#10;(10.0.1.0/24 - Elastic IP)" style="swimlane;whiteSpace=wrap;html=1;fillColor=#FFF9C4;strokeColor=#FBC02D;fontStyle=1;" vertex="1" parent="az1_box">
+          <mxGeometry x="30" y="40" width="260" height="380" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ec2_app1" value="Amazon EC2 Instance&#10;Ubuntu 24.04 LTS (t2/t3.micro)&#10;────────────────────&#10;• Nginx Reverse Proxy (SSL)&#10;• PM2 Process Manager&#10;• Next.js 16 Fullstack App&#10;• CSP Bitmask Scheduler&#10;• Haversine Geolocation Engine" style="shape=mxgraph.aws3.ec2;whiteSpace=wrap;html=1;fillColor=#FFCC80;strokeColor=#EF6C00;fontStyle=1;fontSize=10;" vertex="1" parent="pub_app1">
+          <mxGeometry x="20" y="60" width="220" height="150" as="geometry" />
+        </mxCell>
+
+        <mxCell id="eventbridge_cron" value="EventBridge Scheduler&#10;&amp; Lambda Reminders" style="shape=mxgraph.aws3.lambda;whiteSpace=wrap;html=1;fillColor=#FFE0B2;strokeColor=#F57C00;fontStyle=1;fontSize=10;" vertex="1" parent="pub_app1">
+          <mxGeometry x="20" y="240" width="220" height="70" as="geometry" />
+        </mxCell>
+        
+        <!-- Private Subnet (DB Tier) -->
+        <mxCell id="priv_db1" value="Private Subnet (DB Tier: Single-AZ)" style="swimlane;whiteSpace=wrap;html=1;fillColor=#EDE7F6;strokeColor=#512DA8;fontStyle=1;" vertex="1" parent="az1_box">
+          <mxGeometry x="320" y="40" width="300" height="380" as="geometry" />
+        </mxCell>
+
+        <mxCell id="rds_primary" value="Amazon RDS MySQL&#10;(Single-AZ: lifesync-calendar)&#10;Port 3306" style="shape=mxgraph.aws3.rds;whiteSpace=wrap;html=1;fillColor=#E1BEE7;strokeColor=#8E24AA;fontStyle=1;fontSize=11;" vertex="1" parent="priv_db1">
+          <mxGeometry x="50" y="110" width="200" height="120" as="geometry" />
+        </mxCell>
+        
+        <!-- External Services (Right Side) -->
+        <mxCell id="bedrock_api" value="Amazon Bedrock Runtime&#10;(Claude Fallback AI Engine)" style="shape=mxgraph.aws3.machine_learning;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#7B1FA2;fontStyle=1;fontSize=11;" vertex="1" parent="aws_cloud">
+          <mxGeometry x="1100" y="200" width="180" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="gemini_api" value="Google Gemini 2.5 Flash&#10;(Primary Intent AI Engine)" style="shape=mxgraph.aws3.generic_database;whiteSpace=wrap;html=1;fillColor=#E8EAF6;strokeColor=#3F51B5;fontStyle=1;fontSize=11;" vertex="1" parent="aws_cloud">
+          <mxGeometry x="1100" y="320" width="180" height="80" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="s3_private" value="Amazon S3 Bucket&#10;(lifesync-avatar-bucket)" style="shape=mxgraph.aws3.s3;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontStyle=1;fontSize=11;" vertex="1" parent="aws_cloud">
+          <mxGeometry x="1100" y="430" width="180" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ses_email" value="Google OAuth 2.0 / NextAuth&#10;&amp; Nodemailer SMTP" style="shape=mxgraph.aws3.email_notification;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#E65100;fontStyle=1;fontSize=11;" vertex="1" parent="aws_cloud">
+          <mxGeometry x="1100" y="550" width="180" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="secrets_mgr" value="AWS Secrets Manager&#10;(@aws-sdk/client-secrets-manager)" style="shape=mxgraph.aws3.kms;whiteSpace=wrap;html=1;fillColor=#FCE4EC;strokeColor=#C2185B;fontStyle=1;fontSize=11;" vertex="1" parent="aws_cloud">
+          <mxGeometry x="1100" y="650" width="180" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Connectors -->
+
+        <!-- 1. User -> Mắt Bão DNS -->
+        <mxCell id="edge_user_dns" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeWidth=2;" edge="1" parent="1" source="user_client" target="matbao_dns">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 2. Mắt Bão DNS -> CloudFront CDN -->
+        <mxCell id="edge_dns_cdn" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeWidth=2;" edge="1" parent="1" source="matbao_dns" target="cloudfront">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 3. AWS WAF Protection on CloudFront -->
+        <mxCell id="edge_waf_cdn" value="Protected" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=2;dashed=1;strokeColor=#C62828;" edge="1" parent="aws_cloud" source="aws_waf" target="cloudfront">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 4. CloudFront -> IGW -->
+        <mxCell id="edge_cdn_igw" value="HTTPS Origin" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeWidth=2;" edge="1" parent="aws_cloud" source="cloudfront" target="igw">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 5. IGW -> EC2 App -->
+        <mxCell id="edge_igw_ec2" value="Port 80/443" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeWidth=2;" edge="1" parent="vpc_box" source="igw" target="ec2_app1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 6. EC2 -> RDS MySQL -->
+        <mxCell id="edge_ec2_rds" value="Port 3306" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeWidth=2;strokeColor=#8E24AA;" edge="1" parent="az1_box" source="ec2_app1" target="rds_primary">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 7. EC2 -> Google Gemini API -->
+        <mxCell id="edge_ec2_gemini" value="Primary AI" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeWidth=2;strokeColor=#3F51B5;" edge="1" parent="1" source="ec2_app1" target="gemini_api">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 8. EC2 -> Amazon Bedrock -->
+        <mxCell id="edge_ec2_bedrock" value="Fallback AI" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeWidth=2;dashed=1;strokeColor=#7B1FA2;" edge="1" parent="1" source="ec2_app1" target="bedrock_api">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 9. EC2 -> S3 Presigned URL -->
+        <mxCell id="edge_ec2_s3" value="Presigned URL" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeWidth=2;strokeColor=#2E7D32;" edge="1" parent="1" source="ec2_app1" target="s3_private">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 10. Direct User Upload -> S3 Bucket -->
+        <mxCell id="edge_user_s3" value="PUT Avatar" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;entryX=0;entryY=0.5;strokeWidth=2;dashed=1;strokeColor=#2E7D32;" edge="1" parent="1" source="user_client" target="s3_private">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -8,7 +8,7 @@ chapter: false
 # Internship Report — First Cloud AI Journey 2026
 
 <div align="center" style="margin: 20px 0;">
-  <img src="/images/avatar.png" alt="Profile Picture of Nguyen Phuc Khanh" width="220" style="border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+  <img src="images/avatar.png" alt="Profile Picture of Nguyen Phuc Khanh" width="220" style="border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
   <h3 style="margin-top: 10px; color: #232F3E;">Nguyen Phuc Khanh</h3>
   <p><b>Computer Engineering Student — Ho Chi Minh City University of Technology</b></p>
 </div>
