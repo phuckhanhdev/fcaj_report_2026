@@ -109,20 +109,31 @@ LifeSync AI Calendar giải quyết vấn đề trên bằng cách:
 
 ---
 
-### 6. Ước tính ngân sách
+### 6. Ước tính ngân sách & Chi phí thực tế
 
-#### Chi phí AWS (Hàng tháng)
-| Dịch vụ | Chi phí |
+#### Kịch bản 1: Có AWS Credits & Free Tier (Thực tế thời gian thực tập)
+| Dịch vụ AWS | Chi phí Free Tier / Credit |
 |---|---|
-| EC2 t2.micro (Free Tier 750h/tháng) | $0,00/tháng |
-| RDS MySQL db.t2.micro (Free Tier) | $0,00/tháng |
-| S3 Standard (< 5GB Free Tier) | $0,00/tháng |
-| CloudFront (1TB Free Tier) | ~$0,01/tháng |
-| AWS WAF ($5 Web ACL + $2 mỗi quy tắc) | ~$7,00/tháng (chi từ AWS Credits) |
-| Lambda (< 1M request Free Tier) | $0,00/tháng |
-| EventBridge Scheduler (Free Tier) | $0,00/tháng |
+| **Amazon EC2 t2.micro** (Free Tier 750h/tháng + 20GB EBS) | $0,00/tháng |
+| **Amazon RDS db.t3.micro** (Free Tier 750h/tháng + 20GB SSD) | $0,00/tháng |
+| **Amazon S3 Standard** (< 5GB Free Tier + Presigned URLs) | $0,00/tháng |
+| **Amazon CloudFront** (1TB Free Tier Data Transfer) | ~$0,01/tháng |
+| **AWS WAF** ($5 Web ACL + $2 Managed Rule Sets) | ~$7,00/tháng *(Chi trả từ AWS Credits)* |
+| **AWS Lambda & EventBridge** (< 1M request Free Tier) | $0,00/tháng |
+| **Tổng chi trả thực tế túi cá nhân**: | **$0,00 / tháng** |
 
-**Tổng: ~$7/tháng** — Chi trả bằng AWS Credits
+#### Kịch bản 2: Chi phí thực tế Thương mại (KHÔNG có AWS Credits & KHÔNG có Free Tier)
+| Dịch vụ AWS | Cấu hình On-Demand | Chi phí ($/tháng) | Quy đổi (VNĐ/tháng) |
+|---|---|---|---|
+| **Amazon EC2** | `t3.micro` (730 giờ) + 20GB EBS gp3 SSD | **$10,07** | ~251.750 VNĐ |
+| **Amazon RDS** | MySQL `db.t3.micro` Single-AZ + 20GB gp3 | **$14,71** | ~367.750 VNĐ |
+| **AWS WAF** | 1 Web ACL ($5) + 2 Rule Sets ($2) + Traffic | **$7,60** | ~190.000 VNĐ |
+| **Amazon CloudFront** | CDN Data Transfer Out (10GB) + HTTPS requests | **$0,95** | ~23.750 VNĐ |
+| **Amazon S3** | Standard Storage (5GB) + PUT/GET Presigned URLs | **$0,19** | ~4.750 VNĐ |
+| **AWS Lambda & EventBridge** | `cgv-movie-crawler` cron job hàng tuần | **$0,20** | ~5.000 VNĐ |
+| **API AI Engine** | Google Gemini 2.5 Flash / Amazon Bedrock | **$1,00** | ~25.000 VNĐ |
+| **Tên miền & SSL** | Tên miền `phuckhanh.id.vn` + Let's Encrypt SSL | **$0,40** | ~10.000 VNĐ |
+| **TỔNG CHI PHÍ THỰC TẾ HÀNG THÁNG** | **Duy trì hệ thống Production 24/7** | **~$35,12 / tháng** | **~878.000 VNĐ / tháng** |
 
 ---
 

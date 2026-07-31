@@ -109,20 +109,31 @@ LifeSync AI Calendar solves this by:
 
 ---
 
-### 6. Budget Estimation
+### 6. Budget Estimation & Commercial Production Cost
 
-#### AWS Services (Monthly)
-| Service | Cost |
+#### Scenario 1: With AWS Credits & Free Tier (Actual Internship Period)
+| AWS Service | Cost (Free Tier / Credits) |
 |---|---|
-| EC2 t2.micro (Free Tier 750h/month) | $0.00/month |
-| RDS MySQL db.t2.micro (Free Tier) | $0.00/month |
-| S3 Standard (< 5GB Free Tier) | $0.00/month |
-| CloudFront (1TB Free Tier) | ~$0.01/month |
-| AWS WAF (Web ACL $5 + 2 rules $2) | ~$7.00/month (covered by AWS Credits) |
-| Lambda (< 1M requests Free Tier) | $0.00/month |
-| EventBridge Scheduler (Free Tier) | $0.00/month |
+| **Amazon EC2 t2.micro** (750h/mo Free Tier + 20GB EBS) | $0.00/month |
+| **Amazon RDS db.t3.micro** (750h/mo Free Tier + 20GB SSD) | $0.00/month |
+| **Amazon S3 Standard** (< 5GB Free Tier + Presigned URLs) | $0.00/month |
+| **Amazon CloudFront** (1TB Free Tier Data Transfer) | ~$0.01/month |
+| **AWS WAF** ($5 Web ACL + $2 Managed Rule Sets) | ~$7.00/month *(Covered by AWS Credits)* |
+| **AWS Lambda & EventBridge** (< 1M requests Free Tier) | $0.00/month |
+| **Actual Out-of-Pocket Expense**: | **$0.00 / month** |
 
-**Total: ~$7/month** — Covered by AWS Credits
+#### Scenario 2: Commercial Production Cost (WITHOUT AWS Credits & WITHOUT Free Tier)
+| AWS Service | On-Demand Configuration | Monthly Cost ($) | Monthly Cost (VND ~25k/$) |
+|---|---|---|---|
+| **Amazon EC2** | `t3.micro` (730 hrs) + 20GB EBS gp3 SSD | **$10.07** | ~251,750 VND |
+| **Amazon RDS** | MySQL `db.t3.micro` Single-AZ + 20GB gp3 | **$14.71** | ~367,750 VND |
+| **AWS WAF** | 1 Web ACL ($5) + 2 Rule Sets ($2) + Traffic | **$7.60** | ~190,000 VND |
+| **Amazon CloudFront** | CDN Data Transfer Out (10GB) + HTTPS requests | **$0.95** | ~23,750 VND |
+| **Amazon S3** | Standard Storage (5GB) + PUT/GET Presigned URLs | **$0.19** | ~4,750 VND |
+| **AWS Lambda & EventBridge** | `cgv-movie-crawler` weekly cron job | **$0.20** | ~5,000 VND |
+| **AI Engine API** | Google Gemini 2.5 Flash / Amazon Bedrock | **$1.00** | ~25,000 VND |
+| **Domain & SSL** | Custom Domain `phuckhanh.id.vn` + Let's Encrypt SSL | **$0.40** | ~10,000 VND |
+| **TOTAL ACTUAL MONTHLY COST** | **24/7 Production System Infrastructure** | **~$35.12 / month** | **~878,000 VND / month** |
 
 ---
 
