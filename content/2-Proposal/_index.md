@@ -46,27 +46,6 @@ LifeSync AI Calendar solves this by:
 
 ![AWS Cloud Architecture Diagram LifeSync AI Calendar](/images/architecture.png)
 
-```
-[Internet User]
-      │
-      ▼
-[Custom Domain: phuckhanh.id.vn (Mắt Bão DNS)]
-      │
-      ▼ (Let's Encrypt SSL/TLS 1.3)
-[Amazon CloudFront CDN] (Global Content Delivery Network)
-      │
-      ▼ (AWS WAF: LifeSync-WAF — Blocks SQLi, XSS, DDoS)
-[Nginx Reverse Proxy: Port 80/443]
-      │
-      ▼ (Proxy Pass → http://localhost:3000)
-[AWS EC2 t2.micro] (Ubuntu 24.04 LTS + PM2 + Next.js 16)
-      │
-      ├──► [Amazon RDS MySQL] (Relational Database — Users, Events, Chat)
-      ├──► [AWS Lambda + EventBridge] (Weekly CGV Cinema Crawler Scheduler)
-      ├──► [Google Gemini 2.5 Flash] (AI NLP Intent Parsing & Slot Filling)
-      └──► [Amazon S3 Bucket] (User Avatar Storage via Presigned URL)
-```
-
 #### AWS Services Used
 
 | Service | Role |

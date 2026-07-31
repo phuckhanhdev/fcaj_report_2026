@@ -46,27 +46,6 @@ LifeSync AI Calendar giải quyết vấn đề trên bằng cách:
 
 ![Sơ đồ Kiến trúc AWS LifeSync AI Calendar](/images/architecture.png)
 
-```
-[Người dùng Internet]
-      │
-      ▼
-[Tên miền tùy chỉnh: phuckhanh.id.vn (DNS Mắt Bão)]
-      │
-      ▼ (SSL/TLS 1.3 Let's Encrypt)
-[Amazon CloudFront CDN] (Mạng phân phối nội dung toàn cầu)
-      │
-      ▼ (AWS WAF: LifeSync-WAF — Chặn SQLi, XSS, DDoS)
-[Nginx Reverse Proxy: Port 80/443]
-      │
-      ▼ (Proxy Pass → http://localhost:3000)
-[AWS EC2 t2.micro] (Ubuntu 24.04 LTS + PM2 + Next.js 16)
-      │
-      ├──► [Amazon RDS MySQL] (CSDL quan hệ — Người dùng, Sự kiện, Chat)
-      ├──► [AWS Lambda + EventBridge] (Lịch cào phim CGV hàng tuần)
-      ├──► [Google Gemini 2.5 Flash] (AI NLP Phân tích ý định & Slot Filling)
-      └──► [Amazon S3 Bucket] (Lưu trữ ảnh đại diện qua Presigned URL)
-```
-
 #### Dịch vụ AWS sử dụng
 
 | Dịch vụ | Vai trò |
