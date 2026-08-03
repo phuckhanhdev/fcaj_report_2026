@@ -16,19 +16,8 @@ Workshop này tập trung vào việc cài đặt **các dịch vụ AWS**. Các
 
 #### Kiến trúc
 
-```
-[Người dùng Internet]
-      │
-      ▼
-[Amazon CloudFront CDN] ← [AWS WAF Bảo vệ]
-      │
-      ▼
-[AWS EC2 t2.micro — Next.js 16 + Nginx + PM2]
-      │
-      ├──► [Amazon RDS MySQL]
-      ├──► [Amazon S3 — Lưu trữ Avatar]
-      └──► [AWS Lambda + EventBridge — Cào phim CGV]
-```
+![AWS Cloud Architecture Diagram LifeSync AI Calendar](/images/architecture.png)
+
 
 #### Nội dung
 

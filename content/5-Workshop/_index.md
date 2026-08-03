@@ -16,19 +16,8 @@ This workshop focuses on setting up **AWS services only**. For other services (G
 
 #### Architecture
 
-```
-[Internet User]
-      │
-      ▼
-[Amazon CloudFront CDN] ← [AWS WAF Protection]
-      │
-      ▼
-[AWS EC2 t2.micro — Next.js 16 + Nginx + PM2]
-      │
-      ├──► [Amazon RDS MySQL]
-      ├──► [Amazon S3 — Avatar Storage]
-      └──► [AWS Lambda + EventBridge — CGV Crawler]
-```
+![AWS Cloud Architecture Diagram LifeSync AI Calendar](/images/architecture.png)
+
 
 #### Content
 
