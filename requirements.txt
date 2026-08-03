@@ -1,0 +1,10 @@
+# Python Dependencies for LifeSync Report Project
+# ----------------------------------------------------
+# To install Python package directly:
+#   pip install -r requirements.txt
+#
+# To install EVERYTHING needed to run the project (Hugo, Pandoc, LaTeX, Python):
+#   - macOS:   Run ./setup_mac.sh
+#   - Windows: Double-click setup_win.bat
+
+PyYAML>=6.0

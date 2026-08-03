@@ -1,0 +1,1264 @@
+Amazon Bedrock Agent Core, cho bạn nào chưa biết, thì đó là một dịch vụ để triển khai agent
+và build agent từ đầu và triển khai lên production cả một hệ thống, Agentive System
+Thì mình sẽ chia ra thành 3 ngày, nó có rất là nhiều chức năng ở trong đây
+Thì buổi đầu tiên mình sẽ nói về Ringtime, Gateway và Identity
+Sau khi mình nói về V-production một tí xíu
+Sau đó mình sẽ cố gắng nói phần lý thiết trong vòng 1-2 tiếng
+Tận 100 slides, nên mình sẽ cố gắng bó lại trong vòng 1-2 tiếng
+Tiếp đến mình sẽ có phần Hands-On App được host với bạn Hải Anh
+Và sẽ dẫn chúng ta đi qua những workshop để chúng ta có Hands-On Practice trực tiếp
+Bữa thứ hai mình sẽ nói về Agent thì nó sẽ có Memory, Obserability và những feature khác
+Và buổi thứ ba anh là về những use case thực tế và Best Practice
+Cả 3 buổi này thì đều có Hands-On trực tiếp
+Cho nên là mình sẽ chuyển đổi từ Theory sang Practice
+Thực hành ngay sau học lý thiết luôn
+Rồi, mình bắt đầu ha
+Đầu tiên về định nghĩa của Agentic AI
+Cho bạn nào chưa biết thì Agentic AI nó là một hệ thống phần mềm
+Một cách tự chủ
+Có thể reason, hiểu được con người muốn gì
+Plan ra những cái step
+Và sau đó là execute những cái task này từng bước một
+Và cái keyword ở đây á
+Nó là Autonomous
+Độ tự chủ của một con Agent
+Nó linh hoạt như thế nào
+Mình sẽ coi
+Nó sẽ đi từ Deterministic là một cái workflow
+Mình có thể tự điều chỉnh
+Một bạn thì phải lúc mơ điều chỉnh
+Hai là Fully Autonomous là nó hoàn toàn tự chủ
+Và nó tự liên kết
+Những con Agent nó liên kết nói chuyện với nhau
+Và trả về cho mình một cái response giết định
+Rồi, cho một con basic Agent
+Đầu tiên bộ não của nó luôn luôn là LOM
+LOM thì mình có những provider lớn ngoài kia
+Như là OpenAI
+Như là Alphabet
+Như là Google đúng không?
+Và sau đó mình sẽ kết nối với lại
+Một là database chính thức của doanh nghiệp
+Hai là mình build một cái knowledge base
+Để lấy được những thông tin private
+Thông tin nội bộ của công ty
+Và con Agent này nó sẽ liên kết được
+Để lấy được những cái feature khác
+Như là kết nối với lại những cái tool
+Như là bạn muốn cho nó
+Draft một cái email ở trên Google
+Thì mình sẽ
+Allowing cho nó kết nối tool với lại Gmail
+Ngoài ra nó có memory
+Nó có những cái goal
+Và cái phần lớn cái key á
+Cái mức độ khó á
+Là nằm ở observation
+Khi mà triển thay lên doanh nghiệp rồi á
+Thì làm sao để bẩn giữ được
+Cái mức độ duy trì ổn định
+Của con Agent
+Ở trên production
+Là một việc cực kỳ khó
+Và rất hiếm khi nào mà mình
+Được thực tế, được thực tham như vậy
+Cho nên cái đoạn này nó sẽ
+Buổi sau mình sẽ nói chi tiết hơn
+Ở ngày 2
+Ngày 2
+Rồi
+Như nãy mình có nói là
+Cái mức độ tự chủ của một con Agent
+Nó sẽ quyết định xem là
+Cái hệ thống Agent AI nó có tốt hay không
+Mình sẽ bắt đầu từ Simple Assistant
+Bạn hỏi một câu hỏi và nó trả lời ra câu trả lời
+Đó là cơ chế hoạt động của EOM
+Là Light Language Model
+Sẽ giữ quá
+Sau dựa trên production
+Đúng không?
+Đó
+Cho đến cái mức độ tự chủ cuối cùng
+Là Multi Agent System
+Nhiều con Agent
+Nó sẽ nói chuyện được với nhau
+Nó sẽ quyết định xem là
+Là nơi
+Sự reasoning này
+Xem bước kế tiếp là gì
+Plan ra những cái step
+Xong rồi chia những cái
+Chia những cái step đó cho những con Agent khác
+Từ basic
+Cho đến những cái long running job
+Ở background
+Xong rồi nó sẽ quyết định được
+Trả về kết quả như thế nào
+Ở đây thì có một cái key là
+Deterministic workflow
+Như ở đây mình có thể thấy là
+Mình không cần phải lúc nào cũng em
+Cho nó tự chủ một cách hoàn toàn
+Vì tự chủ hoàn toàn
+Là mình đưa 100% quyền cho AI quyết định
+Thì trong doanh nghiệp
+Không bao giờ sẽ làm như vậy cả
+Mình luôn luôn là nằm
+Ở mức độ tự chủ ở giữa
+Để admin vẫn có thể nhảy vào
+Hay còn gọi là human in the loop
+Thì cái Deterministic Agent này
+Nó là build một cái workflow
+Và ai sẽ là người chuyển cái workflow đó
+Đó là những người developer
+Những người AI engineer
+Mình sẽ setup ra một cái list
+Và Agent
+Nó sẽ đi qua
+Làm những cái task này
+Thêm một trình tự nhất định
+Cho mình
+Rồi
+Về protocol
+Hồi xưa á
+Nếu mà mình làm dev á
+Thì mình sẽ có cái protocol
+Là HTTP RIS API
+Đúng không
+Đó là cả một cái chuẩn
+Từ đó đến giờ
+Cho đến năm 2023
+Cho các app
+Để kết nối
+Để nói chuyện với nhau
+Và bây giờ
+Sau khi có AI ra đời
+Sau khi có Agent
+Thì mình sẽ có 2 protocol mới
+Gọi là MCB và A2A
+Thì MCB nó đơn giản
+Chỉ là một cái protocol
+Cho Agent
+Nói chuyện với lại các tool
+Còn A2A
+Như cái tên là Agent2Agent
+Để cho Agent
+Nói chuyện với Agent
+Mình hiểu đơn giản là vậy
+Rồi
+Rồi
+Để build được một con Agent
+Thì nếu như bạn nào
+Đã từng build Agent rồi
+Nó sẽ có
+Hồi trước á
+2024 á
+Thì thư viện nổi tiếng nhất là
+Landchain
+Build một con Agent bằng Landchain
+Và build cả một hệ thống
+Agent-based system bằng Landrat
+Thì bây giờ
+AWS
+Đã có
+Một cái bộ open source software
+SDK cho RIM mình
+Gọi là Sprint
+Được thiết kế
+Dành RIM cho AWS
+Để kết nối được
+Với những dịch vụ
+Trực tiếp
+Ở trên AWS Cloud
+Thì để làm sao
+Để initialize
+Một con Agent này
+Nó rất là đơn giản thôi
+Nó sẽ đóng gói lại
+Thành
+Một cái
+System button
+Gọi là
+Factory
+Design button Factory
+Thì
+Chỉ cần một vài dòng code
+Là bạn có thể initialize
+Một con Agent
+Một con Agent
+Nó có 3
+Yếu tố cơ bản
+Một cái đầu tiên
+Là bộ não
+Là model
+Mình phải setup xem là
+Nó dùng model gì
+Provider nào
+Ví dụ như là
+Claw Haiku 4.5
+Hay là Sonet 4.5 chẳng hạn
+Xong rồi
+Mình sẽ có
+System ROM
+Giống như là
+Mình đang cần
+Một người
+Senior Customer Service
+Cho một công ty e-commerce chẳng hạn
+Mình sẽ build
+Một cái System ROM
+Trong đó
+Và cái thứ 3 là
+Thứ 4 là những cái tool
+Internal
+Và external
+Ok
+Đấy là
+Về phần introduction
+Và bây giờ mình sẽ đi sâu hơn
+Về Amazon Bedrock
+Agent Call
+Thì sẽ cần model
+Làm sao mình
+Cái model này rất là quan trọng nha
+Làm sao mình biết được
+Cần model nào
+Ví dụ như về Gordy
+Mình sẽ có 4 family đúng không
+Haiku
+Suonet
+Overse
+Và gần đây nhất là Fable
+Làm sao mình biết
+Chọn model nào
+Và version bao nhiêu
+Đó là cả một câu hỏi lớn
+Tại vì chọn model nào
+Nó sẽ đụng đến cái phần reasoning
+Của model đó
+Cho những mình nào chưa biết
+Thì
+Những model lớn này
+Sẽ là
+Sẽ sử dụng cơ chế transformer
+Và
+Đó là
+Cái phần
+Cơ chế transformer
+Và
+Cái cơ chế
+Cơ chế
+Cơ chế
+Làm sao để
+Một token
+Nó có thể nhận ra được
+Những token xung quanh nó
+Gần với nó nhất
+Để nó trả về
+Cái token kế tiếp
+Cái token
+Cái token
+Cái token
+Cái token
+Làm sao để
+Một token
+Nó có thể nhận ra được
+Những token xung quanh nó
+Gần với nó nhất
+Để nó trả về
+Cái token
+Kế tiếp
+Với cái probability
+Hai nhất
+Cao nhất
+Đó là cả một vấn đề
+Như
+Claw
+Sonet
+Vì nó sẽ
+Tốt cho việc
+Những cái complex task
+Và tốt cho software engineering
+Còn
+Hai cuồng
+Là cho những cái model
+Mà mình cần nhanh
+Cần câu trả lời nhanh
+Và
+Câu hỏi nó
+Không quá có
+Còn
+Sonet
+Là nằm ở giữa
+Còn Obers
+Là tốt cho
+Software engineering
+Rồi
+Agent
+Thì nó sẽ cần một context
+Context
+Thì bao gồm những cái như là về ROM
+Về Knowledge Base
+Về những cái structure data
+Mà mình cung cấp cho nó
+Về memory
+Và
+Nó sẽ tag action
+Dựa trên những cái tool mà mình kết nối
+Rồi
+Rồi
+Thì
+Nếu như mà mình build from scratch á
+Build từ đầu á
+Build với land chain
+Mình sẽ không có môi trường
+Mình sẽ không tuân thủ theo những cái best practices và industry standards
+Thì may mắn thầy Amazon đã cho ra một cái dịch vụ gọi là Agent Core để quản lý tất cả mọi thứ này ở trên một cái môi trường gọi là Environment runtime
+Nó sẽ bao gồm hết tất cả những cái tính linh hình cho mình
+Vì vậy đó là lý do tại sao AWS triển khai cái này cho doanh nghiệp
+Tại vì nó tuân theo những cái best practices và nó sẽ giúp cho hệ thống của mình dễ dàng scale, dễ dàng đảm bảo được cái tính security
+Tại vì nó sẽ không có môi trường dễ dàng đảm bảo được cái tính linh hình cho mình
+Vì vậy đó là lý do tại sao AWS triển khai cái này cho doanh nghiệp
+Tại vì nó tuân theo những cái best practices và nó sẽ giúp cho hệ thống của mình dễ dàng scale, dễ dàng đảm bảo được cái tính security
+Để build một con agent từ đầu đến cuối, nó sẽ đi qua những cái bước từ group of concepts thiết kế agent trên giấy
+Và sau đó là triển khai thực tế ở trên production
+Thì nó sẽ có những cái rào cản sau đây như là performance, scalability, security và governance
+Thì Agent Core đã đóng gói hết tất cả những thứ đó
+Và bỏ lên cái service cho chúng ta
+Để mình có thể chỉ vào với một vài clip đơn giản thôi là mình có thể triển khai được con agent đó
+Đây là những dịch vụ ở trong Amazon Bedrock Agent Core
+Nó rất là nhiều thứ
+Và hôm nay mình sẽ đi sâu vào cái runtime environment
+Đến
+Đến identity
+Lớp bảo vệ
+Và gateway
+Rất là nhiều feature
+Và cái này thực tế nếu như mà mình không thực sự làm thật á
+Thì mình sẽ rất khó để mà biết hết được những feature này nó làm gì
+Và nó sử dụng như thế nào
+Cho nên là đó là lý do mình có cái phần hands on để cho mọi người thật sự là
+Và luyện tập ngay lập tức luôn
+Rồi đi sâu hơn
+Về cái phần runtime
+Runtime đầu tiên nó là
+Một cái environment
+Để chạy con agent ở trên đó
+Nó sẽ sử dụng cơ chế của serverless
+Serverless nghĩa là không có server
+Và vì vậy
+Nó sẽ
+Mình sẽ sử dụng cái pricing model là
+BASU goal
+Xài bao nhiêu chảy bao nhiêu
+Lượng request nào vào
+Có traffic nào vào
+Thì mình sẽ tinh phí cái phần đó
+Runtime environment
+Nó sẽ
+Bảo quản
+Những cái chức năng liên quan đến feature
+Để làm sao mình có thể deploy một con agent lên
+Và scale nó được
+Chạy nó một cách an toàn
+Và
+Và sử dụng cái tool liên quan
+Những cái feature xung quanh
+Nằm ở trong agent call
+Để
+Chức năng của Runtime
+Thì mình sẽ có
+Những cái sau đây
+Scale from real time to multi-hour workload
+Accelerate time to market
+Đi triển khai ra ngoài thị trường nhanh hơn
+Và secure workload
+Về security
+Để
+Để
+Một con agent
+Mình có thể view from track
+Đó là cái đầu tiên
+Sử dụng
+Framework
+Mình sẽ initialize
+Cách đầu tiên
+Cách đầu tiên
+Cách đầu tiên
+Cách đầu tiên
+Cách nhất
+Cách thứ hai
+Cách thứ hai
+Là ví dụ như
+Cách công ty
+Cách doanh nghiệp
+Họ đã view agent rồi
+Họ đã có sẵn
+Những cái môi trường
+Của con agent đó
+Họ đã tự view ở công ty
+Và làm sao muốn đưa lên agent call
+Thì mình sẽ có hai cách
+Một là sử dụng doanh nghiệp
+Mình sẽ sử dụng doanh nghiệp
+Về containerization
+Để đóng gói con agent này lại
+Hoặc là mình zip tất cả các file lại
+Để đến S3
+Xong rồi deploy lên trên
+Rình xanh
+Đây phần này mình có thể show trực tiếp
+Để đóng gói con agent này lại
+Hoặc là mình zip tất cả các file lại
+Và để đến S3
+Xong rồi deploy lên trên
+Rình xanh
+Đây phần này mình có thể show trực tiếp
+Để đóng gói con agent này lại
+Hoặc là mình zip tất cả các file lại
+Để đến S3
+Xong rồi deploy lên trên
+Rình xanh
+Đây phần này mình có thể show trực tiếp
+Đây là interface của cái agent core ha
+Ở bên trái các bạn thấy
+Có phần link thay
+Để đóng gói con agent này lại
+Hoặc là
+Mình zip tất cả các file lại
+Để đến S3
+Xong rồi deploy lên trên
+Rình xanh
+Đây phần này mình có thể show trực tiếp
+Đây là interface của cái agent core ha
+Ở bên trái các bạn thấy
+Có phần link thay
+Ở bên trái các bạn thấy
+Có phần link thay
+Và hướng dẫn cách sử dụng
+Link thay như thế nào ở đây
+Thì mình sẽ muốn tạo link thay
+Đây là mình sẽ thấy phần agent source
+Mình có thể upload được cả 2
+1 là S3
+2 là từ ECR
+Hoặc là mình có thể start from scratch
+Ở đây start from template
+Rồi mình sẽ config con agent này
+Bằng Google search
+Một con agent
+Nó sẽ cần 3 thứ
+Là setup cái model
+2 là system drop
+3 là sử dụng cái tool nào cần thiết
+Tool mình có thể setup trực tiếp
+Sử dụng phần source
+Software của Sprint
+2 là mình kết nối với
+Một cái tool khác bên ngoài
+Mà không cần
+Không cần
+Những cái lớp security nhất định
+Ví dụ như là search
+Mình sẽ có 1 cái tool gọi là
+Esa search
+Nó giống Google search
+Nhưng mà nó thiết kế trực tiếp cho AI
+Đó
+Rồi ở phía dưới là nó sẽ có những cái phần
+Như là permission in the bot
+Thì mình
+Tiếng nó sẽ nói thêm sau
+Rồi
+Rồi
+Khi mà mình đã deploy được con agent lên trên cái runtime environment rồi
+Thì nó có thể kết nối được với những dịch vụ nào khác nữa
+Đầu tiên là nó phải có memory
+Memory
+Memory
+Cho từng session
+Cho từng user
+Session là 1 cái chat session
+Hay là user session
+Và nó có short term và long term memory
+Này là buổi sau buổi tháng 2 mình sẽ nói
+Rồi nó sẽ kết nối được với cái lớp gọi là identity
+Identity
+Identity nghĩa là gì
+Là
+Quản trị về những cái authentication và authorization
+Ai được phép vào tool nào
+Kết nối được với agent
+Còn agent sẽ có thể kết nối được với những cái tool nào nữa
+Còn 1 cái lớp gateway
+Gateway này nó cũng là khá hay ha
+Gateway này nó là 1 cái định nghĩa mới ra khi mà
+Thế giới chạy theo Hornets Engineering
+Nghĩa là con agent này mình không cần phải biết
+Về những cái tool liên quan đến trong doanh nghiệp
+Như mình nói về ngân hàng đi
+Nó sẽ có những cái như là internal banking app
+Hoặc là những cái knowledge base ring của ngân hàng
+Hoặc là những dịch vụ mà ngân hàng đã kết nối với 1 bên thứ 3
+Đấy là những thứ bảo mật
+Cần tính bảo mật và tính privacy rất là cao
+Thì làm sao để cho phép được 1 con agent
+Kết nối được với những dịch vụ này
+Thì từ đó cái nhu cầu của gateway ra đời
+Đó là 1 cái lớp trần ở giữa
+Đó là 1 cái lớp middleware
+Để bảo quản tất cả những cái quyền ở trong đây
+Làm sao setup được authentication, authorization
+Set up được những cái policy của ngân hàng
+Tạo ra những cái code rail
+Mà để tăng cái tính bảo mật
+Mà để tăng cái tính bảo mật
+Đó
+Ngoài ra thì còn có những dịch vụ khác
+Đó là những cái tính bảo mật
+Đó là những cái tính bảo mật
+Đó là những cái tính bảo mật
+Đó là những cái tính bảo mật
+Đó là những cái tính bảo mật
+Đó là những cái tính bảo mật
+Cái này, endpoint và version
+Thì nó sẽ giống như cái
+Nó gọi là rollout strategy
+Cũng giống như trong software thôi
+Khi mà mình deploy 1 cái software lên production
+Mình không thể nào chỉ deploy lên là xong
+Mà mình phải có cái gọi là versioning
+Nghĩa là tạo 1 cái version mới cho cái production đó
+Để có thể dành rollback lại
+Và cái bảng hiện tại nó không tốt
+Đó thì trong mà deploy agent nó cũng vậy
+Khi mà tạo ra 1 con agent
+Mình sẽ có 1 cái endpoint
+Và endpoint này là
+Endpoint của AWS
+Nó là ARN
+Là resource name của ARN
+Thì khi mà tạo 1 con agent
+Là 1 cái endpoint khác
+Và khi mà mình update lên á
+Thì mình nên để những cái version
+Ở đằng sau
+Ví dụ như đây là bảng default nè
+Đây là bảng broad
+Hoặc là version 1, 2, 3
+Mục tiêu là để làm gì?
+Để rollback lại được
+Một là rollback lại được
+Hai là mình để test ra dường dường
+Như trong thực tế production chảy á
+Mình không deploy agent
+Và cho 100% người dùng
+Hoạt động liền
+Mà mình sẽ rollout ra 5%, 10%
+Rồi nếu như nó có 1 cái lỗi nào đó
+Thì mình sẽ quay lại
+Dễ dàng rollback lại
+Thì đây là những cái protocol
+Mà agent có thể kết nối được
+Ở trên agent current time
+Lầu tiên là HTTP
+API bình thường thôi
+Là 1 cái web app
+Hay là 1 cái mobile app nào đó
+Kết nối được với con agent
+Hai là HTTP
+Là agent nói chuyện được với tool
+Ba là agent to agent
+Và cái 4 này là cái đoạn mới này
+Là agent to user
+Cái agent to user này rất hay
+Về mặt real time text streaming
+Bạn nào muốn tìm hiểu sâu hơn
+Thì mình có thể xem nó nha
+Mình cứ tưởng tượng nó như là tạo ra 1 con agent
+Và có 1 cái chat interface
+Làm thế nào để mà nó liên tục
+Trả được kết quả
+Y như là link chat ut chẳng hạn
+Thì cái đoạn response time
+Cái đoạn occurrence time
+Nó luôn luôn là 1 câu hỏi lớn
+Cho các provider
+Làm sao để
+Tại vì user sẽ không kiên nhẫn
+Và làm thế nào để trả về câu trả lời
+Liên tục
+Và có ích nhất cho user
+Là 1 câu hỏi lớn
+Nó config không dễ chứ nào
+Rồi đây
+Thì khi mà mình deploy
+Con agent lên runtime
+Sử dụng docker image
+Thì mình phải tuân thủ theo
+Những cái best practices
+Như ở đây là
+Sẽ sử dụng method nào
+Và post nào
+Theo cái tiêu chuẩn của agent call runtime này
+Rồi
+Cái này đi sâu 1 chút
+Về công nghệ của agent call runtime
+Agent call runtime chạy trên 1
+Cái phần 1 của technology
+Gọi là FireWrecker MicroVM
+Nó là
+Chia những cái session nhỏ
+Ở trong đó
+Ra
+Từng cái virtual machine khác nhau
+Cần MicroVM
+Và những con chip MicroVM này
+Nó sẽ có computer ring
+Nó sẽ có hardware resource ring
+Nó sẽ có memory ring
+Và file system ring
+Cho nên những cái session
+Nó sẽ được
+Tách ra hoàn toàn
+Completely isolated này
+Và nó không đụng đến những session khác
+Session ở đây là user session
+Một con agent của bạn này
+Thì không
+Dính dưới gì đến
+Con agent của bạn khác
+Để không có data link ra ngoài
+Nó công nghệ này rất là hay
+Bạn nào muốn tìm hiểu sâu hơn
+Mình có thể xem
+Nó công nghệ này rất là hay
+Bạn nào muốn tìm hiểu sâu hơn
+Mình có thể xem
+Anh như này
+Rồi
+Như hồi nãy mình có nói về cái phần
+Response Time với là Inference Time
+Là cách nào để agent có thể trả về câu chí lay nhanh nhất cho user
+Để họ không bỏ đi
+Thì agent call được thiết kế dựa trên async và long running job
+Nghĩa là khi mà bạn có một cái task rất là phức tạp
+Như là Collect market Etat
+Analyze financial logic
+Rất là phức tạp
+Thì làm sao để một con agent đó chia lại những con agent khác
+Làm việc một cách độc lập với nhau và đưa lại kết quả
+Dạ
+Thì trong
+Nãy mình quên nói là
+Trong Agentive AI
+Agentive System
+Nó có thể có một con agent
+Hoặc là có thể nhiều con agent hoạt động động lập với nhau
+Hoạt động cùng với nhau hoặc là động lập với nhau
+Thì những con agent nào mà biết
+Mà biết về phần trả lời để đưa về cho user nhanh nhất
+Thì nó sẽ làm trước
+Còn nếu như những cái task là phức tạp
+Như là search ngoài web
+Như là search thị trường
+Thì nó sẽ đẩy cho
+Synchronous agent
+Đưa về những cái background đằng sau chạy
+Chạy xong rồi
+Nó sẽ trả về dừng dừng
+Và làm sao để setup cái này
+Là trong code
+Code thì tỉnh để mình đụng đến hands on app
+Thì mình sẽ làm trực tiếp hơn
+Đây là bi-directional streaming
+Là agent current time
+Cũng được thiết kế để
+Để nhận
+Nhận stream 2 chiều
+Cả cho tất cả những cái multimodal
+Ví dụ như audio và text
+Khi mà mình nó có chế độ voice mode
+Nên chat UT
+Thì có chế độ voice mode
+Là khi mình nói tất cả vào
+Nó đẩy sang event ở backend
+Rồi xong nó sẽ trả ngược lại câu trả lời
+Thì nó quyết định ở đây rất lớn
+Nằm ở việc bạn sử dụng model nào
+Với mục đích như thế nào
+Như Amazon cũng là một bên open provider
+Để mà cho phép sử dụng những cái LOM của họ
+Dưới đây là Novasonic
+Thì nó sẽ có chức năng là speech to speech
+Hoặc là Google live API
+Là về vision và voice
+Biệt lựa chọn model
+Nó rất là quan trọng
+Nếu như các bạn mà chọn một model sai
+Mình đang muốn speech to speech
+Nhưng mình chọn một cái không liên quan như vision và voice
+Thì tất nhiên nó sẽ không làm cái nhiệm vụ đó tốt cho các bạn
+Và để làm sao chọn được cái model tốt á
+Nó sẽ trải qua nhiều khâu khác nhau
+Nhiều khâu khác nhau
+Đầu tiên là đọc, đọc là tất nhiên rồi
+Cái thứ hai là bạn phải test rất là nhiều
+Nhưng mình có làm một cái app về product của mình
+Thì mình phải test
+Chắc là phải đến cả 1-2 tháng
+Để ra được cái response tốt nhất
+Rồi thì về phần này nó sẽ là
+Là rune tab
+Nó hoạt động với lại những service khác
+Những cái feature khác như thế nào
+Như ở đây thì mình thấy là kết nối
+Lúc nãy mình có nói là kết nối với lại những feature khác
+Trong Agent Core đúng không
+Thì mình sẽ nói lại cái phần này một tí đi sâu hơn
+Là ở đây rune tab sẽ kết nối với lại identity
+Identity cũng là một feature khác ở trong Agent Core
+Và mình setup đại kháng mình cứ hiểu là mình có thể setup ở trong code
+Ở trong code nó có một cái file là config về rune tab này
+Mình sẽ setup thêm một cái attribute
+Là custom JSON với token
+Xong rồi mình sẽ đi những cái
+Green Actual này vào
+Mình sẽ tìm ra một số đều nào
+Rồi khi mà mình invoke cái runtime này á
+Mình phải bỏ cái thuốc hình đó vào
+Để cho Agent biết được là
+Ai là người
+Ai là người invoke cái Agent này và họ có quyền hay không
+Thì nó nằm
+Identity nó là nằm cho việc authentication và authorization
+Thì tí mình sẽ nói sâu hơn
+Rồi resource based policy
+Nó sẽ giống như IAM role policy
+Mình setup policy cho con Agent
+Nó sẽ có vài thứ cơ bản thôi
+Là đầu tiên là
+Effect
+Allow hay Deny
+Và action là gì
+Và kết nối được với resource now
+Thì nếu bạn nào đã làm với lại
+IAM rồi
+Thì các bạn sẽ dễ hiểu hơn
+IAM role, IAM user, IAM group
+Đây là Agent current time kết nối với lại VPC
+Giải dụ như mình có hai cái VPC khác nhau
+Về cái VPC này
+Thì nó cũng là một dịch vụ khác của AWS
+Cho bạn nào chưa biết
+Mình sẽ chia theo subnet
+À sao cái này để sau đi
+Coi như là hai cái môi trường khác nhau
+Mà để
+Rinsam có thể kết nối được với customer app
+Ở hai môi trường khác nhau
+Thì mình sẽ dùng một dịch vụ khác gọi là
+AWS private link
+Cái cổng kết nối này
+Nó đảm bảo an toàn
+Nó đảm bảo private
+Chứ mình không thể bật một cái SSS tunnel
+Để cho mọi người được đồ được
+Thì nó sẽ không tuân theo cái best practice
+Thì mình sẽ có ba cái characteristic khác nhau
+Một là public hoàn toàn
+Có nghĩa là Agent
+Ai kết nối được với Agent sẽ là public
+Và Agent đi ra các tool nào cũng sẽ là public
+Và cái thứ hai là
+Nó nằm ở giữa
+Là cái cổng vào
+Ai kết nối với Agent
+Mình sẽ public
+Nhưng mà mình sẽ private
+Từ Agent đi ra những cái tool
+Đi ra những cái downstream API khác
+Và cái thứ ba là private hoàn toàn
+Thì cái lý do tại sao
+Mình phải setup những cái lớp bảo vệ này
+Là các bạn cứ tưởng tượng
+Không phải chỉ có một mình mình kết nối với Agent
+Mà có những người xấu khác như là hacker
+Họ muốn prompt injection vào Agent
+Thì nếu như mình để public
+Tất cả mọi người đều có thể prompt thoải mái vào đó
+Nó sẽ không tốt
+Và ví dụ như Agent kết nối với các tool đi
+Tool của bên thứ ba
+Tool ngân hàng
+Tool lộ bộ
+Thì họ lấy những cái data đấy
+Và nếu như không có một lớp guardrail bảo vệ nào ở giữa
+Thì nó sẽ trả hết data hơn về
+Thì nó không tốt chứ nào
+Phần này là về pricing
+Pricing thì nó có vậy chính là
+Agent Core sẽ sử dụng serverless
+Nghĩa là tiết kiệm chi phí rất là nhiều
+Và sử dụng cơ chế Payless Ugo
+Sao bao nhiêu
+Trả bấy nhiêu
+Và khi có request
+Khi có chapter đến
+Thì mới tính phí
+Ở đây mình có một cái bản phí đơn giản của AWS
+Với lại
+World Cloud
+Thì AWS rẻ hơn
+Cho nên là các bạn hãy dùng AWS đi
+Đại khái là vậy
+Lên tham gia xin cách chi cố xin thế nào
+Ok
+Mình chắc là mình sẽ dừng ở đây 5 phút để xem các bạn có câu hỏi nào không
+Mình vừa đi qua Agent Core Run Sam
+Và tiếp đến sẽ là về phần identity và phần gateway
+Thì với những bài đầu mới á
+Thì cái lượng ký thức này nó lớn
+Và mình có thể bị overwhelm ở ngay ban đầu
+Nên nếu mà không thực sự hiểu
+Thì đi phần sau dụng như D2, D3 á
+Nó sẽ rất khó
+Nó sẽ rất khó
+Vâng ạ
+Thì có bạn nào có câu hỏi nào không?
+D2, D3 có đem vô không?
+D2, D3 là mốt anh gửi
+Rồi sau đó mình bỏ vô luôn
+Thì mình ghép vô á
+Mấy phong D2, D3, D4, D5 là như anh làm
+Rồi sau đó mốt anh gửi rồi mình ghép vô thôi
+Hình chí còn ghép vô mình làm vô
+Đây như mình thấy là ở trên Amazon
+Trong môi trường nó có rất nhiều feature khác nhau
+Cái lúc này là về phần runtime
+Về gateway, về thiết kế memory cho doanh nghiệp
+Và về identity
+Boredacy mình sẽ sử dụng rất nhiều trong doanh nghiệp
+Và hôm đó họ nói về những cái Godrail
+Và observability cho doanh nghiệp rất nhiều
+Thì cái Hornets này cũng là một cái feature mới
+Nó được ra đời để mà phục vụ cái việc
+Một con agent không cần biết những cái môi trường ngoài kia
+Nó là gì
+Mình không cần phải setup thực tế memory cho agent
+Hoặc là setup tất cả những thứ liên quan đến agent
+Mà mình chỉ cần 3 thứ đơn giản
+System ROM
+Sử dụng bộ đảo model nào
+Và tool
+Kết nối với những cái tool nào
+Thì khi mà tạo một cái agent dựa trên Hornets
+Mình sẽ kết nối với một cái cổng gọi là gateway
+Và cái cổng này nó sẽ là một cái lớp middleware
+Để quản trị tất cả những cái tool mà agent có thể kết nối được vào
+Đó
+Đây là cách mà tầm 1 năm trở lại đây thì mình thấy mọi người sử dụng nhiều
+Các bạn nào có câu hỏi nào không?
+Nếu không thì mình sẽ đi tiếp về phần identity và gateway ha
+Thì identity nó là một dịch vụ để quản trị những cái authentication và authorization
+Nó sẽ trả lời những câu hỏi như là ai được phép kết nối với con agent của tôi
+Người đó có quyền hay không?
+Xong rồi con agent này làm sao để kết nối được với những cái tool đó
+Thì đây là 2 lớp bảo vệ khác nhau
+Và identity sẽ cung cấp những cái dịch vụ đó là Godrail ở bên bên trái gọi là
+Gọi là Ingress authentication hoặc là Inbound authentication
+Và Godrail ở bên phải là Outbound OS
+Rồi mình sẽ có 5 bước như thế này
+Khi mà user request đến agent
+Họ sẽ phải issue 1 cái credential thích định
+Gọi là thường sử sử dụng là JSON Web Token
+Thì bạn nào chưa biết về JSON Web Token nó là 1 cái chuẩn
+Token đã được sử dụng rất lâu rồi
+Nếu mà bạn nào sử dụng client nói chuyện với lại server
+Mình có 2 cái này
+Đại khái JWT thì mình bao gồm 3 thứ thôi
+Header, payload và signature
+Rồi sau khi mà user gọi cửa đến agent
+Đưa cho nó cái token
+Thì agent sẽ làm gì
+Agent sẽ xem xem đây là người nào
+Và nó sẽ chuyển đổi sang 1 cái what
+Thì what là gì
+Là workload access token
+Nó sẽ chuyển đổi cái token của user sang 1 cái token khác
+Nó bao gồm lại 2 thứ
+Là token của agent
+Và token của user gần chung và lại với nhau
+Và nó tạo ra 1 cái token khác
+Tại sao nó lại làm cái việc đó
+Tại vì mình không thể nào lộ
+JSON Web Token của user được
+Và nó không tuân thủ đến best practice
+Cho nên AWS mới thiết kế ra 1 cái what token này
+Rồi khi mà tạo ra được 1 cái token ở giữa rồi
+Đó rồi
+Mình sẽ đi đến bước kế tiếp
+Là sẽ
+Agent sẽ kết nối với lại
+Ở bên Ava Oath bên kia
+Để mình chuyển đổi qua thêm 1 lớp nữa
+Là về Credential
+Cái Credential của những cái tool này nè
+Nếu mà bạn nào đã thường làm
+Với lại những cái big tech á
+Facebook hoặc là Google
+Rồi là Agoda rồi Spotify
+Các thứ
+Thì mình sẽ tạo 1 cái gọi là Oath token
+Để mà nó bao gồm app ID nè
+App token nè
+Rồi sau đó
+Khi mà trao đổi với nhau
+Nó sẽ trả về cái access token
+Thì
+Đại khái như
+Những cái Credential của các tool
+Mình không thể nào lộ ra cho agent được
+Cho nên đó là lý do tại sao
+Các bạn thấy
+Đi qua cả 3 quá trình
+Nó đều đổi sang những cái token khác
+Để đảm bảo cơ chế security
+Thì khi mà đổi cái Watt token này
+Cho cái Credential bên đây rồi
+Thì nó sẽ store lại 1 cái gọi là token vault
+Được manage trực tiếp
+Ở trên agent coin luôn
+Và nếu mà thành công
+Thì mình sẽ đi vào
+Cộng ở đây
+Và kết nối được các tool
+Rồi sau đó là trả về kết quả
+Trả về kết quả cho user
+Thì
+AWS có 1 cái dịch vụ gọi là Cognito
+Cho phép các bạn tạo user
+Và làm size in size up ngay trực tiếp
+Ở trên AWS luôn
+Mình không phải thiết kế cả 1 cái luôn đó là tự động
+Thì nếu như mình sử dụng 1 dịch vụ của Cognito
+Thì mình sẽ có
+Issue hẳn cái JSON Web token ở ngay lúc này
+Và mình không phải làm tay
+Không phải start from scratch
+Thì những dịch vụ
+Nếu như mình sử dụng cả 1 bộ dịch vụ của AWS
+Thì tất nhiên nó sẽ
+Liên kết với nhau 1 cách chặt chẽ hơn
+Và nó communicate tốt hơn
+Là mình tự thiết kế ban đầu
+Và kết nối với agent
+Bằng cái JSON Web token của chính mình
+Rồi thì
+Đây là 2 cái error code thôi
+401 và 403
+Nếu như mà không được quyền chấp nhận
+Thì nó sẽ trả với error code
+Còn nếu như success
+Thì sẽ đi vào cái cổng ban đầu
+Đó là cái bức tranh tổng quát
+Về cái lock identity ở giữa
+Inbound auth
+Và out auth
+Được quản lý trực tiếp
+Ở trên agent call
+Ở đây mình sẽ có 1 vài cách authentication theo chuẩn
+Thông thường mình dễ thấy
+Đầu tiên là login
+Signsf bình thường
+Đăng nhập bằng username
+Rồi password
+Xong rồi mình sẽ trao đổi token với nhau
+Cái thứ 2
+Là cơ chế thường sử dụng hơn là OOS
+Mình là OOS 2 chân
+Có nghĩa là version 1
+Thì khi mà
+Khi mà
+Trao đổi cái
+App ID
+Với lại app token
+App diễn kết với lại server
+Thì server nó sẽ trái ngược lại cái access token
+Để cho bạn đăng nhập vào
+Và cái thứ 3 là OOS 2
+Là cơ chế Bidgin
+Thì mình sẽ thường thấy sử dụng nhiều nhất
+Ở single sign on á
+Là khi bạn đăng nhập vô 1 cái app
+Với thứ 3 như là aboda
+Thì mình không cần phải tạo tài khoản lợi
+Mà mình đăng nhập qua Google
+Qua Facebook chẳng hạn
+Đó thì 3 cách này là 3 cách phổ biến nhất
+Khi mà dùng authentication
+Đó thì tóm gọn lại
+Identity nó sẽ có
+Làm những chức năng như thế này
+Là workload identity
+Tạo cái Watt token
+Rồi credential
+Tạo ra những cái credential
+Cho 2 bên
+Để trao đổi với nhau
+Rồi
+Thứ 3 là token pool
+Sẽ lưu trữ những cái
+Token này lại
+Ở 1 cái increase restore
+Để không lỡ ra ngoài
+Và cái thứ 3 là về performance
+Worker logic
+Thì cái này là cái slide lúc nãy
+Làm thế nào để agent code
+Rental kết nối được với identity
+Nó sẽ nằm ở trong code
+Và code mình còn phích như thế này
+Những cái discovery URL
+Và cái allowed client ID này
+Nếu như bạn nào sử dụng
+AWS Conditor
+Là cùng chung 1 bộ
+1 bộ service
+Thì nó sẽ dễ dàng
+Để tìm thấy những cái này kết nối hơn
+Còn nếu mà không
+Không mà mình tự
+Build contract
+Hoặc là build
+Của 1 bộ thứ 3
+Thì mình phải cơ thích cái này
+Hơi nhằm 1 tí
+Rồi
+Thì về phần identity
+Nó sẽ nằm ở đây
+Identity này nhìn trên 1 cái lớp
+Astract
+Thì mình không phải chỉ có từ agent
+Agent kết nối được với
+Với những agent kết
+Mà mình có thể kết nối được với
+External resource
+Của bên thứ 3
+Hay cái thứ 2
+Là kết nối với lại 1 cái cổng gateway
+Là cái lớp quản trị ở giữa
+Thì gateway này mình sẽ nói 1 tí nữa
+Rồi
+Identity
+Mình sẽ tạo cái
+Alba host ở đây
+Mình có thể thấy là
+Mình có nhiều cách
+Co-host hoặc là API key
+Là 2 cái phần biến nhất
+Và cái payment host là
+Cái payment host là
+Cái chuẩn mới
+Khi mà cho
+Sử dụng cái dịch vụ thăng toán bên thứ 3
+Đó là Alba host
+Mình setup Alba host
+Mình tạo cái key thôi
+Rồi mình setup ở trong code
+Còn cái Inbound host
+Nó sẽ setup ở đâu
+Là nằm ở trong runtime
+Runtime
+Lúc nãy
+Sau khi mà setup xong agent rồi này
+Là xuống dưới đây
+Mình sẽ có phần Inbound host
+Inbound host thì thường
+Nếu mà cho mình sử dụng
+Cùng dịch vụ Adiples
+Thì sẽ sử dụng IAM permission được
+Hoặc không thì là
+Chia sâu quấy token
+Đó
+Đó
+Đó là
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas
+Hãy subscribe cho kênh lalas

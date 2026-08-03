@@ -10,6 +10,10 @@ pre: " <b> 5.8. </b> "
 
 Phần này hướng dẫn cài đặt các dịch vụ ngoài AWS cần thiết để LifeSync AI Calendar hoạt động trên production. Các dịch vụ này phối hợp với hạ tầng AWS đã cài đặt ở các phần trước.
 
+> [!NOTE]
+> **Lý do thực tế chọn kết hợp dịch vụ bên thứ 3:**
+> Trong quá trình triển khai, thẻ thanh toán Visa liên kết với tài khoản AWS gặp sự cố/trục trặc thanh toán dẫn đến việc hạn chế tạm thời một số dịch vụ và hạn mức (ví dụ: truy cập Amazon Bedrock, mua tên miền trên Route 53 hay mở hạn mức Amazon SES). Do đó, dự án đã linh hoạt tích hợp các dịch vụ bên thứ ba uy tín (Google Gemini 2.5 Flash, Mắt Bão, Let's Encrypt, Google SMTP) làm giải pháp thay thế/dự phòng nhằm đảm bảo ứng dụng vận hành mượt mà, liên tục 24/7 mà không bị gián đoạn.
+
 ---
 
 ## 1. Tên miền tùy chỉnh với Mắt Bão

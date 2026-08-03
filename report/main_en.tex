@@ -1,0 +1,237 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T5]{fontenc}
+\usepackage{vntex}
+\usepackage{textcomp}
+\usepackage{a4wide,amssymb,epsfig,latexsym,array,hhline,fancyhdr}
+\usepackage[normalem]{ulem}
+
+\usepackage[makeroom]{cancel}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{multicol,longtable,amscd}
+\usepackage{diagbox}
+\usepackage{booktabs}
+\usepackage{alltt}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{caption,subcaption}
+
+\usepackage{lastpage}
+\usepackage{enumerate}
+\usepackage{color}
+\usepackage{graphicx}
+\let\oldincludegraphics\includegraphics
+\renewcommand{\includegraphics}[2][]{%
+  \oldincludegraphics[width=\textwidth,keepaspectratio,#1]{#2}%
+}
+\usepackage{pdfpages}
+\usepackage{float}
+\usepackage{array}
+\usepackage{tabularx, caption}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{rotating}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{epsfig}
+\usepackage{tikz}
+\usepackage{url}
+
+\usetikzlibrary{arrows,snakes,backgrounds,calc}
+\usepackage[unicode]{hyperref}
+\hypersetup{urlcolor=blue,linkcolor=black,citecolor=black,colorlinks=true}
+\usepackage{listings}
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}
+  \setlength{\parskip}{0pt}
+}
+
+\providecommand{\passthrough}[1]{#1}
+\providecommand{\pandocbounded}[1]{#1}
+\IfFileExists{grffile.sty}{\usepackage{grffile}}{}
+
+\graphicspath{{../static/images/}}
+
+\def\thesislayout{
+	\geometry{
+		a4paper,
+		total={160mm,240mm},
+		left=30mm,
+		top=30mm,
+	}
+}
+\thesislayout
+
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0.0,0.5,0.0}
+\definecolor{codeblue}{rgb}{0.0,0.2,0.7}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+
+\lstset{
+    basicstyle=\footnotesize\ttfamily,
+    breaklines=true,
+    breakatwhitespace=false,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny\color{codegray},
+    stepnumber=1,
+    numbersep=5pt,
+    keywordstyle=\color{codeblue}\bfseries,
+    commentstyle=\color{codegreen}\itshape,
+    stringstyle=\color{codepurple},
+    showspaces=false,
+    showstringspaces=false,
+    captionpos=b,
+    extendedchars=false,
+    inputencoding=utf8,
+}
+
+
+\setlength{\headheight}{40pt}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{
+ \begin{tabular}{rl}
+    \begin{picture}(25,15)(0,0)
+    \put(0,-8){\includegraphics[width=10mm, height=10mm]{Images/hcmut.png}}
+   \end{picture}&
+	\begin{tabular}{l}
+		\textbf{  Ho Chi Minh City University of Technology -- VNU-HCM}\\
+		\textbf{  Faculty of Computer Science \& Engineering}
+	\end{tabular}
+ \end{tabular}
+}
+\fancyhead[R]{
+	\begin{tabular}{l}
+		\tiny \bf \\
+		\tiny \bf
+	\end{tabular}}
+\fancyfoot{}
+\fancyfoot[L]{\scriptsize  Internship Report (CO3335)}
+%\fancyfoot[R]{\scriptsize  Page {\thepage}/\pageref{LastPage}} //PAGE
+\fancyfoot[R]{}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0.3pt}
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{3}
+\makeatletter
+\newcounter{subsubsubsection}[subsubsection]
+\renewcommand\thesubsubsubsection{\thesubsubsection .\@alph\c@subsubsubsection}
+\newcommand\subsubsubsection{\@startsection{subsubsubsection}{4}{\z@}%
+                                     {-3.25ex\@plus -1ex \@minus -.2ex}%
+                                     {1.5ex \@plus .2ex}%
+                                     {\normalfont\normalsize\bfseries}}
+\newcommand*\l@subsubsubsection{\@dottedtocline{3}{10.0em}{4.1em}}
+\newcommand*{\subsubsubsectionmark}[1]{}
+\makeatother
+
+\everymath{\color{black}}
+\sloppy
+\captionsetup[figure]{labelfont={small,bf},textfont={small,it},belowskip=-1pt,aboveskip=-9pt}
+\captionsetup[table]{labelfont={small,bf},textfont={small,it},belowskip=-1pt,aboveskip=7pt}
+\setlength{\floatsep}{5pt plus 2pt minus 2pt}
+\setlength{\textfloatsep}{5pt plus 2pt minus 2pt}
+\setlength{\intextsep}{10pt plus 2pt minus 2pt}
+
+\thesislayout
+
+\begin{document}
+
+\begin{titlepage}
+\begin{tikzpicture}[remember picture, overlay]
+  \draw[line width = 4pt] ($(current page.north west) + (0.4in,-0.5in)$) rectangle ($(current page.south east) + (-0.4in,0.5in)$);
+  \draw[line width=1.5pt]
+    ($ (current page.north west) + (0.45in,-0.55in) $)
+    rectangle
+    ($ (current page.south east) + (-0.45in,0.55in) $);
+\end{tikzpicture}
+
+\begin{center}
+\Large \textbf{VIETNAM NATIONAL UNIVERSITY HO CHI MINH CITY} \\
+\vspace{0.2cm}
+\Large \textbf{HO CHI MINH CITY UNIVERSITY OF TECHNOLOGY} \\
+\vspace{0.2cm}
+\Large \textbf{FACULTY OF COMPUTER SCIENCE AND ENGINEERING}
+\end{center}
+
+\vspace{0.3cm}
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=4cm]{Images/hcmut.png}
+\end{center}
+\end{figure}
+
+\begin{center}
+\begin{tabular}{c}
+\multicolumn{1}{c}{\textbf{{\LARGE INTERNSHIP REPORT}}}\\
+\\{\textbf{{\Large COURSE CODE: CO3335}}}
+\\
+\\
+\textbf{\Large SEMESTER 253, ACADEMIC YEAR 2025--2026} \\
+\end{tabular}
+\end{center}
+\vspace{0.5cm}
+\begin{itemize}
+\renewcommand\labelitemi{--}
+    \item \Large \textbf{MAJOR: Computer Science}
+    \item \Large \textbf{TRAINING PROGRAM: High-Quality Program}
+\end{itemize}
+\vspace{0.7cm}
+\begin{itemize}
+\renewcommand\labelitemi{--}
+    \item \Large \textbf{COMPANY / INTERNSHIP UNIT:}
+    \\ \Large \textbf{Amazon Web Services Vietnam Co., Ltd.}
+    \item \Large \textbf{DIRECT SUPERVISOR AT THE COMPANY:}
+    \\ \Large \textbf{Lữ Hoàn Thiện}
+    \item \Large \textbf{FACULTY SUPERVISOR / GRADER:}
+    \\ \Large \textbf{Dr. Vũ Ngọc Tú}
+    \item \Large \textbf{STUDENT:}
+    \\ \Large \textbf{FULL NAME: Phạm Võ Tiến Kha} \textbf{STUDENT ID: 2352461}
+\end{itemize}
+\vspace{0.5cm}
+\begin{center}
+{\Large Ho Chi Minh City, August 2026}
+\end{center}
+\end{titlepage}
+
+\newpage
+\tableofcontents
+\newpage
+
+\input{ChuongTrinhThucTap_en}
+\input{KetQuaXetTuyen_en}
+\input{generated/content_body_en}
+
+\newpage
+\section{Summary}
+
+\subsection{Key Technical Skills \& Knowledge Acquired}
+Throughout the 8-week internship at \textbf{Amazon Web Services Vietnam Co., Ltd.} under the \textbf{First Cloud AI Journey 2026 (FCAJ)} program, the student acquired extensive hands-on experience and industry-standard skills:
+\begin{itemize}
+    \item \textbf{Cloud Infrastructure \& DevOps}: Provisioning, operating, and managing \textbf{Amazon EC2} Ubuntu 24.04 LTS servers, Elastic IP binding, Nginx Reverse Proxy, Gzip compression, Swap memory, PM2 process management, relational database management on \textbf{Amazon RDS MySQL}, and CI/CD pipelines via \textbf{GitHub Actions}.
+    \item \textbf{Security \& Global Distribution}: Deploying \textbf{Amazon CloudFront} CDN paired with \textbf{AWS WAF} (mitigating OWASP Top 10 vulnerabilities and SQL Injection), and secure direct uploads via \textbf{Amazon S3 Presigned URLs}.
+    \item \textbf{Serverless \& Automation}: Developing \textbf{AWS Lambda} functions combined with \textbf{Amazon EventBridge Scheduler} for automated weekly CGV cinema data crawling.
+    \item \textbf{Artificial Intelligence (AI Engine)}: Designing a resilient \textbf{Dual-AI Engine} architecture integrating \textbf{Google Gemini 2.5 Flash} and \textbf{Amazon Bedrock}.
+\end{itemize}
+
+\subsection{Personal Reflections on the Company \& Program}
+\begin{itemize}
+    \item \textbf{Work Environment}: The corporate culture at AWS Vietnam is exceptionally open, professional, and fosters a strong Root Cause Analysis mindset.
+    \item \textbf{Mentor Guidance}: The direct industry supervisor provided invaluable guidance, architecture review, and continuous support to empower student learning.
+    \item \textbf{Practical Value}: The internship bridged the gap between academic theories and enterprise reality, enabling the student to deploy a full-stack product into production (\url{https://phuckhanh.id.vn}).
+\end{itemize}
+
+\subsection{Future Improvement \& Career Development Goals}
+\begin{itemize}
+    \item Deepen knowledge in Cloud Security and enforce IAM Least-Privilege access principles.
+    \item Expand Infrastructure-as-Code (AWS CDK / Terraform) adoption to automate disaster recovery workflows.
+    \item Pursue a professional career path as a Cloud Architect / DevOps Engineer.
+\end{itemize}
+\clearpage
+
+\input{TongKet_en}
+\end{document}

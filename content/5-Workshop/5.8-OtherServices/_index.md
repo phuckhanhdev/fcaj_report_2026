@@ -10,6 +10,10 @@ pre: " <b> 5.8. </b> "
 
 This section covers the setup of non-AWS services that are required for LifeSync AI Calendar to function in production. These services work alongside the AWS infrastructure set up in previous sections.
 
+> [!NOTE]
+> **Practical Rationale for 3rd-Party Service Integration:**
+> During deployment, payment processing issues with the linked Visa card on the AWS account caused temporary restrictions on certain AWS services and quotas (such as Amazon Bedrock API access, Route 53 domain registration, or Amazon SES Sandbox limits). To overcome these constraints, the project adopted a flexible architecture incorporating reliable third-party services (Google Gemini 2.5 Flash, Mắt Bão domain registrar, Let's Encrypt SSL, Google SMTP) as primary/fallback alternatives, ensuring high availability and seamless 24/7 system operation.
+
 ---
 
 ## 1. Custom Domain with Mắt Bão (Vietnamese Domain Provider)

@@ -1,0 +1,18 @@
+\section{Admission Results}
+
+% \thispagestyle{empty}
+
+\IfFileExists{form/formD3.pdf}{
+  \includepdf[pages=-,pagecommand={\thispagestyle{empty}}]{form/formD3.pdf}
+}{
+  \begin{center}
+  \vspace*{2cm}
+  \textit{Attach form D3 here}
+  \end{center}
+}
+
+
+\thispagestyle{fancy}
+\setcounter{page}{\thepage}
+
+\endinput

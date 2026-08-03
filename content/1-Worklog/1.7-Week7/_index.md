@@ -1,24 +1,28 @@
 ---
-title: "Week 7 Worklog"
-date: 2026-07-31
+title: "Worklog Week 7"
+date: 2026-07-29
 weight: 7
 chapter: false
 pre: " <b> 1.7. </b> "
 ---
 
 ### Week 7 Objectives:
-* Build AWS Lambda CGV crawler function and configure Amazon EventBridge weekly cron schedule.
-* Handle AWS Bedrock API quota incident and integrate **Google Gemini 2.5 Flash** as a high-availability fallback engine.
-* Complete the full 9-step AWS Production Deployment Workshop report by July 31, 2026.
+* Write AWS Lambda CGV movie crawler and configure weekly automated trigger using Amazon EventBridge Scheduler.
+* Integrate **Google Gemini 2.5 Flash** as a high-availability fallback Dual-AI Engine alongside Bedrock.
+* Perform full security audit across AWS resources (AWS WAF, IAM Roles, S3 Bucket Policies, RDS Security Groups) and finalize system architecture diagrams.
 
-### Tasks carried out this week:
-| Date | Task | Start Date | Completion Date | Reference Material |
+### Tasks Completed This Week:
+| Date | Task Description | Start Date | Completion Date | Reference / Source |
 | --- | --- | --- | --- | --- |
-| 27/07/2026 | - Developed AWS Lambda function (`cgv-movie-crawler`) running Node.js 20.x to scrape CGV movie and showtime data into Amazon RDS MySQL.<br>- Created Amazon EventBridge Schedule (`cgv-weekly-crawler`) with cron expression `cron(0 17 ? * SUN *)` running every Monday at 00:00 AM Vietnam time (UTC+7). | 27/07/2026 | 27/07/2026 | AWS Lambda & EventBridge Docs |
-| 29/07/2026 | - ⚠️ **BEDROCK API INCIDENT & GEMINI FALLBACK**: AWS Bedrock API experienced quota limits / connection errors.<br>- Upgraded the AI Intent Parsing service to a **Dual-AI Engine architecture**, integrating **Google Gemini 2.5 Flash** as an instant fallback engine to ensure 99.9% uptime. | 29/07/2026 | 29/07/2026 | Google Gemini API Docs |
-| 31/07/2026 | - 🎉 **COMPLETED AWS WORKSHOP**: Finalized the comprehensive 9-step AWS Production Deployment Workshop document (`docs/aws_full_production_deployment_report.md`) covering EC2, RDS, S3, CloudFront, WAF, Lambda, and EventBridge. | 31/07/2026 | 31/07/2026 | Project Workshop Documentation |
+| 27/07/2026 | - Authored AWS Lambda function (`cgv-movie-crawler`) on Node.js 20.x to scrape CGV movie schedules and update Amazon RDS MySQL directly.<br>- Created Amazon EventBridge Schedule (`cgv-weekly-crawler`) with `cron(0 17 ? * SUN *)` running every Monday at 00:00 AM ICT (UTC+7). | 27/07/2026 | 27/07/2026 | AWS Lambda & EventBridge Docs |
+| 28/07/2026 | - Configured AWS Cloud9 & AWS CloudShell remote cloud IDE environment.<br>- Conducted security audit (AWS WAF Core Rules, S3 Presigned URL expiration, RDS Security Group isolation). | 28/07/2026 | 28/07/2026 | AWS Security Best Practices |
+| 29/07/2026 | - ⚠️ **BEDROCK API INCIDENT & GEMINI FALLBACK**: Upgraded natural language parsing engine to **Dual-AI Engine**, integrating **Google Gemini 2.5 Flash** as a fallback AI engine with automatic failover.<br>- Finalized official AWS production architecture diagram. | 29/07/2026 | 29/07/2026 | Google Gemini API & Architecture Docs |
 
-### Week 7 Achievements:
-* Fully automated weekly CGV cinema data collection pipeline.
-* Built resilient Dual-AI Engine architecture with automatic fallback to Google Gemini 2.5 Flash.
-* Officially completed the comprehensive 9-step AWS deployment workshop documentation on July 31, 2026.
+### Production System Architecture Diagram:
+
+![AWS Cloud Architecture Diagram LifeSync AI Calendar](/images/architecture.png)
+
+### Week 7 Results:
+* Fully automated weekly CGV movie data ingestion pipeline.
+* Successfully implemented multi-tier Dual-AI Engine architecture with automatic failover to Google Gemini 2.5 Flash.
+* Standardized development environment and enforced strict cloud security compliance.
