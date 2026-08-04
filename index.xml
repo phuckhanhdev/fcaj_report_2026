@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FCAJ 2026 Internship Report on Internship Report</title><link>https://phuckhanhdev.github.io/fcaj_report_2026/</link><description>Recent content in FCAJ 2026 Internship Report on Internship Report</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="https://phuckhanhdev.github.io/fcaj_report_2026/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://phuckhanhdev.github.io/fcaj_report_2026/4-eventparticipated/4.3-event3/detailed_event_report_aabw_v3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://phuckhanhdev.github.io/fcaj_report_2026/4-eventparticipated/4.3-event3/detailed_event_report_aabw_v3/</guid><description>&lt;h1 id="detailed-event-report-aabw---aws-ai-build-week-workshop">Detailed Event Report: AABW - AWS AI Build Week Workshop&lt;/h1>
+&lt;p>&lt;strong>Date &amp;amp; Time:&lt;/strong> 09:00 on 25/07/2026&lt;br>
+&lt;strong>Location:&lt;/strong> 26th Floor, Bitexco Tower, No. 02 Hai Trieu Street, Sai Gon Ward, Ho Chi Minh City&lt;br>
+&lt;strong>Role:&lt;/strong> Attendee&lt;/p>
+&lt;hr>
+&lt;h2 id="-english-version">🇬🇧 ENGLISH VERSION&lt;/h2>
+&lt;h3 id="1-purpose-of-the-event">1. Purpose of the Event&lt;/h3>
+&lt;p>The workshop was designed as an intensive knowledge-sharing and recap session for the &amp;ldquo;AABW - AWS AI Build Week&amp;rdquo; hackathon, an event hosted in collaboration with the KNAI Fund (one of the biggest VCs in Ho Chi Minh City) [cite: 1, 5, 6, 7, 8]. The primary goal was to move beyond theoretical AI knowledge and provide attendees with practical insights into building &amp;ldquo;Agentic AI&amp;rdquo; [cite: 1]. The event featured the winning teams from the hackathon, who shared their end-to-end journeys—from ideation and architecture design to overcoming 24-hour development constraints—demonstrating how to solve real-world problems with viable AI solutions [cite: 1].&lt;/p></description></item><item><title/><link>https://phuckhanhdev.github.io/fcaj_report_2026/4-eventparticipated/4.4-event4/readme/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://phuckhanhdev.github.io/fcaj_report_2026/4-eventparticipated/4.4-event4/readme/</guid><description>&lt;h1 id="macos-setup-guide--returns--refunds-assistant-strands--agentcore">macOS Setup Guide — Returns &amp;amp; Refunds Assistant (Strands + AgentCore)&lt;/h1>
+&lt;p>This guide walks another Kiro user through installing every dependency needed to run this workshop project on macOS (Intel or Apple Silicon). Follow the steps in order — later tools (AgentCore CLI, AWS CDK) depend on Node.js being installed first, and uv/Python tooling is independent of the Node.js stack.&lt;/p>
+&lt;p>Estimated time: 15–20 minutes.&lt;/p>
+&lt;hr>
+&lt;h2 id="prerequisites-checklist">Prerequisites checklist&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">#&lt;/th>
+ &lt;th style="text-align: left">Tool&lt;/th>
+ &lt;th style="text-align: left">Minimum version&lt;/th>
+ &lt;th style="text-align: left">Why it&amp;rsquo;s needed&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">1&lt;/td>
+ &lt;td style="text-align: left">Node.js&lt;/td>
+ &lt;td style="text-align: left">20+&lt;/td>
+ &lt;td style="text-align: left">Runs the AgentCore CLI (&lt;code>@aws/agentcore&lt;/code>), which is distributed as an npm package&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">2&lt;/td>
+ &lt;td style="text-align: left">Python&lt;/td>
+ &lt;td style="text-align: left">3.12+&lt;/td>
+ &lt;td style="text-align: left">Runs the Strands agent code and the Lambda function handlers&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">3&lt;/td>
+ &lt;td style="text-align: left">AgentCore CLI (&lt;code>@aws/agentcore&lt;/code>)&lt;/td>
+ &lt;td style="text-align: left">latest&lt;/td>
+ &lt;td style="text-align: left">Scaffolds, tests locally (&lt;code>agentcore dev&lt;/code>), deploys (&lt;code>agentcore deploy&lt;/code>), and manages agents&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">4&lt;/td>
+ &lt;td style="text-align: left">AWS CDK&lt;/td>
+ &lt;td style="text-align: left">latest v2&lt;/td>
+ &lt;td style="text-align: left">The AgentCore CLI uses CDK under the hood to provision Runtime/Gateway/Memory infrastructure&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">5&lt;/td>
+ &lt;td style="text-align: left">uv&lt;/td>
+ &lt;td style="text-align: left">latest&lt;/td>
+ &lt;td style="text-align: left">Fast Python package/dependency manager; also used to run MCP servers via &lt;code>uvx&lt;/code>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">6&lt;/td>
+ &lt;td style="text-align: left">AWS CLI credentials&lt;/td>
+ &lt;td style="text-align: left">AWS CLI v2&lt;/td>
+ &lt;td style="text-align: left">Grants access to Amazon Bedrock foundation models and AgentCore control-plane APIs&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h2 id="1-install-nodejs-20">1. Install Node.js 20+&lt;/h2>
+&lt;p>The AgentCore CLI requires Node.js 20 or later.&lt;/p></description></item><item><title/><link>https://phuckhanhdev.github.io/fcaj_report_2026/5-workshop/picture/test-diagram/architecture_spec/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://phuckhanhdev.github.io/fcaj_report_2026/5-workshop/picture/test-diagram/architecture_spec/</guid><description>&lt;h1 id="aws-architecture-specification">AWS ARCHITECTURE SPECIFICATION&lt;/h1>
+&lt;h2 id="1-system-overview--tech-stack-scan">1. System Overview &amp;amp; Tech Stack Scan&lt;/h2>
+&lt;h3 id="11-system-overview">1.1 System Overview&lt;/h3>
+&lt;p>&lt;strong>LifeSync AI Calendar&lt;/strong> (tên dự án mã nguồn: &lt;code>ai_calendar_fcaj&lt;/code>) là ứng dụng quản lý lịch trình cá nhân và nhóm thông minh tích hợp Trí tuệ nhân tạo (AI). Hệ thống cho phép người dùng lập kế hoạch công việc, phân tích mệnh/năng lượng cá nhân, bình chọn thời gian họp nhóm, đính kèm tệp tin và tự động gửi email nhắc nhở lịch trình hàng ngày.&lt;/p></description></item></channel></rss>

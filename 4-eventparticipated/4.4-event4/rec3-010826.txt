@@ -1,0 +1,118 @@
+Thái như mình sẽ có 2 cái hook ở giữa
+Nó được setup sẵn trong architecture nha
+Là cái hook bắt đầu vào là Agent Core sẽ từ Agent kết nối với Gateway
+Và từ Gateway trả ngược về Agent
+2 cái hook này đơn giản nó chỉ là 1 cái lớp bảo vệ thêm
+Giả dụ như Gateway kết nối với Tool đi mà Tool trả về những cái sensitive data
+Hoặc là BI Personal Information á
+Thì cái Godrail này nó sẽ có nhiệm vụ là lượt hết những cái sensitive data đó
+Rồi mới trả về cho user
+Đây, về những cái target cho cái Tool thì nó có những chuỗi như thế này
+Rồi, mình sẽ vào thử Gateway này nó trông như thế nào
+Đây thì lúc nào ở trên đầu nó cũng sẽ có phần hướng dẫn
+Khi mà tạo Gateway
+Setup policy
+Setup key
+Như là về inbound identity nè
+Gateway nó sẽ leverage trên identity
+Nên là nó sẽ có set up inbound và outbound authentication được
+Rồi, tiếp đến là target
+Target nó có nhiều chuẩn nha
+Thì cái chuẩn lớn nhất là mcp
+Và trong cái chuẩn mcp này
+Mình sẽ có nhiều target type
+Là về lambda, về REST API
+Hoặc là kết nối với API gateway
+Thì để hiểu được từng phần này
+Thì mình phải thực tế sử dụng
+Xem xét từng trường hợp khác nhau
+Và nó dành cho
+Nó dành cho nhu cầu của bcms như thế nào
+Đó, rồi ở đây là Setup outbound
+Cái chuẩn lớn nhất là OOS
+Về phần security
+Thì cái endpoint này
+Có hai cách để kết nối được với gateway
+Một là agent kết nối đến gateway
+Là mình sẽ kết nối đến cái gọi là data plan
+Là một cái nơi chứa tất cả những thông tin
+Về các tool ở bên mcp server
+Và cái thứ hai là admin có thể kết nối với gateway
+Là trực tiếp hay còn gọi quá trình đó gọi là human in-product
+Rồi, bây giờ
+Như cái buổi hôm đó là về enterprise
+Và enterprise có một cái kê rất là chi tiết
+Nếu như
+Tôi là on-premise
+Data
+Data
+Và agent của tôi nằm ở trên công ty của tôi
+Thì làm sao để kết nối với lại AWS
+Nó sẽ có hai hướng như thế này
+Một là client nằm ở trên một cái vpc khác trên AWS
+Và cái agent call gateway nằm ở trên một mcp khác
+Và cái thứ hai là client nằm ở thực tế tại công ty
+Nó gọi là on-premise
+Làm sao để hai cách này kết nối được với agent call
+Khi mà nằm ở hai môi trường khác nhau
+Thì mình sẽ dùng
+Nếu như client nằm ở vpc khác
+Thì mình sẽ kết nối với lại NAT gateway
+Là cái bài học cơ bản trong cloud practitioner
+Nếu như bạn nào có theo học giáo dữ chữ của AWS
+Thì khi mà internet kết nối vào đúng không
+Thì cái dịch vụ internal bên trong
+Sẽ không
+Sẽ nói chuyện với nhau
+Cái dịch vụ AWS nói chuyện với nhau
+Quanh đặt gateway
+Còn client on-premise
+Thì một là có thể đi
+Cái nối trực tiếp public đến agent call gateway
+Tuy nhiên thì cách này nó sẽ không tốt
+Và
+Như lúc nãy trong cái phần runtime á
+Mình sẽ có một dịch vụ khác gọi là AWS private link
+Thì cái này nó
+Đại khái mình hiểu nó là một cái internal private
+Để truyền data
+Từ client đến agent call
+Một cách an toàn nhất
+Để đảm bảo tất cả những cái tính về bẩu mật, về privacy
+Thì trong cái private link này
+Mình cũng sẽ cần phải setup nhiều cái
+Và nó thiết kế chuẩn best practice
+Cho big tech hoặc là enterprise
+Để truyền thông tin
+Để truyền thông tin
+Để truyền thông tin
+Để truyền thông tin
+Để truyền thông tin
+Để truyền thông tin
+Để truyền thông tin
+Để truyền thông tin
+Để truyền thông tin
+Để truyền thông tin
+Để truyền thông tin
+Để truyền thông tin
+Để truyền thông tin
+Để truyền thông tin
+Thì mình đã đi qua
+Gần 100 slide
+Cho ngày đầu tiên
+Thì mình sẽ tóm tắt lại
+Là hôm nay mình đã nói về những gì
+Introduction về Agentic AI
+Agentic AI là gì
+Là cả một hệ thống agent đó
+Rồi mình sẽ sử dụng Agent call
+Và mình biết được 3 feature của Agent call
+Rinsight, Gateway và Identity
+Đi từ cơ bản đến nâng cao
+Ngoài ra
+Có những cái feature khác
+Một đống feature ở đây nè
+Mình sẽ học ở đây 2
+Rồi đến ngày thứ 3
+Là mình sẽ tổng hợp lại hết
+Rồi đến ngày thứ 3

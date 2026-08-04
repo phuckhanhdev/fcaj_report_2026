@@ -1,0 +1,73 @@
+cái building block có sẵn rồi
+đây phần này nó hơi sâu một tí là mình có những loại
+những loại
+target khác nhau cho những cái tool
+dạ dụ như
+nhiều loại tool khác nhau thì mình sẽ sử dụng nhiều chuẩn target khác nhau
+dưới đây mình có API Gateway Target là cái đơn giản nhất
+rồi tiếp đến là OpenABI, tiếp đến là về Lambda Target
+và tiếp đến là MCB Server Target
+thì tùy vào nhu cầu của những cái tool này
+mình sẽ sử dụng các loại target khác nhau
+thì các loại target khác nhau nó cũng tương ứng với lại
+những cái credential khác nhau
+như cái đơn giản nhất là API Key và Token
+thì cho loại target này
+hoặc là phải setup IAM policy
+thì mới sử dụng được Lambda Target
+hoặc là ở đây là cái token M2M
+Machine to Machine
+và khi mà Agent Core này nó đóng vai trò là cái lớp trung gian
+cho nên nó sẽ ghi nhận lại hết tất cả các lớp
+ghi nhận lại hết metrics
+ghi nhận lại hết những cái alert
+ở trong CloudWatch
+để cho việc sử dụng
+cho sử dụng observability
+là mình sẽ ghi nhận lại hết ai access vào tool nào
+vào giờ nào
+người đó có quyền gì
+rồi human admin có nhảy vào để xử lý cái request nó hay không
+mình sẽ được luôn lại hết tất cả
+để cho mục đích là 2 việc
+để sau này ví dụ như ngân hàng đi sẽ quay lại track những cái log đó được
+và cái thứ hai là cho bị tính phí
+rồi slide này
+Agent Core A3 nó sẽ hỗ trợ semantic search
+đại khái như là
+nó cũng giống semantic search ở trong vector database
+nó sẽ thiết kế ra làm sao để
+100 agent ở bên tay trái và 100 agent ở bên tay phải là những cái tool khác nhau
+làm sao để agent biết có những tool nào hoạt động như thế nào
+và nó chỉ lấy về những cái useful tool nhất định thôi
+đó thì mình áp dụng semantic search
+nó có sẵn rồi
+ở trong cái architecture rồi
+nó rất đơn giản
+mình nói thêm về cái tool này
+cái tool á
+thường sẽ là
+hồi trước sẽ là setup API
+để trả về những cái resource đúng không
+get, voice, with, unit
+thì làm sao để agent nó hiểu được những cái này
+thì nó sẽ sử dụng protocol mcb
+mcb
+mình sẽ setup ở trong code
+của bên phần tool
+nó sẽ bao bọc một cái lớp gọi là schema
+schema đó đơn giản như là một cái JSON
+và nó có những cái phần chính
+như là name của cái tool này là gì
+description
+tool này làm được những gì
+và
+cần những cái parameter nào
+cái require parameter nào
+để cho agent accept được
+đó thì cái chuẩn mcb sẽ giúp cho agent kết nối với những cái tool
+nói chuyện được với những cái tool một cách thông minh hơn
+chứ không phải API là mình chỉ định đúng cái resource đó
+đúng cái endpoint đó
+thì mình mới lấy trả ngược về cái respond được
+Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn
