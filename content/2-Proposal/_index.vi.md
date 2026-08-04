@@ -17,13 +17,6 @@ pre: " <b> 2. </b> "
 
 Hệ thống được triển khai trên nền tảng AWS production-grade gồm Amazon EC2 (t2.micro Free Tier), Amazon RDS MySQL, Amazon S3, Amazon CloudFront CDN, AWS WAF, AWS Lambda và Amazon EventBridge Scheduler — truy cập tại tên miền chính thức **[https://phuckhanh.id.vn](https://phuckhanh.id.vn)**.
 
-<!-- Khung Nhúng Video Demo Hệ thống -->
-<div align="center" style="margin: 25px 0;">
-  <h4>📹 Video Demo Hệ thống LifeSync AI Calendar</h4>
-  <iframe width="100%" height="450" style="max-width: 800px; border-radius: 8px; border: 1px solid #ddd;" src="LINK_VIDEO_DEMO_CỦA_BẠN" frameborder="0" allowfullscreen></iframe>
-  <p><i>(Dán link nhúng video YouTube / Loom / MP4 của bạn vào thuộc tính src ở trên)</i></p>
-</div>
-
 ---
 
 ### 2. Tuyên bố vấn đề
@@ -81,14 +74,14 @@ LifeSync AI Calendar giải quyết vấn đề trên bằng cách:
 
 ---
 
-### 5. Lộ trình & Mốc triển khai
+### 5. Lộ trình & Mốc triển khai (8 Tuần Thực tập: 15/06/2026 – 31/07/2026)
 
-| Giai đoạn | Thời gian | Hoạt động |
+| Mốc / Giai đoạn | Thời gian thực hiện | Hoạt động & Sản phẩm bàn giao (Deliverables) |
 |---|---|---|
-| **Giai đoạn 1** | Tháng 1 | Thiết kế kiến trúc, cài đặt AWS (EC2, RDS, S3), dựng khung Next.js |
-| **Giai đoạn 2** | Tháng 2 | Tính năng cốt lõi (xác thực, lịch, engine lập lịch), tích hợp AI |
-| **Giai đoạn 3** | Tháng 3 | Triển khai CloudFront + WAF, tính năng CGV, kiểm thử production |
-| **Sau ra mắt** | Liên tục | Tự động hóa CI/CD, giám sát, phát triển tính năng mới |
+| **Mốc 1: Khảo sát & Khởi tạo Hạ tầng** | Tuần 1 – Tuần 2<br>*(15/06 – 28/06/2026)* | - Onboarding AWS, nhận AWS Credits, thiết lập môi trường Cloud9 & CLI.<br>- Khảo sát yêu cầu, thiết kế CSDL MySQL trên LocalStack & Amazon RDS.<br>- Dựng khung ứng dụng Web Next.js 16 và hệ thống màu theo Cung Hoàng Đạo. |
+| **Mốc 2: Phát triển Core Engine & Thuật toán** | Tuần 3 – Tuần 4<br>*(29/06 – 12/07/2026)* | - Phát triển Engine Lập lịch Khoa học (CSP Bitmask) với các Strategy Pattern (`StudyStrategy`, `FitnessStrategy`, `DateStrategy`).<br>- Lập trình Thuật toán Haversine với trọng số "Nam rước Nữ" (80% Nữ / 20% Nam).<br>- Tích hợp NextAuth.js Google OAuth 2.0 & máy chủ EC2 Ubuntu, Nginx, PM2.<br>- Báo cáo kết quả giữa kỳ (Mid-term report). |
+| **Mốc 3: Nâng cấp Dual-AI Engine & Tự động hóa** | Tuần 5 – Tuần 7<br>*(13/07 – 29/07/2026)* | - Triển khai Amazon S3 Presigned URLs upload ảnh avatar bảo mật.<br>- Tích hợp Dual-AI Engine (Google Gemini 2.5 Flash + Amazon Bedrock) có cơ chế fallback tự động.<br>- Cấu hình Amazon CloudFront CDN toàn cầu & Tường lửa AWS WAF (Core Rules & SQLi).<br>- Lập trình AWS Lambda & EventBridge Scheduler cào dữ liệu phim CGV tự động hàng tuần. |
+| **Mốc 4: Tối ưu Hiệu năng, Bảo mật & Nghiệm thu** | Tuần 8<br>*(30/07 – 31/07/2026)* | - Tối ưu hóa Nginx static caching/Gzip & kiểm thử tải API bằng Apache Bench (`ab`).<br>- Biên soạn 4 bài viết blog kỹ thuật chuyên sâu cho AWS Study Group.<br>- Đánh giá rủi ro, tự đánh giá, đóng góp ý kiến và xuất bản báo cáo thực tập song ngữ Hugo/PDF.<br>- **Nghiệm thu và nộp báo cáo thực tập chính thức (31/07/2026)**. |
 
 ---
 

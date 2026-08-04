@@ -30,7 +30,7 @@ The event featured the winning teams from the hackathon, who shared their end-to
 
 * **Presenting Teams (Hackathon Winners):**
   * **One Team:** (Members: Anh Duy, Tran Dong, Doan Trung, Minh Viet, Anshul Roy). They built a multi-channel AI conversational ordering agent for KFC.
-  * **Lùa Mình (Plan V):** (Members: Pham Tien Thuan Phat, Huynh Hoang Long, Le Minh Nghia, Tran Dai Vi, Nguyen An). They presented the "SA Professional Native App," an AI assistant for Solution Architects.
+  * **Plan V:** (Members: Pham Tien Thuan Phat, Huynh Hoang Long, Le Minh Nghia, Tran Dai Vi, Nguyen An). They presented the "SA Professional Native App," an AI assistant for Solution Architects.
   * **3KA:** (Members: Huỳnh An Khương, Nguyễn Quốc Huy, Ngô Quang Khôi, Hoàng Lê Thành Đức, Đặng Nguyễn Phước Lộc, Đặng Trường Hưng). They built "S.H.E.P.H.E.R.D," an AI and computer vision system for crowd control and congestion prediction.
   * **Signal Scout:** (Members: Le Tan Luc, Do Hoang Hieu, Trieu Quoc Hao, Nguyen Van Duy Khiem, Nguyen Cong Minh, Nguyen Tran Minh Quan). They developed a complex AI system for Anti-Money Laundering (AML) and corporate strategy detection.
 
@@ -48,7 +48,7 @@ Mr. Joseph Marasota highlighted that the industry is transforming at an unpreced
   * *Solution:* An agent that operates directly within Zalo and WhatsApp. It understands natural language intent, uses tools to fetch menus via TinyFish, and manages cart states without forcing the user to switch apps.
   * *Technical Takeaway:* Instead of using standard AWS Lambda functions which lack memory, they utilized **AgentCore**. This allowed the bot to remember past customer orders. This architectural choice dropped infrastructure costs by 60%, achieving an end-to-end latency of just 3-5 seconds at $0.006 per order.
 
-* **Lùa Mình / Plan V (SA Professional Native App):**
+* **Plan V (SA Professional Native App):**
   * *Problem:* Solution Architects often receive sudden requests to design complex cloud architectures and estimate costs within hours.
   * *Solution:* An AI application where an SA inputs a Business Requirement Document (BRD). The AI automatically generates an editable Draw.io architecture diagram, AWS cost estimates, and Terraform IaC (Infrastructure as Code) scripts.
   * *Technical Takeaway:* The team heavily utilized Prompt and Agent Engineering to ensure the LLM outputs adhered to strict company templates (e.g., ensuring Lambdas are attached to VPCs). The architecture utilized AWS Fargate for the backend and Amazon Bedrock for AI processing.

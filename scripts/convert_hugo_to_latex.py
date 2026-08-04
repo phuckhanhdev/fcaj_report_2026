@@ -420,12 +420,22 @@ def render_worklog_table_latex(header, rows, keep_columns):
     task_names = {"task", "công việc", "cong viec"}
     complete_names = {"completion date", "complete date", "ngày hoàn thành", "ngay hoan thanh"}
 
+    num_cols = len(keep_names)
+    if num_cols == 5:
+        col_spec = "@{}p{0.09\\linewidth}p{0.45\\linewidth}p{0.13\\linewidth}p{0.13\\linewidth}p{0.18\\linewidth}@{}"
+    elif num_cols == 4:
+        col_spec = "@{}p{0.09\\linewidth}p{0.55\\linewidth}p{0.17\\linewidth}p{0.17\\linewidth}@{}"
+    elif num_cols == 3:
+        col_spec = "@{}p{0.09\\linewidth}p{0.71\\linewidth}p{0.18\\linewidth}@{}"
+    else:
+        col_spec = "@{}p{0.09\\linewidth}p{0.71\\linewidth}p{0.18\\linewidth}@{}"
+
     latex = []
     latex.append(r"\begingroup")
     latex.append(r"\small")
-    latex.append(r"\setlength{\tabcolsep}{5pt}")
+    latex.append(r"\setlength{\tabcolsep}{4pt}")
     latex.append(r"\renewcommand{\arraystretch}{1.2}")
-    latex.append(r"\begin{longtable}{@{}p{0.07\linewidth}p{0.72\linewidth}p{0.17\linewidth}@{}}")
+    latex.append(rf"\begin{{longtable}}{{{col_spec}}}")
     latex.append(r"\toprule")
 
     # Force nicer names based on selected columns count.
@@ -544,12 +554,12 @@ def filter_markdown_sections(content, keep_headings):
     return "\n".join(out)
 
 
-def preprocess_markdown(content, meta=None):
+def preprocess_markdown(content, meta=None, rel_dir=None):
     meta = meta or {}
 
     report_type = str(meta.get("reportType") or meta.get("report_type") or "").lower()
 
-    if report_type == "worklog":
+    if report_type == "worklog" or (rel_dir and "1-Worklog" in rel_dir and rel_dir != "1-Worklog"):
         content = preprocess_worklog_markdown(content, meta)
     else:
         content = strip_frontmatter(content)
@@ -797,7 +807,7 @@ def process_language(lang):
         with open(md_path, encoding="utf-8") as f:
             md_content = f.read()
 
-        processed = preprocess_markdown(md_content, meta=meta)
+        processed = preprocess_markdown(md_content, meta=meta, rel_dir=rel_dir)
         latex = convert_to_latex(processed, source_path=md_path)
 
         out_path = os.path.join(lang_dir, f"{out_name}.tex")

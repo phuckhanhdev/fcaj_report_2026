@@ -1,78 +1,92 @@
 ---
-title: "Swinburne Cloud Mastery"
-date: 2026-07-04
-weight: 1
+title: "AWS Agentic AI & Bedrock AgentCore Workshop"
+date: 2026-08-02
+weight: 4
 chapter: false
-pre: " <b> 4.1. </b> "
+pre: " <b> 4.4. </b> "
 ---
 
+# Báo cáo Chi tiết Sự kiện: AWS Agentic AI Workshop & Amazon Bedrock AgentCore Masterclass
 
-# Bài thu hoạch “Swinburne Cloud Mastery”
+- **Thời gian:** 09:00 - 17:00, Ngày 02/08/2026  
+- **Địa điểm:** Tầng 36, Văn phòng AWS Việt Nam, Tòa nhà Bitexco, Số 02 Hải Triều, Q.1, TP. Hồ Chí Minh  
+- **Vai trò:** Người tham dự thực hành (Attendee & Hands-on Lab Participant)  
 
-### Mục Đích Của Sự Kiện
+---
 
-- Chia sẻ góc nhìn về kiến thức và công việc thực tế của ngành Cloud/Data hiện nay.
-- Chia sẻ kinh nghiệm viết CV và giải thích cách hệ thống AI (ATS) quét CV, từ đó hướng dẫn cách xây dựng CV đáp ứng đầy đủ tiêu chí của nhà tuyển dụng.
-- Cung cấp thông tin chi tiết về các vị trí công việc mảng Cloud, DevOps và Data Engineering hiện nay.
+### 1. Mục đích sự kiện
 
-### Danh Sách Diễn Giả
+Chương trình Masterclass & Workshop chuyên sâu được thiết kế dành cho các Kỹ sư Đám mây và Thực tập sinh FCAJ nhằm làm chủ kiến trúc **Agentic AI** tin cậy trên môi trường sản xuất. Mục tiêu chính của sự kiện là thu hẹp khoảng cách giữa các mô hình ngôn ngữ lớn (LLM) lý thuyết và quy trình triển khai ứng dụng tự chủ (Autonomous AI Agents) thực tế trên hạ tầng đám mây AWS.
 
-- **Nguyễn Gia Hưng** - Head of Solution Architecture, AWS Vietnam
-- **Bành Cẩm Vĩnh** - Data Engineer, Renova Cloud (5 năm kinh nghiệm thực chiến)
-- **Như Trần** - Account Manager, AWS Vietnam
-- **Khang Nguyễn** - Solution Architect, AWS (Cựu sinh viên IT của Swinburne)
+Sự kiện tập trung khai thác toàn bộ hệ sinh thái **Amazon Bedrock AgentCore** — bộ dịch vụ chuyên dụng cung cấp các thành phần hạ tầng cốt lõi cho AI Agent bao gồm: **Runtime, Gateway, Identity, Memory, Observability và Guardrails**, kết hợp thực hành trực tiếp qua khung phát triển **Strands Framework** và bộ công cụ **AgentCore CLI**.
 
-### Nội Dung Nổi Bật
+---
 
-#### 1. Góc nhìn Thị trường và Core Mental Models (Anh Gia Hưng)
+### 2. Danh sách Diễn giả & Hướng dẫn viên
 
-- **Tác động của công cụ AI**: Sự ra đời của các công cụ AI giúp tiết kiệm đến 90% thời gian làm việc, tương tự như việc chuyển từ đèn sợi đốt sang đèn LED. Việc phần mềm và công nghệ trở nên rẻ hơn không làm giảm nhu cầu mà ngược lại, sẽ khiến nhu cầu phát triển phần mềm và tiêu thụ tổng thể tăng lên rất mạnh.
-- **Kỹ năng cốt lõi (Core Mental Models)**: Sinh viên cần trang bị 6 mô hình tư duy nền tảng khi đi làm, bao gồm: Teamwork, kỹ năng thực hành (hands-on), kỹ năng xây dựng (building), giải quyết vấn đề (troubleshooting), và đặc biệt là sự kiên trì (resilience) trước những áp lực hoặc khi bị cấp trên chỉ trích.
-- **Đầu tư vào bản thân & Học tập trọn đời**: Doanh nghiệp tuyển dụng không chỉ dựa trên năng lực hiện tại mà còn đánh giá tiềm năng trong tương lai của ứng viên. Việc liên tục đầu tư vào bản thân qua các chứng chỉ quốc tế sẽ là một điểm cộng lớn giúp CV thu hút nhà tuyển dụng.
+* **Diễn giả chính & Chuyên gia Kiến trúc AWS:**
+  * **Mr. Hải Anh:** Senior Solutions Architect tại AWS Việt Nam — Trực tiếp hướng dẫn phần thực hành Hands-on Lab và giải đáp thắc mắc về tích hợp hạ tầng Enterprise.
+  * **Đội ngũ Kỹ sư Giải pháp AWS Việt Nam:** Trình bày hơn 100 slide chuyên sâu về lý thuyết thiết kế Agentic System, chuẩn giao tiếp MCP (Model Context Protocol) và các mô hình bảo mật trên AWS Cloud.
 
-#### 2. Data Engineering: Khoảng cách giữa Trường học và Thực tiễn (Anh Bành Cẩm Vĩnh)
+---
 
-- **Nền tảng kiến thức**: Các môn học nền tảng như Cơ sở dữ liệu, Lập trình, Cấu trúc dữ liệu và giải thuật, Cơ sở dữ liệu phân tán, và API là những kiến thức cực kỳ cơ bản và chắc chắn sẽ bị kiểm tra kỹ lưỡng khi phỏng vấn.
-- **Sự khác biệt về Dữ liệu và Yêu cầu**:
-  - *Ở trường học*: dữ liệu thường sạch, ít và các yêu cầu được định nghĩa rõ ràng ngay từ ngày đầu với thời gian hoàn thành thoải mái.
-  - *Khi đi làm*: dữ liệu đến từ nhiều nguồn khác nhau, thiếu sót, định dạng không đồng nhất và thay đổi liên tục. Hậu quả của việc làm sai ở môi trường thực tế cũng nghiêm trọng hơn, ảnh hưởng trực tiếp đến hệ thống production và hiệu quả kinh doanh của công ty.
-- **"One Framework for every platform"**: Anh Vĩnh nhấn mạnh tầm quan trọng của việc nắm vững DNA của Data Platform, bao gồm các thành phần như Ingestion, Processing, Storage, Data Governance, và Catalog thay vì chỉ chạy theo các công cụ (tools) liên tục thay đổi.
-- **AI trong ngành Data**: AI có thể hỗ trợ tạo mã code hoặc làm tài liệu, nhưng nó không thể thay thế con người ở khía cạnh thấu hiểu vấn đề kinh doanh (Understand Business Problem) và thiết kế hệ thống (Designing Architecture).
+### 3. Nội dung Nổi bật & Bài học Kỹ thuật Chuyên sâu
 
-#### 3. Nghệ thuật Giao tiếp và Nắm bắt Cơ hội (Chị Như Trần)
+#### A. Mô hình Tư duy Agentic AI & Mức độ Tự chủ (Autonomous Spectrum)
+- **Tiến hóa từ LLM đơn thuần đến Multi-Agent System:**
+  * *Simple Assistant*: Chỉ hoạt động theo cơ chế Hỏi - Đáp (Prompt - Response) cơ bản dựa trên tri thức có sẵn của LLM.
+  * *Single Autonomous Agent*: Tự nhận biết mục tiêu, lên kế hoạch (*Reasoning & Planning*) và tự động kích hoạt công cụ (*Tool Execution*) để hoàn thành nhiệm vụ.
+  * *Multi-Agent System*: Hệ thống gồm nhiều AI Agent chuyên biệt tương tác với nhau; phân chia và xử lý các tác vụ phức tạp, chạy ngầm lâu dài (*Long-running background jobs*).
+- **Cân bằng giữa Deterministic Workflow & Fully Autonomous:** Doanh nghiệp cần xác định rõ ranh giới tự động hóa. Với các tác vụ tài chính/ngân hàng, hệ thống cần duy trì *Deterministic Workflow* có sự giám sát của con người (*Human-in-the-loop*).
 
-- **Vượt qua nỗi sợ sai**: Trường học thường tối ưu hóa sự chính xác (School is optimized for correctness), khiến sinh viên mang nặng tâm lý sợ sai và sợ hệ quả từ việc bị đánh giá. Khi ra ngoài làm việc, việc làm quen với áp lực và dám lên tiếng là rất cần thiết.
-- **Kỹ năng giao tiếp (Communication)**: Giao tiếp là một kỹ năng kỹ thuật, không chỉ là kỹ năng mềm. Những sự cố giao tiếp (miscommunication) thường xảy ra do sự khác biệt trong cách tiếp nhận thông điệp giữa các phòng ban (ví dụ: tư duy của Builder so với Seller). Để rút ngắn khoảng cách với cấp trên, sinh viên cần chủ động tạo những cuộc trò chuyện nhỏ (small talk) và chủ động chào hỏi để tăng độ nhận diện (visibility).
-- **Tìm kiếm cơ hội ở "Blue Ocean"**: Những cơ hội xuất hiện nhan nhản trên các nền tảng tuyển dụng là vùng "Biển đỏ" (Red Ocean) đầy cạnh tranh. Chị Như khuyên sinh viên nên xây dựng cơ hội ở những vùng "Biển xanh" (Blue Ocean) thông qua sự kiên trì, xây dựng mạng lưới quan hệ bền chặt và dám làm những việc không ai muốn làm.
+#### B. Điểm nhấn Kiến trúc Amazon Bedrock AgentCore & Gateway
 
-#### 4. Lời khuyên Thực chiến cho Sinh viên IT (Anh Khang Nguyễn)
+- **AgentCore Gateway — Lớp điều phối trung gian bảo mật:**
+  * Gateway đóng vai trò là "điểm trung chuyển" an toàn giữa Agent và các hệ thống backend/dịch vụ ngoài.
+  * Tích hợp **Inbound & Outbound Authentication** (hỗ trợ OAuth 2.0, API Key, Token Machine-to-Machine M2M và IAM Policies).
+  * Hỗ trợ đa dạng chuẩn Target: REST API Gateway, AWS Lambda Target, OpenAPI Spec, và **MCP Server Target**.
 
-- **Sử dụng AI đúng cách**: Sinh viên chắc chắn phải dùng AI, nhưng "bạn có thể outsource việc tư duy cho AI, chứ không thể outsource sự thấu hiểu". Nếu không hiểu rõ nền tảng, AI sẽ dẫn hướng sai và sinh viên sẽ không có kiến thức để kiểm chứng kết quả.
-- **Học kiến thức nền tảng**: Việc hiểu sâu lớp nền tảng (như Networking, Security) sẽ giúp làm việc hiệu quả và lâu dài, đừng chỉ học để qua môn hay đạt điểm cao. Hãy chủ động đặt nhiều câu hỏi "Tại sao" để đào sâu vấn đề.
-- **Tiêu chí chọn việc và Đánh giá Freshers**:
-  - *Khi mới ra trường*: đừng chỉ nhìn vào mức lương. Một công việc cần được đánh giá qua 5 yếu tố: Lương, Kinh nghiệm, Mạng lưới quan hệ (Network), Kiến thức, và Sự phát triển cá nhân (Growth).
-  - *Đối với ứng viên Fresher*: các nhà tuyển dụng đánh giá **Thái độ** là ưu tiên hàng đầu, sau đó mới đến Trình độ, Kinh nghiệm và Trải nghiệm.
+- **Chuẩn giao tiếp Model Context Protocol (MCP) & Semantic Search:**
+  * Thay vì gọi cứng URL API endpoint như trước đây, AgentCore bao bọc các công cụ (Tools) qua chuẩn **MCP Schema** định dạng JSON (gồm Name, Description, Required Parameters).
+  * Ứng dụng thuật toán **Semantic Search** trực tiếp trong AgentCore Architecture để khi có hàng trăm Agent/Tools khác nhau, hệ thống tự động trích xuất và chọn lọc đúng công cụ phù hợp nhất với yêu cầu hiện tại.
 
-### Những Gì Học Được
+- **Bảo mật, Guardrails & Observability cấp Doanh nghiệp:**
+  * **Guardrails Hooks**: Thiết lập 2 điểm Hook kiểm soát (Inbound từ Agent tới Gateway và Outbound từ Gateway về Agent). Lớp này chủ động quét và ngăn chặn rò rỉ dữ liệu nhạy cảm (PII - Personally Identifiable Information) hoặc dữ liệu nội bộ doanh nghiệp.
+  * **AWS PrivateLink Integration**: Giải pháp kết nối riêng tư cho doanh nghiệp Enterprise có hạ tầng On-Premise hoặc VPC riêng, truyền dữ liệu an toàn đến AgentCore Gateway mà không đi qua Internet công cộng.
+  * **Full CloudWatch Observability**: Ghi nhận toàn bộ vết truy cập (Trace Logs), Metrics và Audit Alerts trên **Amazon CloudWatch** phục vụ kiểm toán bảo mật và tính phí chi tiết.
 
-- **Tư Duy Thiết Kế & Thực Chiến**: Hiểu rõ sự khác biệt giữa lý thuyết trường học và thực tiễn dự án doanh nghiệp. Nắm bắt được các mô hình tư duy cốt lõi (Mental Models) như Teamwork, hands-on, building, troubleshooting và sự kiên trì (resilience).
-- **Quy trình tối ưu CV**: Cách viết CV chuẩn chỉ và cách thiết kế thông tin sao cho tối ưu với bộ lọc AI nhằm tìm kiếm các công việc liên quan đến Cloud/DevOps/Data hiện nay.
-- **Kỹ năng giao tiếp**: Học cách giao tiếp hiệu quả như một kỹ năng kỹ thuật thực thụ nhằm tránh sự cố giao tiếp (miscommunication) và tăng độ nhận diện (visibility) cá nhân.
-- **Tư duy chọn việc và Phát triển bản thân**: Đánh giá công việc dựa trên nhiều khía cạnh khác nhau thay vì chỉ nhìn vào thu nhập ngắn hạn.
+#### C. Trải nghiệm Thực hành Hands-On Lab
 
-### Ứng Dụng Vào Công Việc
+Trong phần thực hành trực tiếp, tôi đã tự tay khởi tạo dự án mẫu **"Returns & Refunds Assistant"** trên máy chủ cá nhân với bộ công cụ phát triển hiện đại:
+1. Thiết lập môi trường chuẩn: **Node.js 20+**, **Python 3.12+**, trình quản lý gói siêu tốc **`uv` / `uvx`**, **AWS CLI v2**, **AWS CDK v2** và **`@aws/agentcore` CLI**.
+2. Sử dụng **AgentCore CLI** để kiểm thử cục bộ (`agentcore dev`), định nghĩa Tool Schema qua MCP Server và tự động triển khai hạ tầng đám mây lên AWS (`agentcore deploy`).
 
-- **Tối ưu hóa CV cá nhân**: Chỉnh sửa CV để làm nổi bật các dự án cloud thực tế của mình và đảm bảo nội dung dễ dàng được các thuật toán AI/ATS nhận diện tốt.
-- **Thái độ và Tư duy Builder**: Áp dụng tinh thần kiên trì, chủ động giải quyết vấn đề và xây dựng quan hệ giao tiếp tốt với các thành viên trong đội ngũ thực tập.
-- **Sử dụng AI có kiểm soát**: Dùng AI để tối ưu hóa code và viết tài liệu, nhưng luôn tự xác minh lại kết quả dựa trên kiến thức nền tảng (Networking, Security, API).
+---
 
-### Trải nghiệm trong event
+### 4. Kế hoạch Ứng dụng vào Dự án LifeSync AI Calendar
 
-- Do khoảng cách địa lý và lịch trình công việc thực tập, em đã tham gia sự kiện này dưới hình thức **online** thông qua việc xem lại bản livestream trên kênh YouTube **AWS Study Group**.
-- Dù tham gia trực tuyến nhưng những kiến thức và chia sẻ thực tế từ các diễn giả đầu ngành đã giúp em có cái nhìn cực kỳ rõ nét về định hướng công việc Cloud/DevOps/Data trong tương lai và cách chuẩn bị hành trang tốt nhất để bước vào thị trường lao động.
+Những kiến thức chuyên sâu từ sự kiện là tiền đề quan trọng để tôi tiếp tục nâng cấp hệ thống **LifeSync AI Calendar**:
+1. **Chuẩn hóa Tool Interface với MCP Protocol:** Chuyển đổi các module tự động hóa (như Lambda CGV Crawler, CSP Scheduler Solver) sang chuẩn MCP Schema để AI Engine (Gemini / Bedrock) nhận diện và kích hoạt linh hoạt hơn.
+2. **Triển khai Guardrails bảo vệ thông tin cá nhân:** Tích hợp lớp kiểm soát Guardrail để mã hóa/lược bỏ các thông tin nhạy cảm của người dùng (như vị trí GPS chính xác, lịch trình cá nhân) trước khi truyền sang LLM.
+3. **Tăng cường khả năng Giám sát (Observability):** Cấu hình Amazon CloudWatch Logs Insights để theo dõi độ trễ (latency), tỷ lệ thành công của Tool Calling và chi phí API thời gian thực.
 
-### Một số hình ảnh khi tham gia sự kiện
+---
 
-![Swinburne Cloud Mastery](/images/4-EventParticipated/picture/Event1/event_1.jpg)
+### 5. Minh chứng Tham gia & Thư viện Hình ảnh
 
-> Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp em định hình lại cách thiết kế CV, lộ trình học tập trọn đời, và kỹ năng giao tiếp phối hợp hiệu quả giữa các phòng ban.
+<p align="center">
+  <img src="images/4-EventParticipated/picture/Event4/myEventTicket.png" alt="Vé tham dự sự kiện chính thức AWS Agentic AI Workshop" width="70%">
+</p>
+<p align="center"><i>Hình 4.4.1: Vé tham dự sự kiện chính thức AWS Agentic AI Workshop & Bedrock AgentCore Masterclass (02/08/2026)</i></p>
+
+<br>
+
+<p align="center">
+  <img src="images/4-EventParticipated/picture/Event4/minhchung1.jpg" alt="Thực hành Hands-On Lab tại Văn phòng AWS" width="48%">
+  <img src="images/4-EventParticipated/picture/Event4/minhchung2.jpg" alt="Trình bày Slide Kiến trúc Amazon Bedrock AgentCore" width="48%">
+</p>
+<p align="center"><i>Hình 4.4.2 & 4.4.3: Hình ảnh thực hành Hands-On Lab và theo dõi bài giảng kiến trúc AgentCore tại Văn phòng AWS Việt Nam (Tầng 36 Bitexco)</i></p>
+
+---
+
+> **Tổng kết:** Sự kiện AWS Agentic AI Workshop ngày 02/08/2026 đã cung cấp bức tranh toàn cảnh về kiến trúc sản xuất của AI Agent, giúp tôi làm chủ công cụ Amazon Bedrock AgentCore và áp dụng trực tiếp các tiêu chuẩn bảo mật, MCP protocol vào sản phẩm thực tế.

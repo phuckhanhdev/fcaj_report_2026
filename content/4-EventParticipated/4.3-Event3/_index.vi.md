@@ -30,7 +30,7 @@ Sự kiện có sự góp mặt của các đội chiến thắng từ cuộc th
 
 * **Các đội thi trình bày (Đội chiến thắng):**
   * **One Team:** (Thành viên: Anh Duy, Tran Dong, Doan Trung, Minh Viet, Anshul Roy). Xây dựng agent AI đặt hàng đa kênh cho KFC.
-  * **Lùa Mình (Plan V):** (Thành viên: Pham Tien Thuan Phat, Huynh Hoang Long, Le Minh Nghia, Tran Dai Vi, Nguyen An). Trình bày "SA Professional Native App", một trợ lý AI dành riêng cho các Solution Architect.
+  * **Plan V:** (Thành viên: Pham Tien Thuan Phat, Huynh Hoang Long, Le Minh Nghia, Tran Dai Vi, Nguyen An). Trình bày "SA Professional Native App", một trợ lý AI dành riêng cho các Solution Architect.
   * **3KA:** (Thành viên: Huỳnh An Khương, Nguyễn Quốc Huy, Ngô Quang Khôi, Hoàng Lê Thành Đức, Đặng Nguyễn Phước Lộc, Đặng Trường Hưng). Xây dựng "S.H.E.P.H.E.R.D", hệ thống Computer Vision và AI để kiểm soát đám đông.
   * **Signal Scout:** (Thành viên: Le Tan Luc, Do Hoang Hieu, Trieu Quoc Hao, Nguyen Van Duy Khiem, Nguyen Cong Minh, Nguyen Tran Minh Quan). Phát triển hệ thống AI phức tạp chống rửa tiền (AML) và phân tích chiến lược doanh nghiệp.
 
@@ -48,7 +48,7 @@ Sự kiện có sự góp mặt của các đội chiến thắng từ cuộc th
   * *Giải pháp:* Một AI agent hoạt động trực tiếp trên Zalo và WhatsApp. Nó hiểu ngôn ngữ tự nhiên, dùng tool để lấy menu (qua TinyFish) và quản lý giỏ hàng mà không bắt người dùng chuyển app.
   * *Bài học kỹ thuật:* Thay vì dùng hàm AWS Lambda thông thường (không có bộ nhớ), họ dùng **"AgentCore"**. Điều này giúp bot "nhớ" được lịch sử order của khách. Lựa chọn kiến trúc này giúp giảm 60% chi phí hạ tầng, đạt độ trễ chỉ 3-5 giây với chi phí 0.006 USD/đơn hàng.
 
-* **Lùa Mình / Plan V (App hỗ trợ Solution Architect):**
+* **Plan V (App hỗ trợ Solution Architect):**
   * *Vấn đề:* Các SA thường xuyên bị ép deadline phải thiết kế kiến trúc hạ tầng phức tạp và tính toán chi phí chỉ trong vài giờ.
   * *Giải pháp:* Một ứng dụng AI nơi SA chỉ cần nạp tài liệu yêu cầu (BRD). AI sẽ tự động vẽ sơ đồ kiến trúc trên Draw.io, lập bảng giá AWS và sinh ra code Terraform (IaC).
   * *Bài học kỹ thuật:* Đội đã sử dụng kỹ năng Prompt và Agent Engineering rất tốt để ép LLM tuân thủ chặt chẽ các template chuẩn của công ty (ví dụ: Lambda bắt buộc phải nằm trong VPC). Hệ thống dùng AWS Fargate cho backend và Amazon Bedrock để xử lý AI.

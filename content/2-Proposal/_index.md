@@ -17,13 +17,6 @@ pre: " <b> 2. </b> "
 
 The system is deployed on a production-grade AWS infrastructure stack including Amazon EC2 (t2.micro Free Tier), Amazon RDS MySQL, Amazon S3, Amazon CloudFront CDN, AWS WAF, AWS Lambda, and Amazon EventBridge Scheduler — all accessible at the custom domain **[https://phuckhanh.id.vn](https://phuckhanh.id.vn)**.
 
-<!-- System Demo Video Embed -->
-<div align="center" style="margin: 25px 0;">
-  <h4>📹 System Demo Video: LifeSync AI Calendar</h4>
-  <iframe width="100%" height="450" style="max-width: 800px; border-radius: 8px; border: 1px solid #ddd;" src="YOUR_DEMO_VIDEO_EMBED_URL" frameborder="0" allowfullscreen></iframe>
-  <p><i>(Paste your video embed link above)</i></p>
-</div>
-
 ---
 
 ### 2. Problem Statement
@@ -81,14 +74,14 @@ LifeSync AI Calendar solves this by:
 
 ---
 
-### 5. Timeline & Milestones
+### 5. Timeline & Milestones (8-Week Internship: June 15, 2026 – July 31, 2026)
 
-| Phase | Period | Activity |
+| Milestone / Phase | Execution Period | Key Activities & Deliverables |
 |---|---|---|
-| **Phase 1** | Month 1 | Architecture design, AWS setup (EC2, RDS, S3), Next.js scaffolding |
-| **Phase 2** | Month 2 | Core features (auth, calendar, scheduling engine), AI integration |
-| **Phase 3** | Month 3 | CloudFront + WAF deployment, CGV geolocation, production hardening |
-| **Post-launch** | Ongoing | CI/CD automation, monitoring, feature iterations |
+| **Milestone 1: Research & Scaffolding** | Week 1 – Week 2<br>*(June 15 – June 28, 2026)* | - AWS onboarding, credits activation, Cloud9 & CLI environment setup.<br>- Requirement analysis, MySQL schema design on LocalStack & Amazon RDS.<br>- Next.js 16 web app scaffolding and Zodiac-based avatar color system. |
+| **Milestone 2: Core Engine & Algorithm** | Week 3 – Week 4<br>*(June 29 – July 12, 2026)* | - Developed CSP Bitmask Scientific Scheduling Engine with Strategy Patterns (`StudyStrategy`, `FitnessStrategy`, `DateStrategy`).<br>- Programmed Haversine algorithm with "Nam rước Nữ" weighting (80% Female / 20% Male).<br>- Integrated NextAuth.js Google OAuth 2.0 & provisioned EC2 Ubuntu, Nginx, PM2.<br>- Presented Mid-term evaluation report. |
+| **Milestone 3: Dual-AI Engine & Automation** | Week 5 – Week 7<br>*(July 13 – July 29, 2026)* | - Deployed Amazon S3 Presigned URLs for secure avatar upload.<br>- Integrated Dual-AI Engine (Google Gemini 2.5 Flash + Amazon Bedrock) with automated failover.<br>- Configured Amazon CloudFront global CDN & AWS WAF (Core Rules & SQLi protection).<br>- Developed AWS Lambda & EventBridge Scheduler for weekly automated CGV movie crawling. |
+| **Milestone 4: Performance, Security & Final Submission** | Week 8<br>*(July 30 – July 31, 2026)* | - Nginx static caching/Gzip optimization & API load testing via Apache Bench (`ab`).<br>- Authored 4 technical blog posts for the AWS Study Group community.<br>- Completed risk assessment, self-evaluation, feedback, and bilingual Hugo/PDF publication.<br>- **Official Internship Completion and Final Report Submission (July 31, 2026)**. |
 
 ---
 
